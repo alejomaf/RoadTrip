@@ -11,6 +11,8 @@ import CoreData
 
 class InicioViewController: UIViewController, UITableViewDataSource {
     
+    @IBOutlet weak var tableView: UITableView!
+    
     var registros: [NSManagedObject] = [NSManagedObject]()
     
     override func viewDidLoad() {
@@ -18,7 +20,18 @@ class InicioViewController: UIViewController, UITableViewDataSource {
     }
     
     override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(true)
+        super.viewWillAppear(animated)
+        
+        guard let appDelegate = UIApplication.shared.delegate as? AppDelegate else { return }
+        let tasksRequest = NSFetchRequest<NSManagedObject>(entityName: "Registro")
+        
+        do {
+            registros = try appDelegate.persistentContainer.viewContext.fetch(tasksRequest)
+        } catch let error as NSError {
+            print("No se han podido cargar los datos. \(error), \(error.userInfo)")
+        }
+        
+        tableView.reloadData()
     }
     
     // MARK: - Functions
@@ -44,7 +57,7 @@ class InicioViewController: UIViewController, UITableViewDataSource {
         let row = registros[indexPath.row]
         
         cell.titleLbl.text = row.value(forKey: "nombre") as? String ?? "Sin nombre"
-        cell.dateLbl.text = (row.value(forKey: "fecha") as? Date ?? Date.distantPast).description
+        cell.dateLbl.text = (row.value(forKey: "fecha") as? Date)?.description ?? "-"
         cell.validationBorder.backgroundColor = validationColor(row.value(forKey: "resultado") as? Bool)
         
         return cell

@@ -60,9 +60,6 @@
 		29192C5B256EBF13008D37F5 /* roadtrip */ = {
 			isa = PBXGroup;
 			children = (
-				297E7081257027B6001D6AFA /* Controllers */,
-				297E7080257027B2001D6AFA /* Views */,
-				297E707F257027AC001D6AFA /* Models */,
 				29192C5C256EBF13008D37F5 /* AppDelegate.swift */,
 				29192C5E256EBF13008D37F5 /* ViewController.swift */,
 				29192C60256EBF13008D37F5 /* Main.storyboard */,
@@ -74,27 +71,6 @@
 				29192C63256EBF13008D37F5 /* roadtrip.xcdatamodeld */,
 			);
 			path = roadtrip;
-			sourceTree = "<group>";
-		};
-		297E707F257027AC001D6AFA /* Models */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Models;
-			sourceTree = "<group>";
-		};
-		297E7080257027B2001D6AFA /* Views */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Views;
-			sourceTree = "<group>";
-		};
-		297E7081257027B6001D6AFA /* Controllers */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Controllers;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */

@@ -179,6 +179,7 @@
                                             <outlet property="dateLbl" destination="OOJ-4X-knj" id="hgW-z2-oef"/>
                                             <outlet property="titleLbl" destination="2aM-Aq-97t" id="m2j-oC-2qq"/>
                                             <outlet property="validationBorder" destination="dmp-NR-Tdd" id="Nos-1p-YcU"/>
+                                            <segue destination="SsC-Si-Qh2" kind="show" id="NBJ-gv-tOO"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
@@ -188,17 +189,55 @@
                         <viewLayoutGuide key="safeArea" id="kgo-6I-3xh"/>
                     </view>
                     <navigationItem key="navigationItem" title="Lista de registros" id="ITO-u7-dUh">
+                        <barButtonItem key="backBarButtonItem" title="Atrás" id="lcD-ci-B7B"/>
                         <barButtonItem key="leftBarButtonItem" systemItem="stop" id="BSd-AN-2g1">
                             <color key="tintColor" red="0.0" green="0.66666666669999997" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="UWe-dy-qq9">
                             <color key="tintColor" red="0.0" green="0.66666666666666663" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                            <connections>
+                                <segue destination="fZQ-Xr-QNc" kind="show" id="0IN-Im-QFg"/>
+                            </connections>
                         </barButtonItem>
                     </navigationItem>
+                    <connections>
+                        <outlet property="tableView" destination="fO7-0s-3Mj" id="Ymj-5Z-gqc"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Pvn-nZ-DAc" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1166.6666666666667" y="770.75892857142856"/>
+        </scene>
+        <!--Detalles del registro-->
+        <scene sceneID="8rg-SU-5EB">
+            <objects>
+                <viewController title="Detalles del registro" id="SsC-Si-Qh2" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="kyG-pT-pqc">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" red="0.14901960780000001" green="0.14901960780000001" blue="0.14901960780000001" alpha="1" colorSpace="calibratedRGB"/>
+                        <viewLayoutGuide key="safeArea" id="0Km-dh-nOP"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="53M-BH-6k9" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2119" y="1501"/>
+        </scene>
+        <!--Agregar registro-->
+        <scene sceneID="Pot-4F-Ygz">
+            <objects>
+                <viewController title="Agregar registro" id="fZQ-Xr-QNc" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Qsz-VK-WgU">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" red="0.14901960784313725" green="0.14901960784313725" blue="0.14901960784313725" alpha="1" colorSpace="calibratedRGB"/>
+                        <color key="tintColor" red="0.0" green="0.66666666669999997" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <viewLayoutGuide key="safeArea" id="XBa-P1-548"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="QsC-gk-cRa" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2119" y="771"/>
         </scene>
         <!--Nuevo usuario-->
         <scene sceneID="UdI-He-r6d">
@@ -223,7 +262,7 @@
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" barStyle="black" id="iUH-rM-i7e">
                         <rect key="frame" x="0.0" y="44" width="414" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
-                        <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="tintColor" red="0.0" green="0.66666666669999997" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>
@@ -242,8 +281,12 @@
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" barStyle="black" id="btN-lQ-Ht2">
                         <rect key="frame" x="0.0" y="44" width="414" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
+                        <color key="tintColor" red="0.0" green="0.66666666669999997" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
+                    <toolbar key="toolbar" opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="iVk-99-Jtd">
+                        <autoresizingMask key="autoresizingMask"/>
+                    </toolbar>
                     <connections>
                         <segue destination="ggq-2Y-F6q" kind="relationship" relationship="rootViewController" id="XHd-9M-tmt"/>
                     </connections>

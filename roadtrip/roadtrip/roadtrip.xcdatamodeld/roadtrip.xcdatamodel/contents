@@ -1,24 +1,31 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="14460.32" systemVersion="19H15" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
+<model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="14460.32" systemVersion="17G14033" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
     <entity name="Registro" representedClassName="Registro" syncable="YES" codeGenerationType="class">
-        <attribute name="atributos" optional="YES" attributeType="Transformable" customClassName="[Double]" syncable="YES"/>
+        <attribute name="a01" attributeType="Float" defaultValueString="0.0" usesScalarValueType="YES" syncable="YES"/>
+        <attribute name="a02" attributeType="Float" defaultValueString="0.0" usesScalarValueType="YES" syncable="YES"/>
+        <attribute name="a03" attributeType="Float" defaultValueString="0.0" usesScalarValueType="YES" syncable="YES"/>
+        <attribute name="a04" attributeType="Float" defaultValueString="0.0" usesScalarValueType="YES" syncable="YES"/>
+        <attribute name="a05" attributeType="Float" defaultValueString="0.0" usesScalarValueType="YES" syncable="YES"/>
+        <attribute name="a06" attributeType="Float" defaultValueString="0.0" usesScalarValueType="YES" syncable="YES"/>
         <attribute name="fecha" optional="YES" attributeType="Date" usesScalarValueType="NO" syncable="YES"/>
-        <relationship name="ubicacion" optional="YES" transient="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Usuario" syncable="YES"/>
-        <relationship name="usuario" optional="YES" transient="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Usuario" syncable="YES"/>
+        <attribute name="nombre" optional="YES" attributeType="String" syncable="YES"/>
+        <relationship name="ubicacion" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Ubicacion" syncable="YES"/>
+        <relationship name="usuario" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Usuario" inverseName="registros" inverseEntity="Usuario" syncable="YES"/>
     </entity>
     <entity name="Ubicacion" representedClassName="Ubicacion" syncable="YES">
         <attribute name="horizontal" optional="YES" transient="YES" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES" syncable="YES"/>
         <attribute name="vertical" optional="YES" transient="YES" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES" syncable="YES"/>
     </entity>
     <entity name="Usuario" representedClassName="Usuario" syncable="YES">
-        <attribute name="contrasena" optional="YES" transient="YES" attributeType="String" minValueString="8" maxValueString="20" syncable="YES"/>
+        <attribute name="contrasena" transient="YES" attributeType="String" minValueString="8" maxValueString="20" syncable="YES"/>
         <attribute name="correo" optional="YES" transient="YES" attributeType="String" minValueString="13" maxValueString="30" syncable="YES"/>
-        <attribute name="nombre" optional="YES" transient="YES" attributeType="String" minValueString="6" maxValueString="20" syncable="YES"/>
-        <relationship name="ubicacion" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Ubicacion" syncable="YES"/>
+        <attribute name="nombre" transient="YES" attributeType="String" minValueString="6" maxValueString="20" syncable="YES"/>
+        <relationship name="registros" optional="YES" toMany="YES" deletionRule="Nullify" ordered="YES" destinationEntity="Registro" inverseName="usuario" inverseEntity="Registro" syncable="YES"/>
+        <relationship name="ubicacion" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Usuario" syncable="YES"/>
     </entity>
     <elements>
-        <element name="Usuario" positionX="-63" positionY="-18" width="128" height="105"/>
-        <element name="Registro" positionX="-54" positionY="-9" width="128" height="105"/>
-        <element name="Ubicacion" positionX="-36" positionY="9" width="128" height="75"/>
+        <element name="Registro" positionX="-281.4375" positionY="-5.71484375" width="128" height="195"/>
+        <element name="Ubicacion" positionX="-442.11328125" positionY="-90.578125" width="128" height="75"/>
+        <element name="Usuario" positionX="-288.234375" positionY="-165.421875" width="128" height="120"/>
     </elements>
 </model>
