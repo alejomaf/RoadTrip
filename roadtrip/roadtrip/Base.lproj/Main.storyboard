@@ -13,7 +13,7 @@
         <!--Iniciar sesión-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="roadtrip" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="IniciarSesionViewController" customModule="roadtrip" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -118,7 +118,7 @@
         <!--Lista de registros-->
         <scene sceneID="eyz-X2-8ep">
             <objects>
-                <viewController title="Lista de registros" id="ggq-2Y-F6q" customClass="InicioViewController" customModule="roadtrip" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController title="Lista de registros" id="ggq-2Y-F6q" customClass="RegistroTableViewController" customModule="roadtrip" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="qOF-ug-LHg">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -211,7 +211,7 @@
         <!--Detalles del registro-->
         <scene sceneID="8rg-SU-5EB">
             <objects>
-                <viewController title="Detalles del registro" id="SsC-Si-Qh2" sceneMemberID="viewController">
+                <viewController title="Detalles del registro" id="SsC-Si-Qh2" customClass="RegistroViewController" customModule="roadtrip" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="kyG-pT-pqc">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -226,8 +226,8 @@
         <!--Agregar registro-->
         <scene sceneID="Pot-4F-Ygz">
             <objects>
-                <viewController title="Agregar registro" id="fZQ-Xr-QNc" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="Qsz-VK-WgU">
+                <viewController title="Agregar registro" id="fZQ-Xr-QNc" customClass="AgregarRegistroViewController" customModule="roadtrip" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Qsz-VK-WgU" customClass="Agregaron">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" red="0.14901960784313725" green="0.14901960784313725" blue="0.14901960784313725" alpha="1" colorSpace="calibratedRGB"/>
@@ -242,7 +242,7 @@
         <!--Nuevo usuario-->
         <scene sceneID="UdI-He-r6d">
             <objects>
-                <viewController title="Nuevo usuario" id="IHg-ui-Ez8" sceneMemberID="viewController">
+                <viewController title="Nuevo usuario" id="IHg-ui-Ez8" customClass="RegistrarseViewController" customModule="roadtrip" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="RnY-7T-MiX">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>

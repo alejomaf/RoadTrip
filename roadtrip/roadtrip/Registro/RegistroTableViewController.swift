@@ -9,7 +9,7 @@
 import UIKit
 import CoreData
 
-class InicioViewController: UIViewController, UITableViewDataSource {
+class RegistroTableViewController: UIViewController, UITableViewDataSource {
     
     @IBOutlet weak var tableView: UITableView!
     
