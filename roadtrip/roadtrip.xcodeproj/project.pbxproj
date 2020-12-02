@@ -92,12 +92,7 @@
 		255477D62576CB66000ED989 /* Funcionalidad */ = {
 			isa = PBXGroup;
 			children = (
-				29192C5C256EBF13008D37F5 /* AppDelegate.swift */,
 				29192C5E256EBF13008D37F5 /* ViewController.swift */,
-				29192C66256EBF14008D37F5 /* Assets.xcassets */,
-				29192C68256EBF14008D37F5 /* LaunchScreen.storyboard */,
-				29192C6B256EBF14008D37F5 /* Info.plist */,
-				29192C63256EBF13008D37F5 /* roadtrip.xcdatamodeld */,
 			);
 			path = Funcionalidad;
 			sourceTree = "<group>";
@@ -134,6 +129,11 @@
 		29192C5B256EBF13008D37F5 /* roadtrip */ = {
 			isa = PBXGroup;
 			children = (
+				29192C66256EBF14008D37F5 /* Assets.xcassets */,
+				29192C68256EBF14008D37F5 /* LaunchScreen.storyboard */,
+				29192C6B256EBF14008D37F5 /* Info.plist */,
+				29192C63256EBF13008D37F5 /* roadtrip.xcdatamodeld */,
+				29192C5C256EBF13008D37F5 /* AppDelegate.swift */,
 				255477E32577EC60000ED989 /* Base de datos */,
 				255477D62576CB66000ED989 /* Funcionalidad */,
 				255477D52576CB51000ED989 /* Iniciar sesión */,
