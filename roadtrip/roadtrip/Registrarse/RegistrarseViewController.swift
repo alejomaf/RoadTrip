@@ -10,8 +10,18 @@ import UIKit
 
 class RegistrarseViewController: UIViewController {
 
+    
+    @IBOutlet weak var usuarioL: UITextField!
+    @IBOutlet weak var correoElectronicoL: UITextField!
+    @IBOutlet weak var contrasenaL1: UITextField!
+    @IBOutlet weak var contrasenaL2: UITextField!
+    
+    
     //Los usuarios se cargan al inicializarse la vista, se utilizan para comprobar que no se repitan ni los correos ni los nombres de usuario
     var usuarios:[Usuario]?
+    var nombre: String?
+    var contrasena: String?
+    var correo: String?
     
     override func viewDidLoad() {
         super.viewDidLoad()

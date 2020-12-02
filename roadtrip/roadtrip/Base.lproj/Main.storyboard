@@ -59,7 +59,7 @@
                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
                                 <connections>
-                                    <segue destination="PnD-6o-BrX" kind="show" id="mjd-xC-6pj"/>
+                                    <action selector="botonIniciarSesion:" destination="BYZ-38-t0r" eventType="touchUpInside" id="mFr-Fs-mM5"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ow2-Pq-tfI">
@@ -71,7 +71,7 @@
                                     <color key="titleColor" red="0.0" green="0.66666666669999997" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
                                 <connections>
-                                    <segue destination="IHg-ui-Ez8" kind="show" id="wF5-Ty-A6f"/>
+                                    <segue destination="IHg-ui-Ez8" kind="show" identifier="registrarse" id="wF5-Ty-A6f"/>
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="¿Has olvidado tu contraseña?" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yf3-Kv-D28">
@@ -110,6 +110,10 @@
                     <navigationItem key="navigationItem" title="Iniciar sesión" id="D6f-dd-X8x">
                         <barButtonItem key="backBarButtonItem" title="Atrás" id="oCi-JL-GOy"/>
                     </navigationItem>
+                    <connections>
+                        <outlet property="contrasena" destination="J73-mj-gWL" id="zL6-dY-FgX"/>
+                        <outlet property="nombre" destination="3TM-ZG-xHY" id="5EG-9X-gH2"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
@@ -329,6 +333,9 @@
                                 <state key="normal" title="Crear cuenta" backgroundImage="btn">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
+                                <connections>
+                                    <segue destination="OOR-La-F2g" kind="unwind" unwindAction="guardarNotaWithSender:" id="pMP-pA-9uk"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" red="0.14901960784313725" green="0.14901960784313725" blue="0.14901960784313725" alpha="1" colorSpace="calibratedRGB"/>
@@ -349,8 +356,15 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="Ewg-wO-uOb"/>
                     </view>
+                    <connections>
+                        <outlet property="contrasenaL1" destination="BsI-KF-UEK" id="UXJ-QA-oNJ"/>
+                        <outlet property="contrasenaL2" destination="bOL-tT-Ahu" id="tra-Kj-qce"/>
+                        <outlet property="correoElectronicoL" destination="q9k-CY-TwF" id="wEj-lt-1n2"/>
+                        <outlet property="usuarioL" destination="USE-OQ-BTY" id="Na5-kQ-5Zh"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="uNP-sK-u9Z" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <exit id="OOR-La-F2g" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
             <point key="canvasLocation" x="1167" y="60"/>
         </scene>

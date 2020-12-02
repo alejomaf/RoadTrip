@@ -10,6 +10,8 @@ import UIKit
 import CoreData
 
 class IniciarSesionViewController: UIViewController {
+    @IBOutlet weak var nombre: UITextField!
+    @IBOutlet weak var contrasena: UITextField!
     
     let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
     
@@ -60,6 +62,14 @@ class IniciarSesionViewController: UIViewController {
         self.saveData()
     }
     
+    @IBAction func botonIniciarSesion(_ sender: Any) {
+        if(nombre?.text==""||contrasena?.text==""){return}
+        if(iniciarSesion(nombre: nombre.text!, contrasena: contrasena.text!)){
+            performSegue(withIdentifier: "iniciarSesion", sender: nil)
+            //Hace falta que este segue vaya a la lista de registros
+        }
+    }
+    
     
     //Segue para cuando va a registrarse el usuario o consigue iniciar sesión
     
@@ -67,10 +77,18 @@ class IniciarSesionViewController: UIViewController {
         if segue.identifier == "registrarse"{
             let viewDestiny = segue.destination as! RegistrarseViewController
             viewDestiny.usuarios = usuarios
-        }else if segue.identifier == "listaRegistros"{
+        }else if segue.identifier == "iniciarSesion"{
             let viewDestiny = segue.destination as! RegistroTableViewController
             
         }
+    }
+    
+    @IBAction func guardarNota(sender: UIStoryboardSegue){
+        let nombre=(sender.source as! RegistrarseViewController).nombre
+        let correo=(sender.source as! RegistrarseViewController).correo
+        let contrasena=(sender.source as! RegistrarseViewController).contrasena
+        
+        registrarse(nombre: nombre!, contrasena: correo!, correo: contrasena!)
     }
     
 
