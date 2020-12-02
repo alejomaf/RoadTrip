@@ -17,9 +17,9 @@
         <attribute name="vertical" optional="YES" transient="YES" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES" syncable="YES"/>
     </entity>
     <entity name="Usuario" representedClassName="Usuario" syncable="YES">
-        <attribute name="contrasena" transient="YES" attributeType="String" minValueString="8" maxValueString="20" syncable="YES"/>
-        <attribute name="correo" optional="YES" transient="YES" attributeType="String" minValueString="13" maxValueString="30" syncable="YES"/>
-        <attribute name="nombre" transient="YES" attributeType="String" minValueString="6" maxValueString="20" syncable="YES"/>
+        <attribute name="contrasena" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="correo" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="nombre" optional="YES" attributeType="String" syncable="YES"/>
         <relationship name="registros" optional="YES" toMany="YES" deletionRule="Nullify" ordered="YES" destinationEntity="Registro" inverseName="usuario" inverseEntity="Registro" syncable="YES"/>
         <relationship name="ubicacion" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Usuario" syncable="YES"/>
     </entity>

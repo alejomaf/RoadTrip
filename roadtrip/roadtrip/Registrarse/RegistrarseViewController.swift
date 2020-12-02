@@ -15,6 +15,7 @@ class RegistrarseViewController: UIViewController {
     @IBOutlet weak var correoElectronicoL: UITextField!
     @IBOutlet weak var contrasenaL1: UITextField!
     @IBOutlet weak var contrasenaL2: UITextField!
+    @IBOutlet weak var crearCuenta: UIButton!
     
     
     //Los usuarios se cargan al inicializarse la vista, se utilizan para comprobar que no se repitan ni los correos ni los nombres de usuario
@@ -22,8 +23,11 @@ class RegistrarseViewController: UIViewController {
     var nombre: String?
     var contrasena: String?
     var correo: String?
+    var correoValido: Bool = false
+    var nombreValido: Bool = false
     
     override func viewDidLoad() {
+        crearCuenta.isEnabled=false
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
@@ -49,6 +53,28 @@ class RegistrarseViewController: UIViewController {
         return true
     }
 
+    @IBAction func actualizaNombre(_ sender: Any) {
+        nombreValido = checkNombre(nombre: usuarioL.text!)
+        actualizarBoton()
+    }
+    @IBAction func actualizaCorreo(_ sender: Any) {
+        correoValido = checkCorreo(correo: correoElectronicoL.text!)
+        actualizarBoton()
+    }
+    @IBAction func actualizaContrasena1(_ sender: Any) {
+        actualizarBoton()
+    }
+    @IBAction func actualizazContrasena2(_ sender: Any) {
+        actualizarBoton()
+    }
+    
+    func actualizarBoton(){
+        if(usuarioL.text==""||correoElectronicoL.text==""||contrasenaL1.text==""||contrasenaL2.text==""||correoValido==false||nombreValido==false){
+            crearCuenta.isEnabled = false
+        }else{
+            crearCuenta.isEnabled = true
+        }
+    }
     /*
     // MARK: - Navigation
 

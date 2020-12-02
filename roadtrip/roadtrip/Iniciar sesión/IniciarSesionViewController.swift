@@ -29,6 +29,7 @@ class IniciarSesionViewController: UIViewController {
         }catch{
             print("Error al guardar el usuario")
         }
+        cogerUsuarios()
     }
     
     func cogerUsuarios(){
@@ -45,6 +46,10 @@ class IniciarSesionViewController: UIViewController {
         for usuario in usuarios!{
             if(usuario.nombre==nombre){
                 if(usuario.contrasena==contrasena){
+                    UserDefaults.standard.set(usuario.nombre, forKey:"username");
+                    UserDefaults.standard.set(usuario.contrasena, forKey:"password");
+                    UserDefaults.standard.synchronize();
+                    // Con esto se carga el usuario let user = UserDefaults.standard.array(forKey: "user")as? [Usuario]
                     return true
                 }
             }
@@ -57,6 +62,7 @@ class IniciarSesionViewController: UIViewController {
         nuevoUsuario.nombre = nombre
         nuevoUsuario.contrasena = contrasena
         nuevoUsuario.correo = correo
+        nuevoUsuario.ubicacion = nil
         
         self.usuarios?.append(nuevoUsuario)
         self.saveData()
@@ -71,21 +77,22 @@ class IniciarSesionViewController: UIViewController {
             let viewDestiny = segue.destination as! RegistrarseViewController
             viewDestiny.usuarios = usuarios
         }else if segue.identifier == "iniciarSesion"{
-            let viewDestiny = segue.destination as! RegistroTableViewController
+            
+            //let viewDestiny = segue.destination as! RegistroTableViewController
         }
     }
     override func shouldPerformSegue(withIdentifier identifier: String, sender: Any?) -> Bool {
         if identifier == "iniciarSesion"{
-            if(nombre?.text==""||contrasena?.text==""){return false}
+            if(nombre.text==""||contrasena.text==""){return false}
             return iniciarSesion(nombre: nombre.text!, contrasena: contrasena.text!)
         }
         return true
     }
     
     @IBAction func guardarNota(sender: UIStoryboardSegue){
-        let nombre=(sender.source as! RegistrarseViewController).nombre
-        let correo=(sender.source as! RegistrarseViewController).correo
-        let contrasena=(sender.source as! RegistrarseViewController).contrasena
+        let nombre=(sender.source as! RegistrarseViewController).usuarioL.text
+        let correo=(sender.source as! RegistrarseViewController).correoElectronicoL.text
+        let contrasena=(sender.source as! RegistrarseViewController).contrasenaL1.text
         
         registrarse(nombre: nombre!, contrasena: correo!, correo: contrasena!)
     }

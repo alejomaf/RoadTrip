@@ -59,8 +59,7 @@
                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
                                 <connections>
-                                    <action selector="botonIniciarSesion:" destination="BYZ-38-t0r" eventType="touchUpInside" id="mFr-Fs-mM5"/>
-                                    <segue destination="PnD-6o-BrX" kind="show" id="y1d-rS-olY"/>
+                                    <segue destination="PnD-6o-BrX" kind="show" identifier="iniciarSesion" id="y1d-rS-olY"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ow2-Pq-tfI">
@@ -274,6 +273,9 @@
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
+                                <connections>
+                                    <action selector="actualizaNombre:" destination="IHg-ui-Ez8" eventType="editingChanged" id="Vba-ll-GLW"/>
+                                </connections>
                             </textField>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Correo electrónico" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZQt-5T-3Fi">
                                 <rect key="frame" x="50" y="237" width="314" height="29"/>
@@ -287,6 +289,9 @@
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
+                                <connections>
+                                    <action selector="actualizaCorreo:" destination="IHg-ui-Ez8" eventType="editingChanged" id="PW1-DU-EpI"/>
+                                </connections>
                             </textField>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Contraseña" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ihc-he-cab">
                                 <rect key="frame" x="50" y="346" width="314" height="29"/>
@@ -300,6 +305,9 @@
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
+                                <connections>
+                                    <action selector="actualizaContrasena1:" destination="IHg-ui-Ez8" eventType="editingChanged" id="RCd-Y4-uit"/>
+                                </connections>
                             </textField>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Repite tu contraseña" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="bOL-tT-Ahu">
                                 <rect key="frame" x="50" y="455" width="314" height="40"/>
@@ -320,6 +328,9 @@
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
+                                <connections>
+                                    <action selector="actualizazContrasena2:" destination="IHg-ui-Ez8" eventType="editingChanged" id="ZKc-DM-biC"/>
+                                </connections>
                             </textField>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9Zk-s7-Ked">
                                 <rect key="frame" x="57" y="782" width="300" height="40"/>
@@ -374,6 +385,7 @@
                         <outlet property="contrasenaL1" destination="BsI-KF-UEK" id="UXJ-QA-oNJ"/>
                         <outlet property="contrasenaL2" destination="bOL-tT-Ahu" id="tra-Kj-qce"/>
                         <outlet property="correoElectronicoL" destination="q9k-CY-TwF" id="wEj-lt-1n2"/>
+                        <outlet property="crearCuenta" destination="9Zk-s7-Ked" id="BFm-9t-ZV6"/>
                         <outlet property="usuarioL" destination="USE-OQ-BTY" id="Na5-kQ-5Zh"/>
                     </connections>
                 </viewController>
