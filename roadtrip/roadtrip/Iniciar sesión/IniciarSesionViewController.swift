@@ -62,13 +62,6 @@ class IniciarSesionViewController: UIViewController {
         self.saveData()
     }
     
-    @IBAction func botonIniciarSesion(_ sender: Any) {
-        if(nombre?.text==""||contrasena?.text==""){return}
-        if(iniciarSesion(nombre: nombre.text!, contrasena: contrasena.text!)){
-            performSegue(withIdentifier: "iniciarSesion", sender: nil)
-            //Hace falta que este segue vaya a la lista de registros
-        }
-    }
     
     
     //Segue para cuando va a registrarse el usuario o consigue iniciar sesión
@@ -79,8 +72,14 @@ class IniciarSesionViewController: UIViewController {
             viewDestiny.usuarios = usuarios
         }else if segue.identifier == "iniciarSesion"{
             let viewDestiny = segue.destination as! RegistroTableViewController
-            
         }
+    }
+    override func shouldPerformSegue(withIdentifier identifier: String, sender: Any?) -> Bool {
+        if identifier == "iniciarSesion"{
+            if(nombre?.text==""||contrasena?.text==""){return false}
+            return iniciarSesion(nombre: nombre.text!, contrasena: contrasena.text!)
+        }
+        return true
     }
     
     @IBAction func guardarNota(sender: UIStoryboardSegue){
