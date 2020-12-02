@@ -58,9 +58,6 @@
                                 <state key="normal" title="Iniciar sesión" backgroundImage="btn">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
-                                <connections>
-                                    <action selector="botonIniciarSesion:" destination="BYZ-38-t0r" eventType="touchUpInside" id="mFr-Fs-mM5"/>
-                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ow2-Pq-tfI">
                                 <rect key="frame" x="50" y="742" width="314" height="40"/>
