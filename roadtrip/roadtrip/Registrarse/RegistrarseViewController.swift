@@ -10,12 +10,34 @@ import UIKit
 
 class RegistrarseViewController: UIViewController {
 
+    //Los usuarios se cargan al inicializarse la vista, se utilizan para comprobar que no se repitan ni los correos ni los nombres de usuario
+    var usuarios:[Usuario]?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
     }
     
+    func checkNombre(nombre:String) -> Bool{
+        if (usuarios?.count==0) {return true}
+        for usuario in usuarios!{
+            if(usuario.nombre==nombre){
+                return false
+            }
+        }
+        return true
+    }
+    
+    func checkCorreo(correo:String) -> Bool{
+        if (usuarios?.count==0) {return true}
+        for usuario in usuarios!{
+            if(usuario.correo==correo){
+                return false
+            }
+        }
+        return true
+    }
 
     /*
     // MARK: - Navigation
