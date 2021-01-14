@@ -42,6 +42,7 @@ class IniciarSesionViewController: UIViewController {
 	
 	func iniciarSesion(nombre: String, contrasena: String) -> Bool {
         if(usuarios?.count==0){
+            print("mal")
             return false}
 
 		for usuario in usuarios! {
@@ -75,16 +76,19 @@ class IniciarSesionViewController: UIViewController {
 			let viewDestiny = segue.destination as! RegistrarseViewController
 			viewDestiny.usuarios = usuarios
 		} else if segue.identifier == "iniciarSesion" {
-			
+            
 			//let viewDestiny = segue.destination as! RegistroTableViewController
 		}
 	}
 
 	override func shouldPerformSegue(withIdentifier identifier: String, sender: Any?) -> Bool {
+        
+        //Si alguno de los campos de texto se encuentran vacíos no se inicia la comprobación del usuario
 		if identifier == "iniciarSesion" {
             if(nombre.text == "" || contrasena.text == ""){
                 return false}
             else{
+                //Realiza la comprobación del usuario
                 return iniciarSesion(nombre: nombre.text!, contrasena: contrasena.text!)}
 		}
 		return true
