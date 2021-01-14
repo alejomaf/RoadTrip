@@ -23,15 +23,20 @@ class CrearUbicacionViewController: UIViewController, UIImagePickerControllerDel
         // Do any additional setup after loading the view.
     }
     
-    @IBAction func seleccionarUbicacion(ubicacion : UITapGestureRecognizer) {
-      
-        let ubicacionSeleccionada = ubicacion.location(in: self.view)
+    @IBAction func seleccionarUbicacion(_ sender : UITapGestureRecognizer) {
+        let ubicacionSeleccionada = sender.location(in: self.view)
         
+        //Cojo los valores de la ubicación
         x = Double(ubicacionSeleccionada.x)
         y = Double(ubicacionSeleccionada.y)
         
+        //Actualizo el puntero
         pin.center.x = CGFloat(x)
         pin.center.y = CGFloat(y)
+        
+        //Actualizo los campos de texto
+        ejex.text = "\(x)"
+        ejey.text = "\(y)"
     }
 
     /*
