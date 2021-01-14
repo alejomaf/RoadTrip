@@ -2,7 +2,7 @@
 //  Ubicacion+CoreDataProperties.swift
 //  roadtrip
 //
-//  Created by Alejo Martín Arias Filippo on 02/12/2020.
+//  Created by Alejo Martín Arias Filippo on 09/12/2020.
 //  Copyright © 2020 ual. All rights reserved.
 //
 //
@@ -17,7 +17,7 @@ extension Ubicacion {
         return NSFetchRequest<Ubicacion>(entityName: "Ubicacion")
     }
 
-    @NSManaged public var horizontal: Int16
-    @NSManaged public var vertical: Int16
+    @NSManaged public var horizontal: Double
+    @NSManaged public var vertical: Double
 
 }

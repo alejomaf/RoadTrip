@@ -41,8 +41,8 @@ class IniciarSesionViewController: UIViewController {
 	}
 	
 	func iniciarSesion(nombre: String, contrasena: String) -> Bool {
-		if(usuarios?.count==0)
-			return false
+        if(usuarios?.count==0){
+            return false}
 
 		for usuario in usuarios! {
 			if(usuario.nombre == nombre) {
@@ -82,10 +82,10 @@ class IniciarSesionViewController: UIViewController {
 
 	override func shouldPerformSegue(withIdentifier identifier: String, sender: Any?) -> Bool {
 		if identifier == "iniciarSesion" {
-			if(nombre.text == "" || contrasena.text == "")
-				return false
-			else
-				return iniciarSesion(nombre: nombre.text!, contrasena: contrasena.text!)
+            if(nombre.text == "" || contrasena.text == ""){
+                return false}
+            else{
+                return iniciarSesion(nombre: nombre.text!, contrasena: contrasena.text!)}
 		}
 		return true
 	}
