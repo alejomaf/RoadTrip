@@ -9,7 +9,6 @@
 /* Begin PBXBuildFile section */
 		255477C92576C7F4000ED989 /* IniciarSesionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 255477C82576C7F4000ED989 /* IniciarSesionViewController.swift */; };
 		255477CB2576C81A000ED989 /* RegistrarseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 255477CA2576C81A000ED989 /* RegistrarseViewController.swift */; };
-		255477CF2576CA0F000ED989 /* AgregarRegistroViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 255477CE2576CA0F000ED989 /* AgregarRegistroViewController.swift */; };
 		255477D12576CAB3000ED989 /* RegistroViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 255477D02576CAB3000ED989 /* RegistroViewController.swift */; };
 		25AAFDC82581467E008FF470 /* CrearUbicacionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25AAFDC72581467E008FF470 /* CrearUbicacionViewController.swift */; };
 		25AAFDD7258157F5008FF470 /* Usuario+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25AAFDD1258157F5008FF470 /* Usuario+CoreDataClass.swift */; };
@@ -18,6 +17,7 @@
 		25AAFDDA258157F5008FF470 /* Ubicacion+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25AAFDD4258157F5008FF470 /* Ubicacion+CoreDataProperties.swift */; };
 		25AAFDDB258157F5008FF470 /* Registro+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25AAFDD5258157F5008FF470 /* Registro+CoreDataClass.swift */; };
 		25AAFDDC258157F5008FF470 /* Registro+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25AAFDD6258157F5008FF470 /* Registro+CoreDataProperties.swift */; };
+		25E82ED625B08596000EAED3 /* AtributoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25E82ED525B08596000EAED3 /* AtributoViewController.swift */; };
 		29192C5D256EBF13008D37F5 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29192C5C256EBF13008D37F5 /* AppDelegate.swift */; };
 		29192C62256EBF13008D37F5 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 29192C60256EBF13008D37F5 /* Main.storyboard */; };
 		29192C65256EBF13008D37F5 /* roadtrip.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 29192C63256EBF13008D37F5 /* roadtrip.xcdatamodeld */; };
@@ -30,7 +30,6 @@
 /* Begin PBXFileReference section */
 		255477C82576C7F4000ED989 /* IniciarSesionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IniciarSesionViewController.swift; sourceTree = "<group>"; };
 		255477CA2576C81A000ED989 /* RegistrarseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistrarseViewController.swift; sourceTree = "<group>"; };
-		255477CE2576CA0F000ED989 /* AgregarRegistroViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AgregarRegistroViewController.swift; sourceTree = "<group>"; };
 		255477D02576CAB3000ED989 /* RegistroViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistroViewController.swift; sourceTree = "<group>"; };
 		25AAFDC72581467E008FF470 /* CrearUbicacionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CrearUbicacionViewController.swift; sourceTree = "<group>"; };
 		25AAFDD1258157F5008FF470 /* Usuario+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Usuario+CoreDataClass.swift"; sourceTree = "<group>"; };
@@ -39,6 +38,7 @@
 		25AAFDD4258157F5008FF470 /* Ubicacion+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Ubicacion+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		25AAFDD5258157F5008FF470 /* Registro+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Registro+CoreDataClass.swift"; sourceTree = "<group>"; };
 		25AAFDD6258157F5008FF470 /* Registro+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Registro+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		25E82ED525B08596000EAED3 /* AtributoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AtributoViewController.swift; sourceTree = "<group>"; };
 		29192C59256EBF13008D37F5 /* roadtrip.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = roadtrip.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		29192C5C256EBF13008D37F5 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		29192C61256EBF13008D37F5 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -72,10 +72,10 @@
 		255477D32576CB1E000ED989 /* Registro */ = {
 			isa = PBXGroup;
 			children = (
-				255477CE2576CA0F000ED989 /* AgregarRegistroViewController.swift */,
 				255477D02576CAB3000ED989 /* RegistroViewController.swift */,
 				297E70772570207B001D6AFA /* RegistroTableViewCell.swift */,
 				297E707B257026DC001D6AFA /* RegistroTableViewController.swift */,
+				25E82ED525B08596000EAED3 /* AtributoViewController.swift */,
 			);
 			path = Registro;
 			sourceTree = "<group>";
@@ -221,11 +221,11 @@
 				29192C5D256EBF13008D37F5 /* AppDelegate.swift in Sources */,
 				255477C92576C7F4000ED989 /* IniciarSesionViewController.swift in Sources */,
 				255477CB2576C81A000ED989 /* RegistrarseViewController.swift in Sources */,
+				25E82ED625B08596000EAED3 /* AtributoViewController.swift in Sources */,
 				25AAFDC82581467E008FF470 /* CrearUbicacionViewController.swift in Sources */,
 				25AAFDDA258157F5008FF470 /* Ubicacion+CoreDataProperties.swift in Sources */,
 				25AAFDDC258157F5008FF470 /* Registro+CoreDataProperties.swift in Sources */,
 				25AAFDDB258157F5008FF470 /* Registro+CoreDataClass.swift in Sources */,
-				255477CF2576CA0F000ED989 /* AgregarRegistroViewController.swift in Sources */,
 				25AAFDD8258157F5008FF470 /* Usuario+CoreDataProperties.swift in Sources */,
 				25AAFDD7258157F5008FF470 /* Usuario+CoreDataClass.swift in Sources */,
 				297E707C257026DC001D6AFA /* RegistroTableViewController.swift in Sources */,

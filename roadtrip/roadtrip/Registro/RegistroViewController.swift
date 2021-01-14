@@ -10,6 +10,16 @@ import UIKit
 
 class RegistroViewController: UIViewController {
 
+    
+    @IBOutlet weak var botonCancelar: UIBarButtonItem!
+    @IBOutlet weak var botonGuardar: UIBarButtonItem!
+    @IBOutlet weak var barraNavegacion: UINavigationItem!
+    @IBOutlet weak var texto: UITextField!
+    @IBOutlet weak var botonNo: UIButton!
+    @IBOutlet weak var botonSi: UIButton!
+    @IBOutlet weak var listaRegistros: UIStackView!
+    @IBOutlet weak var botones: UIStackView!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 

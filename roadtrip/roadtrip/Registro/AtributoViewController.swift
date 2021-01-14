@@ -1,20 +1,23 @@
 //
-//  AgregarRegistroViewController.swift
+//  AtributoViewController.swift
 //  roadtrip
 //
-//  Created by Alejo Martín Arias Filippo on 01/12/2020.
-//  Copyright © 2020 ual. All rights reserved.
+//  Created by Alejo Martín Arias Filippo on 14/01/2021.
+//  Copyright © 2021 ual. All rights reserved.
 //
 
 import UIKit
 
-class AgregarRegistroViewController: UIViewController {
+class AtributoViewController: UIView {
 
-    override func viewDidLoad() {
+    @IBOutlet weak var nombre: UILabel!
+    @IBOutlet weak var valorTexto: UILabel!
+    @IBOutlet weak var selector: UISlider!
+    /*override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
-    }
+    }*/
     
 
     /*
