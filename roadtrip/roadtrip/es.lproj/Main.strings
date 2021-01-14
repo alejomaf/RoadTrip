@@ -1,0 +1,108 @@
+
+/* Class = "UILabel"; text = "Latitud"; ObjectID = "0Wl-nC-E5d"; */
+"0Wl-nC-E5d.text" = "Latitud";
+
+/* Class = "UILabel"; text = "Identificador del registro"; ObjectID = "2aM-Aq-97t"; */
+"2aM-Aq-97t.text" = "Identificador del registro";
+
+/* Class = "UITextField"; placeholder = "Introduce tu usuario"; ObjectID = "3TM-ZG-xHY"; */
+"3TM-ZG-xHY.placeholder" = "Introduce tu usuario";
+
+/* Class = "UILabel"; text = "Ubicación predeterminada"; ObjectID = "3co-ev-0hW"; */
+"3co-ev-0hW.text" = "Ubicación predeterminada";
+
+/* Class = "UIButton"; normalTitle = "Crear cuenta"; ObjectID = "9Zk-s7-Ked"; */
+"9Zk-s7-Ked.normalTitle" = "Crear cuenta";
+
+/* Class = "UITextField"; placeholder = "Introduce tu contraseña"; ObjectID = "BsI-KF-UEK"; */
+"BsI-KF-UEK.placeholder" = "Introduce tu contraseña";
+
+/* Class = "UINavigationItem"; title = "Iniciar sesión"; ObjectID = "D6f-dd-X8x"; */
+"D6f-dd-X8x.title" = "Iniciar sesión";
+
+/* Class = "UILabel"; text = "Usuario"; ObjectID = "DQC-IE-R0J"; */
+"DQC-IE-R0J.text" = "Usuario";
+
+/* Class = "UITextField"; placeholder = "Introduce su ubicación predeterminada"; ObjectID = "Dnn-Tk-WSu"; */
+"Dnn-Tk-WSu.placeholder" = "Introduce su ubicación predeterminada";
+
+/* Class = "UIViewController"; title = "Nuevo usuario"; ObjectID = "IHg-ui-Ez8"; */
+"IHg-ui-Ez8.title" = "Nuevo usuario";
+
+/* Class = "UINavigationItem"; title = "Lista de registros"; ObjectID = "ITO-u7-dUh"; */
+"ITO-u7-dUh.title" = "Lista de registros";
+
+/* Class = "UITextField"; placeholder = "Valor"; ObjectID = "Id1-qf-WyJ"; */
+"Id1-qf-WyJ.placeholder" = "Valor";
+
+/* Class = "UILabel"; text = "Contraseña"; ObjectID = "Ihc-he-cab"; */
+"Ihc-he-cab.text" = "Contraseña";
+
+/* Class = "UITextField"; placeholder = "Introduce tu contraseña"; ObjectID = "J73-mj-gWL"; */
+"J73-mj-gWL.placeholder" = "Introduce tu contraseña";
+
+/* Class = "UIButton"; normalTitle = "Iniciar sesión"; ObjectID = "M91-W2-tjA"; */
+"M91-W2-tjA.normalTitle" = "Iniciar sesión";
+
+/* Class = "UITabBarItem"; title = "Validación"; ObjectID = "MNi-dU-amQ"; */
+"MNi-dU-amQ.title" = "Validación";
+
+/* Class = "UILabel"; text = "Fecha de creación"; ObjectID = "OOJ-4X-knj"; */
+"OOJ-4X-knj.text" = "Fecha de creación";
+
+/* Class = "UIButton"; normalTitle = "¿No tienes cuenta? Regístrate"; ObjectID = "Ow2-Pq-tfI"; */
+"Ow2-Pq-tfI.normalTitle" = "¿No tienes cuenta? Regístrate";
+
+/* Class = "UILabel"; text = "Usuario"; ObjectID = "PND-yy-bHL"; */
+"PND-yy-bHL.text" = "Usuario";
+
+/* Class = "UIViewController"; title = "Detalles del registro"; ObjectID = "SsC-Si-Qh2"; */
+"SsC-Si-Qh2.title" = "Detalles del registro";
+
+/* Class = "UITextField"; placeholder = "Introduce tu usuario"; ObjectID = "USE-OQ-BTY"; */
+"USE-OQ-BTY.placeholder" = "Introduce tu usuario";
+
+/* Class = "UITextField"; placeholder = "Valor"; ObjectID = "VRD-ZV-BAK"; */
+"VRD-ZV-BAK.placeholder" = "Valor";
+
+/* Class = "UIViewController"; title = "Nueva ubicación"; ObjectID = "Yur-GL-cm6"; */
+"Yur-GL-cm6.title" = "Nueva ubicación";
+
+/* Class = "UILabel"; text = "Correo electrónico"; ObjectID = "ZQt-5T-3Fi"; */
+"ZQt-5T-3Fi.text" = "Correo electrónico";
+
+/* Class = "UIButton"; normalTitle = "Guardar"; ObjectID = "Zq0-eC-bv4"; */
+"Zq0-eC-bv4.normalTitle" = "Guardar";
+
+/* Class = "UITextField"; placeholder = "Repite tu contraseña"; ObjectID = "bOL-tT-Ahu"; */
+"bOL-tT-Ahu.placeholder" = "Repite tu contraseña";
+
+/* Class = "UIViewController"; title = "Agregar registro"; ObjectID = "fZQ-Xr-QNc"; */
+"fZQ-Xr-QNc.title" = "Agregar registro";
+
+/* Class = "UIViewController"; title = "Lista de registros"; ObjectID = "ggq-2Y-F6q"; */
+"ggq-2Y-F6q.title" = "Lista de registros";
+
+/* Class = "UILabel"; text = "Contraseña"; ObjectID = "izJ-Px-Zs4"; */
+"izJ-Px-Zs4.text" = "Contraseña";
+
+/* Class = "UITabBarItem"; title = "Inicio"; ObjectID = "l6O-lQ-vKt"; */
+"l6O-lQ-vKt.title" = "Inicio";
+
+/* Class = "UIBarButtonItem"; title = "Atrás"; ObjectID = "lcD-ci-B7B"; */
+"lcD-ci-B7B.title" = "Atrás";
+
+/* Class = "UIBarButtonItem"; title = "Atrás"; ObjectID = "oCi-JL-GOy"; */
+"oCi-JL-GOy.title" = "Atrás";
+
+/* Class = "UILabel"; text = "Longitud"; ObjectID = "pJN-Yq-2uD"; */
+"pJN-Yq-2uD.text" = "Longitud";
+
+/* Class = "UITextField"; placeholder = "Introduce su correo electrónico"; ObjectID = "q9k-CY-TwF"; */
+"q9k-CY-TwF.placeholder" = "Introduce su correo electrónico";
+
+/* Class = "UITabBarItem"; title = "Búsqueda"; ObjectID = "rVG-EV-uoG"; */
+"rVG-EV-uoG.title" = "Búsqueda";
+
+/* Class = "UILabel"; text = "¿Has olvidado tu contraseña?"; ObjectID = "yf3-Kv-D28"; */
+"yf3-Kv-D28.text" = "¿Has olvidado tu contraseña?";
