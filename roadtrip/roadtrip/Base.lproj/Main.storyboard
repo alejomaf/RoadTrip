@@ -190,6 +190,7 @@
                                             <outlet property="dateLbl" destination="OOJ-4X-knj" id="hgW-z2-oef"/>
                                             <outlet property="titleLbl" destination="2aM-Aq-97t" id="m2j-oC-2qq"/>
                                             <outlet property="validationBorder" destination="dmp-NR-Tdd" id="Nos-1p-YcU"/>
+                                            <segue destination="SsC-Si-Qh2" kind="presentation" identifier="verRegistro" trigger="accessoryAction" id="DbM-eT-aJn"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
@@ -206,7 +207,7 @@
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="UWe-dy-qq9">
                             <color key="tintColor" red="0.0" green="0.66666666666666663" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                             <connections>
-                                <segue destination="SsC-Si-Qh2" kind="presentation" id="qOM-xg-jxq"/>
+                                <segue destination="SsC-Si-Qh2" kind="presentation" identifier="crearRegistro" id="qOM-xg-jxq"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
@@ -226,13 +227,23 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="mapa" translatesAutoresizingMaskIntoConstraints="NO" id="710-fs-JJ3">
-                                <rect key="frame" x="20" y="108" width="374" height="202"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" image="ubicacionNoSeleccionada" translatesAutoresizingMaskIntoConstraints="NO" id="710-fs-JJ3">
+                                <rect key="frame" x="20" y="108" width="374" height="374"/>
+                                <gestureRecognizers/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="374" id="UwW-Gg-HSI"/>
+                                    <constraint firstAttribute="height" constant="374" id="keh-XC-gJv"/>
+                                    <constraint firstAttribute="width" secondItem="710-fs-JJ3" secondAttribute="height" multiplier="1:1" id="sLG-Qz-AsE"/>
+                                </constraints>
+                                <connections>
+                                    <outletCollection property="gestureRecognizers" destination="H3h-Ea-Mb5" appends="YES" id="t7b-cC-svu"/>
+                                </connections>
                             </imageView>
-                            <navigationBar contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="k4h-zU-RUh">
+                            <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="k4h-zU-RUh">
                                 <rect key="frame" x="0.0" y="44" width="414" height="44"/>
-                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="414" id="v20-Oy-Aua"/>
+                                </constraints>
                                 <items>
                                     <navigationItem title="Title" id="wBE-kd-I2b">
                                         <barButtonItem key="leftBarButtonItem" systemItem="cancel" id="3IY-Tr-dVv"/>
@@ -240,16 +251,8 @@
                                     </navigationItem>
                                 </items>
                             </navigationBar>
-                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="Texto" borderStyle="roundedRect" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="efs-F5-lha">
-                                <rect key="frame" x="159" y="318" width="97" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <nil key="textColor"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
-                            </textField>
-                            <stackView opaque="NO" contentMode="scaleToFill" fixedFrame="YES" spacing="281" translatesAutoresizingMaskIntoConstraints="NO" id="Y0T-1Q-2wL">
-                                <rect key="frame" x="37" y="366" width="341" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <stackView opaque="NO" contentMode="scaleToFill" ambiguous="YES" spacing="281" translatesAutoresizingMaskIntoConstraints="NO" id="Y0T-1Q-2wL">
+                                <rect key="frame" x="37" y="565" width="341" height="30"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="x6G-8Q-FRK">
                                         <rect key="frame" x="0.0" y="0.0" width="30" height="30"/>
@@ -260,13 +263,41 @@
                                         <state key="normal" title="Si"/>
                                     </button>
                                 </subviews>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="341" id="e7D-oY-zoj"/>
+                                </constraints>
                             </stackView>
-                            <stackView opaque="NO" contentMode="scaleToFill" fixedFrame="YES" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="gNT-WA-fxL">
-                                <rect key="frame" x="37" y="418" width="341" height="429"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <stackView opaque="NO" contentMode="scaleToFill" ambiguous="YES" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="gNT-WA-fxL">
+                                <rect key="frame" x="37" y="603" width="341" height="484"/>
+                                <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="341" id="c9D-6L-WPi"/>
+                                </constraints>
                             </stackView>
+                            <textField opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="Texto" borderStyle="roundedRect" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="efs-F5-lha">
+                                <rect key="frame" x="159" y="504" width="97" height="30"/>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
                         </subviews>
                         <color key="backgroundColor" red="0.14901960780000001" green="0.14901960780000001" blue="0.14901960780000001" alpha="1" colorSpace="calibratedRGB"/>
+                        <constraints>
+                            <constraint firstItem="k4h-zU-RUh" firstAttribute="trailing" secondItem="0Km-dh-nOP" secondAttribute="trailing" id="0kw-5O-BDz"/>
+                            <constraint firstItem="gNT-WA-fxL" firstAttribute="top" secondItem="Y0T-1Q-2wL" secondAttribute="bottom" constant="8" id="5wO-25-QK1"/>
+                            <constraint firstItem="k4h-zU-RUh" firstAttribute="leading" secondItem="0Km-dh-nOP" secondAttribute="leading" id="8Lm-bg-Dh5"/>
+                            <constraint firstItem="gNT-WA-fxL" firstAttribute="top" secondItem="Y0T-1Q-2wL" secondAttribute="bottom" constant="8" id="ALj-lH-1Ft"/>
+                            <constraint firstItem="0Km-dh-nOP" firstAttribute="trailing" secondItem="Y0T-1Q-2wL" secondAttribute="trailing" constant="36" id="ALy-IZ-Yb9"/>
+                            <constraint firstItem="0Km-dh-nOP" firstAttribute="trailing" secondItem="710-fs-JJ3" secondAttribute="trailing" constant="20" id="Er4-bQ-A7Y"/>
+                            <constraint firstItem="710-fs-JJ3" firstAttribute="leading" secondItem="0Km-dh-nOP" secondAttribute="leading" constant="20" id="Pb0-bO-BxM"/>
+                            <constraint firstItem="0Km-dh-nOP" firstAttribute="trailing" secondItem="gNT-WA-fxL" secondAttribute="trailing" constant="36" id="aWN-xz-lOx"/>
+                            <constraint firstItem="gNT-WA-fxL" firstAttribute="leading" secondItem="0Km-dh-nOP" secondAttribute="leading" constant="37" id="psw-4N-r3c"/>
+                            <constraint firstItem="Y0T-1Q-2wL" firstAttribute="top" secondItem="efs-F5-lha" secondAttribute="bottom" constant="31" id="qHb-R5-T4h"/>
+                            <constraint firstItem="efs-F5-lha" firstAttribute="top" secondItem="710-fs-JJ3" secondAttribute="bottom" constant="22" id="sxN-OE-izW"/>
+                            <constraint firstItem="k4h-zU-RUh" firstAttribute="top" secondItem="0Km-dh-nOP" secondAttribute="top" id="tgV-Z5-p9S"/>
+                            <constraint firstItem="Y0T-1Q-2wL" firstAttribute="leading" secondItem="0Km-dh-nOP" secondAttribute="leading" constant="37" id="x1F-ij-Qp2"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="0Km-dh-nOP"/>
                     </view>
                     <connections>
@@ -281,8 +312,9 @@
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="53M-BH-6k9" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <tapGestureRecognizer id="H3h-Ea-Mb5"/>
             </objects>
-            <point key="canvasLocation" x="2087" y="1519"/>
+            <point key="canvasLocation" x="2087" y="1602"/>
         </scene>
         <!--Crear Ubicacion View Controller-->
         <scene sceneID="DPk-Yz-fVU">
@@ -300,7 +332,7 @@
                                 </items>
                             </navigationBar>
                             <imageView contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="mapa" translatesAutoresizingMaskIntoConstraints="NO" id="C4p-st-ZC2">
-                                <rect key="frame" x="16" y="149" width="383" height="360"/>
+                                <rect key="frame" x="16" y="149" width="383" height="383"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <gestureRecognizers/>
                                 <connections>
@@ -497,7 +529,7 @@
                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
                                 <connections>
-                                    <segue destination="Yur-GL-cm6" kind="show" id="lxM-rt-5FU"/>
+                                    <segue destination="Yur-GL-cm6" kind="show" identifier="crearUbicacion" id="lxM-rt-5FU"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -593,7 +625,11 @@
     </scenes>
     <resources>
         <image name="btn" width="300" height="40"/>
-        <image name="mapa" width="1920" height="1080"/>
+        <image name="mapa" width="1079" height="1079"/>
         <image name="pointer" width="390" height="623"/>
+        <image name="ubicacionNoSeleccionada" width="1079" height="1079"/>
     </resources>
+    <inferredMetricsTieBreakers>
+        <segue reference="DbM-eT-aJn"/>
+    </inferredMetricsTieBreakers>
 </document>
