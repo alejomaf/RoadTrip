@@ -2,7 +2,7 @@
 //  Ubicacion+CoreDataClass.swift
 //  roadtrip
 //
-//  Created by Alejo Martín Arias Filippo on 02/12/2020.
+//  Created by Alejo Martín Arias Filippo on 09/12/2020.
 //  Copyright © 2020 ual. All rights reserved.
 //
 //

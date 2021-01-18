@@ -13,8 +13,8 @@
         <relationship name="usuario" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Usuario" inverseName="registros" inverseEntity="Usuario" syncable="YES"/>
     </entity>
     <entity name="Ubicacion" representedClassName="Ubicacion" syncable="YES">
-        <attribute name="horizontal" optional="YES" transient="YES" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES" syncable="YES"/>
-        <attribute name="vertical" optional="YES" transient="YES" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES" syncable="YES"/>
+        <attribute name="horizontal" optional="YES" transient="YES" attributeType="Double" defaultValueString="0" usesScalarValueType="YES" syncable="YES"/>
+        <attribute name="vertical" optional="YES" transient="YES" attributeType="Double" defaultValueString="0" usesScalarValueType="YES" syncable="YES"/>
     </entity>
     <entity name="Usuario" representedClassName="Usuario" syncable="YES">
         <attribute name="contrasena" optional="YES" attributeType="String" syncable="YES"/>
