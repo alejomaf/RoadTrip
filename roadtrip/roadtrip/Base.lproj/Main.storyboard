@@ -498,16 +498,16 @@
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="O8T-yi-DS2" userLabel="a1 Tfl">
-                                                        <rect key="frame" x="256" y="2.5" width="120" height="30"/>
+                                                        <rect key="frame" x="256" y="2" width="120" height="31"/>
                                                         <color key="backgroundColor" red="0.26666666666666666" green="0.26666666666666666" blue="0.26666666666666666" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                         <nil key="textColor"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                         <textInputTraits key="textInputTraits"/>
                                                     </textField>
-                                                    <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.10000000000000001" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="3G5-bn-85k" userLabel="a1 Sld">
+                                                    <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" minValue="-1" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="3G5-bn-85k" userLabel="a1 Sld">
                                                         <rect key="frame" x="38" y="40" width="343" height="31"/>
                                                         <constraints>
-                                                            <constraint firstAttribute="height" constant="30" id="LQ1-au-udI"/>
+                                                            <constraint firstAttribute="height" constant="30" id="DH7-Sh-AP8"/>
                                                         </constraints>
                                                         <color key="minimumTrackTintColor" red="0.0" green="0.40000000000000002" blue="0.59999999999999998" alpha="1" colorSpace="calibratedRGB"/>
                                                         <color key="maximumTrackTintColor" red="0.0" green="0.26666666666666666" blue="0.40000000000000002" alpha="1" colorSpace="calibratedRGB"/>
@@ -518,11 +518,12 @@
                                                 <constraints>
                                                     <constraint firstItem="O8T-yi-DS2" firstAttribute="leading" secondItem="QEI-N5-Mqi" secondAttribute="trailing" constant="200" id="ABb-XW-4Hr"/>
                                                     <constraint firstItem="QEI-N5-Mqi" firstAttribute="centerY" secondItem="9VN-BJ-R0y" secondAttribute="centerY" id="Jby-fa-uSU"/>
+                                                    <constraint firstItem="3G5-bn-85k" firstAttribute="top" secondItem="O8T-yi-DS2" secondAttribute="bottom" constant="7" id="Noj-ej-grK"/>
                                                     <constraint firstItem="QEI-N5-Mqi" firstAttribute="leading" secondItem="9VN-BJ-R0y" secondAttribute="leading" constant="40" id="Pj0-qb-Eq8"/>
+                                                    <constraint firstAttribute="trailing" secondItem="3G5-bn-85k" secondAttribute="trailing" id="RvV-QE-PjX"/>
                                                     <constraint firstItem="O8T-yi-DS2" firstAttribute="trailing" secondItem="9VN-BJ-R0y" secondAttribute="trailing" constant="-3" id="WCH-PR-u3H"/>
-                                                    <constraint firstItem="3G5-bn-85k" firstAttribute="top" secondItem="9VN-BJ-R0y" secondAttribute="bottom" constant="5" id="bvJ-iO-n20"/>
-                                                    <constraint firstItem="3G5-bn-85k" firstAttribute="trailing" secondItem="9VN-BJ-R0y" secondAttribute="trailing" id="n2i-2T-CtB"/>
-                                                    <constraint firstItem="3G5-bn-85k" firstAttribute="leading" secondItem="QEI-N5-Mqi" secondAttribute="leading" id="nNr-Ma-iLz"/>
+                                                    <constraint firstItem="3G5-bn-85k" firstAttribute="leading" secondItem="QEI-N5-Mqi" secondAttribute="leading" id="gNq-Nu-1jz"/>
+                                                    <constraint firstAttribute="bottom" secondItem="3G5-bn-85k" secondAttribute="bottom" constant="-35" id="of4-ik-gCa"/>
                                                     <constraint firstAttribute="height" constant="35" id="pP0-BE-RqK"/>
                                                     <constraint firstItem="O8T-yi-DS2" firstAttribute="centerY" secondItem="QEI-N5-Mqi" secondAttribute="centerY" id="vEd-6d-qo7"/>
                                                 </constraints>
@@ -543,7 +544,7 @@
                                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                         <textInputTraits key="textInputTraits"/>
                                                     </textField>
-                                                    <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.10000000149011612" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="fiI-yr-qFI" userLabel="a2 Sld">
+                                                    <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" minValue="-1" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="fiI-yr-qFI" userLabel="a2 Sld">
                                                         <rect key="frame" x="38" y="40" width="343" height="31"/>
                                                         <color key="minimumTrackTintColor" red="0.0" green="0.40000000000000002" blue="0.59999999999999998" alpha="1" colorSpace="calibratedRGB"/>
                                                         <color key="maximumTrackTintColor" red="0.0" green="0.2666666667" blue="0.40000000000000002" alpha="1" colorSpace="calibratedRGB"/>
@@ -574,7 +575,7 @@
                                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                         <textInputTraits key="textInputTraits"/>
                                                     </textField>
-                                                    <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.10000000149011612" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="227-5C-gxq" userLabel="a3 Sld">
+                                                    <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" minValue="-1" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="227-5C-gxq" userLabel="a3 Sld">
                                                         <rect key="frame" x="38" y="40" width="343" height="31"/>
                                                         <color key="minimumTrackTintColor" red="0.0" green="0.40000000000000002" blue="0.59999999999999998" alpha="1" colorSpace="calibratedRGB"/>
                                                         <color key="maximumTrackTintColor" red="0.0" green="0.2666666667" blue="0.40000000000000002" alpha="1" colorSpace="calibratedRGB"/>
@@ -605,7 +606,7 @@
                                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                         <textInputTraits key="textInputTraits"/>
                                                     </textField>
-                                                    <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.10000000149011612" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="btF-FM-x7Z" userLabel="a4 Sld">
+                                                    <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.10000000149011612" minValue="-1" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="btF-FM-x7Z" userLabel="a4 Sld">
                                                         <rect key="frame" x="38" y="40" width="343" height="31"/>
                                                         <color key="minimumTrackTintColor" red="0.0" green="0.40000000000000002" blue="0.59999999999999998" alpha="1" colorSpace="calibratedRGB"/>
                                                         <color key="maximumTrackTintColor" red="0.0" green="0.2666666667" blue="0.40000000000000002" alpha="1" colorSpace="calibratedRGB"/>
@@ -636,7 +637,7 @@
                                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                         <textInputTraits key="textInputTraits"/>
                                                     </textField>
-                                                    <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.10000000149011612" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="MVe-yV-jjf" userLabel="a5 Sld">
+                                                    <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.10000000149011612" minValue="-1" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="MVe-yV-jjf" userLabel="a5 Sld">
                                                         <rect key="frame" x="38" y="40" width="343" height="31"/>
                                                         <color key="minimumTrackTintColor" red="0.0" green="0.40000000000000002" blue="0.59999999999999998" alpha="1" colorSpace="calibratedRGB"/>
                                                         <color key="maximumTrackTintColor" red="0.0" green="0.2666666667" blue="0.40000000000000002" alpha="1" colorSpace="calibratedRGB"/>
@@ -661,13 +662,13 @@
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="NaL-4q-mHp" userLabel="a6 Tfl">
-                                                        <rect key="frame" x="256" y="2.5" width="120" height="30"/>
+                                                        <rect key="frame" x="256" y="2" width="120" height="31"/>
                                                         <color key="backgroundColor" red="0.2666666667" green="0.2666666667" blue="0.2666666667" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                         <nil key="textColor"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                         <textInputTraits key="textInputTraits"/>
                                                     </textField>
-                                                    <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.10000000149011612" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="zui-Wk-1aL" userLabel="a6 Sld">
+                                                    <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.10000000149011612" minValue="-1" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="zui-Wk-1aL" userLabel="a6 Sld">
                                                         <rect key="frame" x="38" y="40" width="343" height="31"/>
                                                         <color key="minimumTrackTintColor" red="0.0" green="0.40000000000000002" blue="0.59999999999999998" alpha="1" colorSpace="calibratedRGB"/>
                                                         <color key="maximumTrackTintColor" red="0.0" green="0.2666666667" blue="0.40000000000000002" alpha="1" colorSpace="calibratedRGB"/>
@@ -677,9 +678,12 @@
                                                 <color key="backgroundColor" red="0.1333333333" green="0.1333333333" blue="0.1333333333" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <constraints>
                                                     <constraint firstItem="zui-Wk-1aL" firstAttribute="top" secondItem="W2H-Yi-qUg" secondAttribute="bottom" constant="5" id="BLK-3s-9w4"/>
+                                                    <constraint firstAttribute="trailing" secondItem="zui-Wk-1aL" secondAttribute="trailing" id="Efa-xl-cNR"/>
                                                     <constraint firstItem="NaL-4q-mHp" firstAttribute="centerY" secondItem="D6V-vk-uFw" secondAttribute="centerY" id="Is1-Cf-2Dq"/>
                                                     <constraint firstItem="D6V-vk-uFw" firstAttribute="centerY" secondItem="W2H-Yi-qUg" secondAttribute="centerY" id="R7q-lO-XSp"/>
                                                     <constraint firstItem="D6V-vk-uFw" firstAttribute="trailing" secondItem="NaL-4q-mHp" secondAttribute="leading" id="S4h-Hs-nxl"/>
+                                                    <constraint firstItem="zui-Wk-1aL" firstAttribute="leading" secondItem="D6V-vk-uFw" secondAttribute="leading" id="YZP-Gf-OtA"/>
+                                                    <constraint firstItem="zui-Wk-1aL" firstAttribute="top" secondItem="NaL-4q-mHp" secondAttribute="bottom" constant="7" id="vjI-aS-8DP"/>
                                                 </constraints>
                                             </view>
                                         </subviews>
@@ -696,14 +700,12 @@
                                             <constraint firstItem="NaL-4q-mHp" firstAttribute="trailing" secondItem="Y3J-UC-243" secondAttribute="trailing" id="CjR-35-VyE"/>
                                             <constraint firstItem="W2H-Yi-qUg" firstAttribute="leading" secondItem="ciy-Sx-JhI" secondAttribute="leading" id="E3Y-E0-imp"/>
                                             <constraint firstItem="GOQ-w4-7Ho" firstAttribute="width" secondItem="9VN-BJ-R0y" secondAttribute="width" id="Ebb-Y1-65P"/>
-                                            <constraint firstItem="GOQ-w4-7Ho" firstAttribute="top" secondItem="3G5-bn-85k" secondAttribute="bottom" constant="25" id="FHb-s1-Q5N"/>
                                             <constraint firstItem="ciy-Sx-JhI" firstAttribute="leading" secondItem="Qae-9Y-NcF" secondAttribute="leading" id="GqE-Pa-eUv"/>
                                             <constraint firstItem="HHP-BH-92b" firstAttribute="leading" secondItem="koE-hv-ee3" secondAttribute="leading" id="Ija-DA-9Vk"/>
                                             <constraint firstItem="y8M-5s-nAC" firstAttribute="leading" secondItem="QEI-N5-Mqi" secondAttribute="leading" id="IkL-hv-ddD"/>
                                             <constraint firstItem="tsf-X4-CXe" firstAttribute="top" secondItem="auN-Lo-e1e" secondAttribute="top" id="Jad-2B-s7H"/>
                                             <constraint firstItem="btF-FM-x7Z" firstAttribute="trailing" secondItem="227-5C-gxq" secondAttribute="trailing" id="Jke-zN-thp"/>
                                             <constraint firstItem="O6g-3O-VLl" firstAttribute="leading" secondItem="GOQ-w4-7Ho" secondAttribute="leading" id="LJi-PT-m4x"/>
-                                            <constraint firstItem="fiI-yr-qFI" firstAttribute="leading" secondItem="3G5-bn-85k" secondAttribute="leading" id="N8U-7e-qbP"/>
                                             <constraint firstItem="Y3J-UC-243" firstAttribute="trailing" secondItem="HYL-4N-Pix" secondAttribute="trailing" id="NRB-7B-sCL"/>
                                             <constraint firstItem="Qae-9Y-NcF" firstAttribute="leading" secondItem="O6g-3O-VLl" secondAttribute="leading" id="NXV-oY-lHO"/>
                                             <constraint firstItem="D6V-vk-uFw" firstAttribute="leading" secondItem="Deq-rP-GnM" secondAttribute="leading" id="Oqq-fW-AgF"/>
@@ -712,7 +714,6 @@
                                             <constraint firstItem="zui-Wk-1aL" firstAttribute="trailing" secondItem="MVe-yV-jjf" secondAttribute="trailing" id="QA7-9W-O0m"/>
                                             <constraint firstItem="W2H-Yi-qUg" firstAttribute="height" secondItem="ciy-Sx-JhI" secondAttribute="height" id="RhL-TE-teK"/>
                                             <constraint firstItem="btF-FM-x7Z" firstAttribute="leading" secondItem="227-5C-gxq" secondAttribute="leading" id="S7x-Uh-YdO"/>
-                                            <constraint firstItem="fiI-yr-qFI" firstAttribute="trailing" secondItem="3G5-bn-85k" secondAttribute="trailing" id="S8X-Ti-JuE"/>
                                             <constraint firstItem="0mL-OA-3sR" firstAttribute="top" secondItem="tsf-X4-CXe" secondAttribute="bottom" id="UxL-9H-BEr"/>
                                             <constraint firstItem="9VN-BJ-R0y" firstAttribute="leading" secondItem="auN-Lo-e1e" secondAttribute="leading" id="WL4-cV-a5C"/>
                                             <constraint firstItem="227-5C-gxq" firstAttribute="leading" secondItem="fiI-yr-qFI" secondAttribute="leading" id="YAP-tW-8vE"/>
@@ -740,6 +741,7 @@
                                             <constraint firstItem="ZXB-X5-Rxg" firstAttribute="leading" secondItem="O8T-yi-DS2" secondAttribute="leading" id="uCt-aA-jmf"/>
                                             <constraint firstItem="zui-Wk-1aL" firstAttribute="leading" secondItem="MVe-yV-jjf" secondAttribute="leading" id="uPm-o4-fd8"/>
                                             <constraint firstAttribute="trailing" secondItem="9VN-BJ-R0y" secondAttribute="trailing" constant="35" id="vrw-9j-tee"/>
+                                            <constraint firstItem="O6g-3O-VLl" firstAttribute="top" secondItem="auN-Lo-e1e" secondAttribute="top" constant="488" id="wfz-Hq-2BG"/>
                                             <constraint firstItem="W2H-Yi-qUg" firstAttribute="top" secondItem="MVe-yV-jjf" secondAttribute="bottom" constant="25" id="ywt-0f-wpn"/>
                                             <constraint firstItem="227-5C-gxq" firstAttribute="trailing" secondItem="fiI-yr-qFI" secondAttribute="trailing" id="z9s-0S-IZs"/>
                                             <constraint firstItem="koE-hv-ee3" firstAttribute="leading" secondItem="y8M-5s-nAC" secondAttribute="leading" id="zKq-Hw-I4z"/>
