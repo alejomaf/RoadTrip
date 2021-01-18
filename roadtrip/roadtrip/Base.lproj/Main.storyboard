@@ -218,6 +218,7 @@
                                             <outlet property="dateLbl" destination="OOJ-4X-knj" id="hgW-z2-oef"/>
                                             <outlet property="titleLbl" destination="2aM-Aq-97t" id="m2j-oC-2qq"/>
                                             <outlet property="validationBorder" destination="dmp-NR-Tdd" id="Nos-1p-YcU"/>
+                                            <segue destination="fZQ-Xr-QNc" kind="show" identifier="verRegistro" id="dDt-hk-yhe"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
@@ -234,7 +235,7 @@
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="UWe-dy-qq9">
                             <color key="tintColor" red="0.0" green="0.66666666666666663" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                             <connections>
-                                <segue destination="fZQ-Xr-QNc" kind="show" id="0IN-Im-QFg"/>
+                                <segue destination="fZQ-Xr-QNc" kind="show" identifier="crearRegistro" id="0IN-Im-QFg"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
@@ -286,7 +287,7 @@
                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
                             </button>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="C4p-st-ZC2">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="mapa" translatesAutoresizingMaskIntoConstraints="NO" id="C4p-st-ZC2">
                                 <rect key="frame" x="0.0" y="88" width="414" height="233"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="C4p-st-ZC2" secondAttribute="height" multiplier="16:9" id="34h-lE-MyW"/>
@@ -465,11 +466,15 @@
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="auN-Lo-e1e" userLabel="Content View">
                                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                                         <subviews>
-                                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="tsf-X4-CXe">
+                                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ubicacionNoSeleccionada" translatesAutoresizingMaskIntoConstraints="NO" id="tsf-X4-CXe">
                                                 <rect key="frame" x="0.0" y="0.0" width="414" height="233"/>
+                                                <gestureRecognizers/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" secondItem="tsf-X4-CXe" secondAttribute="height" multiplier="16:9" id="Vzb-k9-nNj"/>
                                                 </constraints>
+                                                <connections>
+                                                    <outletCollection property="gestureRecognizers" destination="SNs-sD-Jey" appends="YES" id="1DI-LV-spf"/>
+                                                </connections>
                                             </imageView>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0mL-OA-3sR">
                                                 <rect key="frame" x="207" y="233" width="207" height="30"/>
@@ -480,6 +485,9 @@
                                                 <state key="normal" title="Sí">
                                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 </state>
+                                                <connections>
+                                                    <action selector="pulsarBotonSi:" destination="fZQ-Xr-QNc" eventType="touchUpInside" id="044-E2-Wtb"/>
+                                                </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="C1a-FO-h9j">
                                                 <rect key="frame" x="0.0" y="233" width="207" height="30"/>
@@ -487,6 +495,9 @@
                                                 <state key="normal" title="No">
                                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 </state>
+                                                <connections>
+                                                    <action selector="pulsaBotonNo:" destination="fZQ-Xr-QNc" eventType="touchUpInside" id="azj-4K-R0a"/>
+                                                </connections>
                                             </button>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="9VN-BJ-R0y" userLabel="a1 View">
                                                 <rect key="frame" x="0.0" y="298" width="379" height="35"/>
@@ -503,6 +514,9 @@
                                                         <nil key="textColor"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                         <textInputTraits key="textInputTraits"/>
+                                                        <connections>
+                                                            <action selector="editarTexto:" destination="fZQ-Xr-QNc" eventType="editingChanged" id="NdE-NL-L8C"/>
+                                                        </connections>
                                                     </textField>
                                                     <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" minValue="-1" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="3G5-bn-85k" userLabel="a1 Sld">
                                                         <rect key="frame" x="38" y="40" width="343" height="31"/>
@@ -543,6 +557,9 @@
                                                         <nil key="textColor"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                         <textInputTraits key="textInputTraits"/>
+                                                        <connections>
+                                                            <action selector="editarTextoA2:" destination="fZQ-Xr-QNc" eventType="editingDidEnd" id="tpw-H8-lKB"/>
+                                                        </connections>
                                                     </textField>
                                                     <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" minValue="-1" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="fiI-yr-qFI" userLabel="a2 Sld">
                                                         <rect key="frame" x="38" y="40" width="343" height="31"/>
@@ -574,6 +591,9 @@
                                                         <nil key="textColor"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                         <textInputTraits key="textInputTraits"/>
+                                                        <connections>
+                                                            <action selector="editarTextoA3:" destination="fZQ-Xr-QNc" eventType="editingDidEnd" id="OLd-NF-6O0"/>
+                                                        </connections>
                                                     </textField>
                                                     <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" minValue="-1" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="227-5C-gxq" userLabel="a3 Sld">
                                                         <rect key="frame" x="38" y="40" width="343" height="31"/>
@@ -605,6 +625,9 @@
                                                         <nil key="textColor"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                         <textInputTraits key="textInputTraits"/>
+                                                        <connections>
+                                                            <action selector="editarTextoA4:" destination="fZQ-Xr-QNc" eventType="editingDidEnd" id="yqY-17-1Jj"/>
+                                                        </connections>
                                                     </textField>
                                                     <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.10000000149011612" minValue="-1" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="btF-FM-x7Z" userLabel="a4 Sld">
                                                         <rect key="frame" x="38" y="40" width="343" height="31"/>
@@ -636,6 +659,9 @@
                                                         <nil key="textColor"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                         <textInputTraits key="textInputTraits"/>
+                                                        <connections>
+                                                            <action selector="editarTextoA5:" destination="fZQ-Xr-QNc" eventType="editingDidEnd" id="u9Q-kC-QSg"/>
+                                                        </connections>
                                                     </textField>
                                                     <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.10000000149011612" minValue="-1" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="MVe-yV-jjf" userLabel="a5 Sld">
                                                         <rect key="frame" x="38" y="40" width="343" height="31"/>
@@ -667,6 +693,9 @@
                                                         <nil key="textColor"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                         <textInputTraits key="textInputTraits"/>
+                                                        <connections>
+                                                            <action selector="editarTextoA6:" destination="fZQ-Xr-QNc" eventType="editingDidEnd" id="yrh-vl-hZ7"/>
+                                                        </connections>
                                                     </textField>
                                                     <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.10000000149011612" minValue="-1" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="zui-Wk-1aL" userLabel="a6 Sld">
                                                         <rect key="frame" x="38" y="40" width="343" height="31"/>
@@ -773,8 +802,30 @@
                     <navigationItem key="navigationItem" title="Registro" id="bSE-16-RWF">
                         <barButtonItem key="rightBarButtonItem" systemItem="save" id="Tqx-AY-mGn"/>
                     </navigationItem>
+                    <connections>
+                        <outlet property="botonNo" destination="C1a-FO-h9j" id="ull-Q6-cMm"/>
+                        <outlet property="botonSi" destination="0mL-OA-3sR" id="XHO-3d-MgA"/>
+                        <outlet property="mapa" destination="tsf-X4-CXe" id="uXT-Sc-uGQ"/>
+                        <outlet property="sliderA1" destination="3G5-bn-85k" id="4yf-4c-OqG"/>
+                        <outlet property="sliderA2" destination="fiI-yr-qFI" id="HIK-7o-l37"/>
+                        <outlet property="sliderA3" destination="227-5C-gxq" id="bPD-y3-b2p"/>
+                        <outlet property="sliderA4" destination="btF-FM-x7Z" id="aAC-ju-e72"/>
+                        <outlet property="sliderA5" destination="MVe-yV-jjf" id="c03-ll-zXY"/>
+                        <outlet property="sliderA6" destination="zui-Wk-1aL" id="S1R-zW-lzM"/>
+                        <outlet property="textoA1" destination="O8T-yi-DS2" id="nbo-cC-oxF"/>
+                        <outlet property="textoA2" destination="ZXB-X5-Rxg" id="eIn-Ze-p2K"/>
+                        <outlet property="textoA3" destination="xsA-Pf-raU" id="uZo-xh-sdd"/>
+                        <outlet property="textoA4" destination="HYL-4N-Pix" id="2zh-WN-uST"/>
+                        <outlet property="textoA5" destination="Y3J-UC-243" id="7Ye-MR-MAi"/>
+                        <outlet property="textoA6" destination="NaL-4q-mHp" id="uya-Wy-41J"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="QsC-gk-cRa" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <tapGestureRecognizer id="SNs-sD-Jey">
+                    <connections>
+                        <segue destination="Yur-GL-cm6" kind="show" identifier="devolverUbicacionUsuario" id="4iJ-Mq-Y5N"/>
+                    </connections>
+                </tapGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="2151" y="1250"/>
         </scene>
@@ -858,7 +909,7 @@
                                 <textInputTraits key="textInputTraits"/>
                                 <connections>
                                     <action selector="actualizazContrasena2:" destination="IHg-ui-Ez8" eventType="editingChanged" id="ZKc-DM-biC"/>
-                                    <segue destination="Yur-GL-cm6" kind="show" id="F06-gB-Btb"/>
+                                    <segue destination="Yur-GL-cm6" kind="show" identifier="devolverUbicacionUsuario" id="F06-gB-Btb"/>
                                 </connections>
                             </textField>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9Zk-s7-Ked">
@@ -1074,6 +1125,7 @@
                                             <outlet property="dateLbl" destination="xwB-JE-yR8" id="BjD-bR-5HP"/>
                                             <outlet property="titleLbl" destination="nJR-zK-ye8" id="ZHY-Xo-1hS"/>
                                             <outlet property="validationBorder" destination="EbK-Bc-AAM" id="2QN-NL-rFz"/>
+                                            <segue destination="fZQ-Xr-QNc" kind="show" identifier="verRegistroBusqueda" id="9qR-fw-Gh1"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
@@ -1118,8 +1170,11 @@
     </scenes>
     <resources>
         <image name="btn" width="300" height="40"/>
+        <image name="mapa" width="1079" height="1079"/>
+        <image name="ubicacionNoSeleccionada" width="1079" height="1079"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="3e1-Wf-QmO"/>
+        <segue reference="0IN-Im-QFg"/>
+        <segue reference="4iJ-Mq-Y5N"/>
     </inferredMetricsTieBreakers>
 </document>
