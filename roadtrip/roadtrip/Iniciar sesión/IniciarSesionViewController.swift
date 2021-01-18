@@ -9,19 +9,45 @@
 import UIKit
 import CoreData
 
-class IniciarSesionViewController: UIViewController {
+class IniciarSesionViewController: UIViewController, UIGestureRecognizerDelegate {
 	@IBOutlet weak var nombre: UITextField!
 	@IBOutlet weak var contrasena: UITextField!
-	
+    @IBOutlet weak var olvidadolbl: UILabel!
+    
 	let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
 	var usuarios:[Usuario]?
-	
-	override func viewDidLoad() {
-		super.viewDidLoad()
-		
-		cogerUsuarios()
-	}
-	
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        
+        cogerUsuarios()
+        
+        let tap: UITapGestureRecognizer = UITapGestureRecognizer(
+            target: self, action: #selector(recordar))
+        
+        olvidadolbl.addGestureRecognizer(tap)
+        
+        tap.delegate = self
+    }
+    
+    @objc func recordar(sender: UITapGestureRecognizer)
+    {
+        let alert = UIAlertController(title: "Recordar contraseña", message: "Introduzca su usuario para poder recuperar su contraseña.", preferredStyle: .alert)
+        
+        alert.addTextField { (textField) in
+            textField.placeholder = "Introduce tu usuario"
+        }
+        
+        alert.addAction(UIAlertAction(title: "Enviar", style: .default, handler: { [weak alert] (_) in
+            let textField = alert!.textFields![0]
+            print("Usuario: \(textField.text ?? "Ninguno")")
+        }))
+        
+        alert.addAction(UIAlertAction(title: "Atrás", style: .destructive))
+        
+        self.present(alert, animated: true, completion: nil)
+    }
+    
 	func saveData() {
 		do {
 			try context.save()
