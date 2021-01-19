@@ -13,7 +13,7 @@
         <!--Iniciar sesión-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="IniciarSesionViewController" customModule="roadtrip" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="IniciarSesionViewController" customModule="TripTok" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -32,7 +32,7 @@
                                 </constraints>
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
+                                <textInputTraits key="textInputTraits" textContentType="username"/>
                             </textField>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Contraseña" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="izJ-Px-Zs4">
                                 <rect key="frame" x="50" y="389.5" width="314" height="29"/>
@@ -48,7 +48,7 @@
                                 </constraints>
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
+                                <textInputTraits key="textInputTraits" secureTextEntry="YES" textContentType="password"/>
                             </textField>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="M91-W2-tjA">
                                 <rect key="frame" x="50" y="692" width="314" height="40"/>
@@ -91,12 +91,15 @@
                                 <rect key="frame" x="50" y="105" width="110" height="30"/>
                                 <state key="normal" title="TEST BUTON"/>
                                 <connections>
-                                    <segue destination="fZQ-Xr-QNc" kind="show" id="3e1-Wf-QmO"/>
+                                    <segue destination="wgb-Vy-rcA" kind="show" id="sbN-O7-maU"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="R3U-21-4Z9" userLabel="Contraseña Btn">
-                                <rect key="frame" x="329" y="438.5" width="30" height="40"/>
-                                <state key="normal" title="O"/>
+                                <rect key="frame" x="319" y="438.5" width="40" height="40"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="R3U-21-4Z9" secondAttribute="height" multiplier="1:1" id="WL7-y7-M59"/>
+                                </constraints>
+                                <state key="normal" backgroundImage="ojoOff"/>
                             </button>
                         </subviews>
                         <color key="backgroundColor" red="0.14901960784313725" green="0.14901960784313725" blue="0.14901960784313725" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -144,12 +147,12 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="241" y="61"/>
+            <point key="canvasLocation" x="240.57971014492756" y="60.9375"/>
         </scene>
         <!--Lista de registros-->
         <scene sceneID="eyz-X2-8ep">
             <objects>
-                <viewController title="Lista de registros" id="ggq-2Y-F6q" customClass="RegistroTableViewController" customModule="roadtrip" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController title="Lista de registros" id="ggq-2Y-F6q" customClass="RegistroTableViewController" customModule="TripTok" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="qOF-ug-LHg">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -159,10 +162,13 @@
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
                                 <color key="backgroundColor" red="0.066666666666666666" green="0.066666666666666666" blue="0.066666666666666666" alpha="0.0" colorSpace="calibratedRGB"/>
                                 <items>
-                                    <tabBarItem title="Inicio" id="l6O-lQ-vKt"/>
-                                    <tabBarItem title="Búsqueda" id="rVG-EV-uoG"/>
-                                    <tabBarItem title="Validación" id="MNi-dU-amQ"/>
+                                    <tabBarItem title="Inicio" image="casaOff" selectedImage="casaOn" id="l6O-lQ-vKt">
+                                        <inset key="largeContentSizeImageInsets" minX="0.0" minY="46" maxX="0.0" maxY="0.0"/>
+                                    </tabBarItem>
+                                    <tabBarItem title="Búsqueda" image="lupaOff" selectedImage="lupaOn" id="rVG-EV-uoG"/>
+                                    <tabBarItem title="Validación" image="calculadoraOff" selectedImage="calculadoraOn" id="MNi-dU-amQ"/>
                                 </items>
+                                <color key="tintColor" red="0.92990451389999995" green="0.14901960780000001" blue="0.14901960780000001" alpha="1" colorSpace="calibratedRGB"/>
                                 <color key="barTintColor" red="0.14901960784313725" green="0.14901960784313725" blue="0.14901960784313725" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             </tabBar>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="80" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="fO7-0s-3Mj">
@@ -171,7 +177,7 @@
                                 <color key="backgroundColor" red="0.20000000000000001" green="0.20000000000000001" blue="0.20000000000000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <color key="sectionIndexBackgroundColor" red="0.08235294118" green="0.08235294118" blue="0.08235294118" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="RegistroTableViewCell" rowHeight="80" id="XK6-YM-URu" customClass="RegistroTableViewCell" customModule="roadtrip" customModuleProvider="target">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="RegistroTableViewCell" rowHeight="80" id="XK6-YM-URu" customClass="RegistroTableViewCell" customModule="TripTok" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="28" width="414" height="80"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="XK6-YM-URu" id="8fQ-Es-D1w">
@@ -318,20 +324,20 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="zuo-VQ-lD3" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2971" y="457"/>
+            <point key="canvasLocation" x="3471" y="382"/>
         </scene>
         <!--Información-->
         <scene sceneID="XVA-ko-whK">
             <objects>
-                <viewController title="Información" id="FZx-4N-CC1" sceneMemberID="viewController">
+                <viewController title="Información" id="FZx-4N-CC1" customClass="InformacionViewController" customModule="TripTok" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="B6p-ci-Cw1">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pZM-Vh-236">
-                                <rect key="frame" x="98" y="118" width="218" height="25"/>
+                                <rect key="frame" x="145" y="118" width="124" height="25"/>
                                 <attributedString key="attributedText">
-                                    <fragment content="&lt;nombreAplicacion&gt;">
+                                    <fragment content="nombreApp">
                                         <attributes>
                                             <color key="NSColor" red="0.0" green="0.66666666666666663" blue="1" alpha="0.84999999999999998" colorSpace="calibratedRGB"/>
                                             <font key="NSFont" size="22" name="Arial-BoldMT"/>
@@ -363,9 +369,9 @@
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="C9m-Kb-Oxz">
                                 <rect key="frame" x="318" y="432.5" width="36" height="18"/>
                                 <attributedString key="attributedText">
-                                    <fragment content="1.0.0">
+                                    <fragment content="1.0">
                                         <attributes>
-                                            <color key="NSColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                            <color key="NSColor" white="0.67000000000000004" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                             <font key="NSFont" size="16" name="ArialMT"/>
                                             <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
                                         </attributes>
@@ -447,6 +453,10 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="duo-Bx-k3I"/>
                     </view>
+                    <connections>
+                        <outlet property="iconoApp" destination="HGe-I9-g7g" id="h50-Pk-JwM"/>
+                        <outlet property="nombreApp" destination="pZM-Vh-236" id="PHq-B1-p2v"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="UI2-T4-sDh" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -455,7 +465,7 @@
         <!--Registro-->
         <scene sceneID="Pot-4F-Ygz">
             <objects>
-                <viewController title="Registro" id="fZQ-Xr-QNc" customClass="AgregarRegistroViewController" customModule="roadtrip" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController title="Registro" id="fZQ-Xr-QNc" customClass="AgregarRegistroViewController" customModule="TripTok" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Qsz-VK-WgU">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -827,7 +837,7 @@
                     </connections>
                 </tapGestureRecognizer>
             </objects>
-            <point key="canvasLocation" x="2141" y="1250"/>
+            <point key="canvasLocation" x="2719" y="1258"/>
         </scene>
         <!--Validacion-->
         <scene sceneID="g5W-jh-sWf">
@@ -1088,12 +1098,12 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dy1-Tf-Bt7" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="241" y="1791"/>
+            <point key="canvasLocation" x="241" y="2025"/>
         </scene>
         <!--Nuevo usuario-->
         <scene sceneID="UdI-He-r6d">
             <objects>
-                <viewController title="Nuevo usuario" id="IHg-ui-Ez8" customClass="RegistrarseViewController" customModule="roadtrip" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController title="Nuevo usuario" id="IHg-ui-Ez8" customClass="RegistrarseViewController" customModule="TripTok" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="RnY-7T-MiX">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -1112,7 +1122,7 @@
                                 </constraints>
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
+                                <textInputTraits key="textInputTraits" textContentType="username"/>
                                 <connections>
                                     <action selector="actualizaNombre:" destination="IHg-ui-Ez8" eventType="editingChanged" id="Vba-ll-GLW"/>
                                 </connections>
@@ -1128,7 +1138,7 @@
                                 <color key="backgroundColor" red="0.20000000000000001" green="0.20000000000000001" blue="0.20000000000000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
+                                <textInputTraits key="textInputTraits" textContentType="email"/>
                                 <connections>
                                     <action selector="actualizaCorreo:" destination="IHg-ui-Ez8" eventType="editingChanged" id="PW1-DU-EpI"/>
                                 </connections>
@@ -1144,7 +1154,7 @@
                                 <color key="backgroundColor" red="0.20000000000000001" green="0.20000000000000001" blue="0.20000000000000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
+                                <textInputTraits key="textInputTraits" secureTextEntry="YES" textContentType="password"/>
                                 <connections>
                                     <action selector="actualizaContrasena1:" destination="IHg-ui-Ez8" eventType="editingChanged" id="RCd-Y4-uit"/>
                                 </connections>
@@ -1154,7 +1164,7 @@
                                 <color key="backgroundColor" red="0.20000000000000001" green="0.20000000000000001" blue="0.20000000000000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
+                                <textInputTraits key="textInputTraits" secureTextEntry="YES" textContentType="password"/>
                             </textField>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Ubicación predeterminada" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3co-ev-0hW">
                                 <rect key="frame" x="50" y="515" width="314" height="29"/>
@@ -1167,7 +1177,7 @@
                                 <color key="backgroundColor" red="0.20000000000000001" green="0.20000000000000001" blue="0.20000000000000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
+                                <textInputTraits key="textInputTraits" textContentType="location"/>
                                 <connections>
                                     <action selector="actualizazContrasena2:" destination="IHg-ui-Ez8" eventType="editingChanged" id="ZKc-DM-biC"/>
                                     <segue destination="Yur-GL-cm6" kind="show" identifier="devolverUbicacionUsuario" id="F06-gB-Btb"/>
@@ -1183,16 +1193,25 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="iBm-zJ-Eb7" userLabel="Contraseña Btn1">
-                                <rect key="frame" x="329" y="395" width="30" height="40"/>
-                                <state key="normal" title="O"/>
+                                <rect key="frame" x="319" y="395" width="40" height="40"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="iBm-zJ-Eb7" secondAttribute="height" multiplier="1:1" id="5sg-El-Pdq"/>
+                                </constraints>
+                                <state key="normal" backgroundImage="ojoOff"/>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="RjD-JP-NHZ" userLabel="Contraseña Btn2">
-                                <rect key="frame" x="329" y="455" width="30" height="40"/>
-                                <state key="normal" title="O"/>
+                                <rect key="frame" x="319" y="455" width="40" height="40"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="RjD-JP-NHZ" secondAttribute="height" multiplier="1:1" id="BK0-pd-uqI"/>
+                                </constraints>
+                                <state key="normal" backgroundImage="ojoOff"/>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eSg-4w-Z4E">
-                                <rect key="frame" x="329" y="564" width="30" height="40"/>
-                                <state key="normal" title="O"/>
+                                <rect key="frame" x="319" y="564" width="40" height="40"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="eSg-4w-Z4E" secondAttribute="height" multiplier="1:1" id="B0Y-Ys-r0v"/>
+                                </constraints>
+                                <state key="normal" backgroundImage="localizacion"/>
                             </button>
                         </subviews>
                         <color key="backgroundColor" red="0.14901960784313725" green="0.14901960784313725" blue="0.14901960784313725" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -1254,7 +1273,7 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="uNP-sK-u9Z" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <exit id="OOR-La-F2g" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
-            <point key="canvasLocation" x="1238" y="457"/>
+            <point key="canvasLocation" x="1238" y="382"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="1Ma-lh-Ku5">
@@ -1296,18 +1315,18 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="iRV-0i-eSG" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="241" y="952"/>
+            <point key="canvasLocation" x="241" y="1250"/>
         </scene>
         <!--Búsqueda-->
         <scene sceneID="HOi-j3-XaJ">
             <objects>
-                <viewController title="Búsqueda" id="wgb-Vy-rcA" customClass="RegistroTableViewController" customModule="roadtrip" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController title="Búsqueda" id="wgb-Vy-rcA" customClass="RegistroTableViewController" customModule="TripTok" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="BoK-15-g82">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="XOg-sp-sKk" userLabel="Buscar View">
-                                <rect key="frame" x="0.0" y="44" width="414" height="40"/>
+                                <rect key="frame" x="0.0" y="88" width="414" height="40"/>
                                 <subviews>
                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Escribe para buscar..." textAlignment="natural" minimumFontSize="17" clearButtonMode="unlessEditing" translatesAutoresizingMaskIntoConstraints="NO" id="Kc3-lZ-tb1">
                                         <rect key="frame" x="20" y="0.0" width="394" height="40"/>
@@ -1317,20 +1336,23 @@
                                         <textInputTraits key="textInputTraits"/>
                                     </textField>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7S0-eI-GJP" userLabel="Buscar Btn">
-                                        <rect key="frame" x="372" y="0.0" width="30" height="40"/>
-                                        <state key="normal" title="O"/>
+                                        <rect key="frame" x="372" y="5" width="30" height="30"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="30" id="Aq9-8n-VCc"/>
+                                            <constraint firstAttribute="width" secondItem="7S0-eI-GJP" secondAttribute="height" multiplier="1:1" id="DFl-HQ-1Np"/>
+                                        </constraints>
+                                        <state key="normal" backgroundImage="lupaOff"/>
                                     </button>
                                 </subviews>
                                 <color key="backgroundColor" red="0.26666666666666666" green="0.26666666666666666" blue="0.26666666666666666" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
                                     <constraint firstItem="Kc3-lZ-tb1" firstAttribute="top" secondItem="XOg-sp-sKk" secondAttribute="top" id="7bZ-zf-3cx"/>
                                     <constraint firstItem="7S0-eI-GJP" firstAttribute="trailing" secondItem="XOg-sp-sKk" secondAttribute="trailing" constant="-12" id="8SF-Wz-c8b"/>
-                                    <constraint firstItem="7S0-eI-GJP" firstAttribute="bottom" secondItem="XOg-sp-sKk" secondAttribute="bottom" id="L5L-wr-InQ"/>
                                     <constraint firstAttribute="trailing" secondItem="Kc3-lZ-tb1" secondAttribute="trailing" id="SeB-oN-mRJ"/>
                                     <constraint firstItem="Kc3-lZ-tb1" firstAttribute="leading" secondItem="XOg-sp-sKk" secondAttribute="leading" constant="20" id="Zo9-zY-WMv"/>
                                     <constraint firstAttribute="bottom" secondItem="Kc3-lZ-tb1" secondAttribute="bottom" id="e94-LY-SbJ"/>
+                                    <constraint firstItem="7S0-eI-GJP" firstAttribute="centerY" secondItem="Kc3-lZ-tb1" secondAttribute="centerY" id="hRM-TZ-Ynb"/>
                                     <constraint firstAttribute="height" constant="40" id="s7B-uZ-UKK"/>
-                                    <constraint firstItem="7S0-eI-GJP" firstAttribute="top" secondItem="XOg-sp-sKk" secondAttribute="top" id="yAn-ax-mtp"/>
                                 </constraints>
                             </view>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="80" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="Epw-IT-J6j">
@@ -1339,7 +1361,7 @@
                                 <color key="backgroundColor" red="0.20000000000000001" green="0.20000000000000001" blue="0.20000000000000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <color key="sectionIndexBackgroundColor" red="0.08235294118" green="0.08235294118" blue="0.08235294118" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="RegistroTableViewCell" rowHeight="80" id="bfp-BD-lV3" customClass="RegistroTableViewCell" customModule="roadtrip" customModuleProvider="target">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="RegistroTableViewCell" rowHeight="80" id="bfp-BD-lV3" customClass="RegistroTableViewCell" customModule="TripTok" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="28" width="414" height="80"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="bfp-BD-lV3" id="zBO-tT-pAz">
@@ -1426,16 +1448,24 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="r9W-LY-1C7" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2184" y="457"/>
+            <point key="canvasLocation" x="1967" y="1973"/>
         </scene>
     </scenes>
     <resources>
         <image name="btn" width="300" height="40"/>
+        <image name="calculadoraOff" width="25" height="25"/>
+        <image name="calculadoraOn" width="25" height="25"/>
+        <image name="casaOff" width="25" height="25"/>
+        <image name="casaOn" width="25" height="25"/>
+        <image name="localizacion" width="250" height="250"/>
+        <image name="lupaOff" width="25" height="25"/>
+        <image name="lupaOn" width="25" height="25"/>
         <image name="mapa" width="539" height="539"/>
+        <image name="ojoOff" width="250" height="250"/>
         <image name="ubicacionNoSeleccionada" width="539" height="539"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="0IN-Im-QFg"/>
+        <segue reference="9qR-fw-Gh1"/>
         <segue reference="4iJ-Mq-Y5N"/>
     </inferredMetricsTieBreakers>
 </document>
