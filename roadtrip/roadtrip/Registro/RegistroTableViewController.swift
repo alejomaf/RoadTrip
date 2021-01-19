@@ -63,6 +63,10 @@ class RegistroTableViewController: UIViewController, UITableViewDataSource {
         return cell
     }
     
+    @IBAction func cerrar(_ sender: UIBarButtonItem) {
+        UIApplication.init()
+    }
+    
     // MARK: - Navigation
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation

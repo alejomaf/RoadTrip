@@ -87,7 +87,8 @@ class RegistrarseViewController: UIViewController {
     
      @IBAction func registrarse(sender: UIStoryboardSegue) {
         let nuevoUsuario = Usuario(context: context)
-        nuevoUsuario.nombre = usuarioL.text
+		
+		nuevoUsuario.nombre = usuarioL.text
         nuevoUsuario.contrasena = contrasenaL1.text
         nuevoUsuario.correo = correoElectronicoL.text
         nuevoUsuario.ubicacion = nil
@@ -100,6 +101,12 @@ class RegistrarseViewController: UIViewController {
         }
 		
 		print("Usuario registrado.")
+		
+        salir(sender:sender)
+    }
+    
+    @IBAction func salir(sender: UIStoryboardSegue) {
+        dismiss(animated: false, completion: nil)
     }
     
     //Configuro los botones de crear ubicación para que el unwind esté bien programado
