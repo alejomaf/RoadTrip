@@ -2,15 +2,17 @@
   "images" : [
     {
       "idiom" : "universal",
+      "filename" : "casaOnx1.png",
       "scale" : "1x"
     },
     {
       "idiom" : "universal",
-      "filename" : "pin.png",
+      "filename" : "casaOnx2.png",
       "scale" : "2x"
     },
     {
       "idiom" : "universal",
+      "filename" : "casaOnx3.png",
       "scale" : "3x"
     }
   ],

@@ -7,24 +7,44 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		255477C92576C7F4000ED989 /* IniciarSesionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 255477C82576C7F4000ED989 /* IniciarSesionViewController.swift */; };
-		255477CB2576C81A000ED989 /* RegistrarseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 255477CA2576C81A000ED989 /* RegistrarseViewController.swift */; };
-		255477D12576CAB3000ED989 /* RegistroViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 255477D02576CAB3000ED989 /* RegistroViewController.swift */; };
-		25AAFDC82581467E008FF470 /* CrearUbicacionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25AAFDC72581467E008FF470 /* CrearUbicacionViewController.swift */; };
-		25AAFDD7258157F5008FF470 /* Usuario+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25AAFDD1258157F5008FF470 /* Usuario+CoreDataClass.swift */; };
-		25AAFDD8258157F5008FF470 /* Usuario+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25AAFDD2258157F5008FF470 /* Usuario+CoreDataProperties.swift */; };
-		25AAFDD9258157F5008FF470 /* Ubicacion+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25AAFDD3258157F5008FF470 /* Ubicacion+CoreDataClass.swift */; };
-		25AAFDDA258157F5008FF470 /* Ubicacion+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25AAFDD4258157F5008FF470 /* Ubicacion+CoreDataProperties.swift */; };
-		25AAFDDB258157F5008FF470 /* Registro+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25AAFDD5258157F5008FF470 /* Registro+CoreDataClass.swift */; };
-		25AAFDDC258157F5008FF470 /* Registro+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25AAFDD6258157F5008FF470 /* Registro+CoreDataProperties.swift */; };
-		25E82ED625B08596000EAED3 /* AtributoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25E82ED525B08596000EAED3 /* AtributoViewController.swift */; };
-		29192C5D256EBF13008D37F5 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29192C5C256EBF13008D37F5 /* AppDelegate.swift */; };
-		29192C62256EBF13008D37F5 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 29192C60256EBF13008D37F5 /* Main.storyboard */; };
-		29192C65256EBF13008D37F5 /* roadtrip.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 29192C63256EBF13008D37F5 /* roadtrip.xcdatamodeld */; };
-		29192C67256EBF14008D37F5 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 29192C66256EBF14008D37F5 /* Assets.xcassets */; };
-		29192C6A256EBF14008D37F5 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 29192C68256EBF14008D37F5 /* LaunchScreen.storyboard */; };
-		297E70782570207B001D6AFA /* RegistroTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 297E70772570207B001D6AFA /* RegistroTableViewCell.swift */; };
-		297E707C257026DC001D6AFA /* RegistroTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 297E707B257026DC001D6AFA /* RegistroTableViewController.swift */; };
+		292235A425B6FD1B0043258B /* RegistroTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 297E70772570207B001D6AFA /* RegistroTableViewCell.swift */; };
+		292235A525B6FD1B0043258B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29192C5C256EBF13008D37F5 /* AppDelegate.swift */; };
+		292235A625B6FD1B0043258B /* IniciarSesionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 255477C82576C7F4000ED989 /* IniciarSesionViewController.swift */; };
+		292235A725B6FD1B0043258B /* RegistrarseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 255477CA2576C81A000ED989 /* RegistrarseViewController.swift */; };
+		292235A825B6FD1B0043258B /* AtributoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25E82ED525B08596000EAED3 /* AtributoViewController.swift */; };
+		292235A925B6FD1B0043258B /* CrearUbicacionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25AAFDC72581467E008FF470 /* CrearUbicacionViewController.swift */; };
+		292235AA25B6FD1B0043258B /* Ubicacion+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25AAFDD4258157F5008FF470 /* Ubicacion+CoreDataProperties.swift */; };
+		292235AB25B6FD1B0043258B /* Registro+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25AAFDD6258157F5008FF470 /* Registro+CoreDataProperties.swift */; };
+		292235AC25B6FD1B0043258B /* Registro+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25AAFDD5258157F5008FF470 /* Registro+CoreDataClass.swift */; };
+		292235AD25B6FD1B0043258B /* Usuario+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25AAFDD2258157F5008FF470 /* Usuario+CoreDataProperties.swift */; };
+		292235AE25B6FD1B0043258B /* Usuario+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25AAFDD1258157F5008FF470 /* Usuario+CoreDataClass.swift */; };
+		292235AF25B6FD1B0043258B /* RegistroTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 297E707B257026DC001D6AFA /* RegistroTableViewController.swift */; };
+		292235B025B6FD1B0043258B /* Ubicacion+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25AAFDD3258157F5008FF470 /* Ubicacion+CoreDataClass.swift */; };
+		292235B125B6FD1B0043258B /* RegistroViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 255477D02576CAB3000ED989 /* RegistroViewController.swift */; };
+		292235B225B6FD1B0043258B /* roadtrip.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 29192C63256EBF13008D37F5 /* roadtrip.xcdatamodeld */; };
+		292235B525B6FD1B0043258B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 29192C68256EBF14008D37F5 /* LaunchScreen.storyboard */; };
+		292235B625B6FD1B0043258B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 29192C66256EBF14008D37F5 /* Assets.xcassets */; };
+		292235B725B6FD1B0043258B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 29192C60256EBF13008D37F5 /* Main.storyboard */; };
+		292235BF25B7070D0043258B /* InformacionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 292235BD25B7070D0043258B /* InformacionViewController.swift */; };
+		2933952725B72510001E5968 /* RegistroTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 297E70772570207B001D6AFA /* RegistroTableViewCell.swift */; };
+		2933952825B72510001E5968 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29192C5C256EBF13008D37F5 /* AppDelegate.swift */; };
+		2933952925B72510001E5968 /* IniciarSesionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 255477C82576C7F4000ED989 /* IniciarSesionViewController.swift */; };
+		2933952A25B72510001E5968 /* RegistrarseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 255477CA2576C81A000ED989 /* RegistrarseViewController.swift */; };
+		2933952B25B72510001E5968 /* AtributoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25E82ED525B08596000EAED3 /* AtributoViewController.swift */; };
+		2933952C25B72510001E5968 /* CrearUbicacionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25AAFDC72581467E008FF470 /* CrearUbicacionViewController.swift */; };
+		2933952D25B72510001E5968 /* Ubicacion+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25AAFDD4258157F5008FF470 /* Ubicacion+CoreDataProperties.swift */; };
+		2933952E25B72510001E5968 /* Registro+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25AAFDD6258157F5008FF470 /* Registro+CoreDataProperties.swift */; };
+		2933952F25B72510001E5968 /* Registro+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25AAFDD5258157F5008FF470 /* Registro+CoreDataClass.swift */; };
+		2933953025B72510001E5968 /* Usuario+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25AAFDD2258157F5008FF470 /* Usuario+CoreDataProperties.swift */; };
+		2933953125B72510001E5968 /* Usuario+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25AAFDD1258157F5008FF470 /* Usuario+CoreDataClass.swift */; };
+		2933953225B72510001E5968 /* RegistroTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 297E707B257026DC001D6AFA /* RegistroTableViewController.swift */; };
+		2933953325B72510001E5968 /* Ubicacion+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25AAFDD3258157F5008FF470 /* Ubicacion+CoreDataClass.swift */; };
+		2933953425B72510001E5968 /* RegistroViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 255477D02576CAB3000ED989 /* RegistroViewController.swift */; };
+		2933953525B72510001E5968 /* InformacionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 292235BD25B7070D0043258B /* InformacionViewController.swift */; };
+		2933953625B72510001E5968 /* roadtrip.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 29192C63256EBF13008D37F5 /* roadtrip.xcdatamodeld */; };
+		2933953925B72510001E5968 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 29192C68256EBF14008D37F5 /* LaunchScreen.storyboard */; };
+		2933953A25B72510001E5968 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 29192C66256EBF14008D37F5 /* Assets.xcassets */; };
+		2933953B25B72510001E5968 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 29192C60256EBF13008D37F5 /* Main.storyboard */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -39,13 +59,17 @@
 		25AAFDD5258157F5008FF470 /* Registro+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Registro+CoreDataClass.swift"; sourceTree = "<group>"; };
 		25AAFDD6258157F5008FF470 /* Registro+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Registro+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		25E82ED525B08596000EAED3 /* AtributoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AtributoViewController.swift; sourceTree = "<group>"; };
-		29192C59256EBF13008D37F5 /* roadtrip.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = roadtrip.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		29192C5C256EBF13008D37F5 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		29192C61256EBF13008D37F5 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		29192C64256EBF13008D37F5 /* roadtrip.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = roadtrip.xcdatamodel; sourceTree = "<group>"; };
 		29192C66256EBF14008D37F5 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		29192C69256EBF14008D37F5 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		29192C6B256EBF14008D37F5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		292235BB25B6FD1B0043258B /* TripTok.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TripTok.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		292235BC25B6FD1C0043258B /* roadtrip copy-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = "roadtrip copy-Info.plist"; path = "/Users/aula11/Documents/RoadTrip/roadtrip/roadtrip copy-Info.plist"; sourceTree = "<absolute>"; };
+		292235BD25B7070D0043258B /* InformacionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InformacionViewController.swift; sourceTree = "<group>"; usesTabs = 1; };
+		2933953F25B72510001E5968 /* imaginRoad.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = imaginRoad.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		2933954025B72510001E5968 /* TripTok copy-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = "TripTok copy-Info.plist"; path = "/Users/aula11/Documents/RoadTrip/roadtrip/TripTok copy-Info.plist"; sourceTree = "<absolute>"; };
 		297E70772570207B001D6AFA /* RegistroTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistroTableViewCell.swift; sourceTree = "<group>"; };
 		297E707B257026DC001D6AFA /* RegistroTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistroTableViewController.swift; sourceTree = "<group>"; };
 		2989C66025B0C81F0096A4B2 /* es */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = es; path = es.lproj/LaunchScreen.strings; sourceTree = "<group>"; };
@@ -53,7 +77,14 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
-		29192C56256EBF13008D37F5 /* Frameworks */ = {
+		292235B325B6FD1B0043258B /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		2933953725B72510001E5968 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -118,13 +149,17 @@
 			children = (
 				29192C5B256EBF13008D37F5 /* roadtrip */,
 				29192C5A256EBF13008D37F5 /* Products */,
+				292235BC25B6FD1C0043258B /* roadtrip copy-Info.plist */,
+				2933954025B72510001E5968 /* TripTok copy-Info.plist */,
 			);
 			sourceTree = "<group>";
+			usesTabs = 1;
 		};
 		29192C5A256EBF13008D37F5 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				29192C59256EBF13008D37F5 /* roadtrip.app */,
+				292235BB25B6FD1B0043258B /* TripTok.app */,
+				2933953F25B72510001E5968 /* imaginRoad.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -143,6 +178,7 @@
 				255477D32576CB1E000ED989 /* Registro */,
 				255477D22576CB0C000ED989 /* Registrarse */,
 				29192C60256EBF13008D37F5 /* Main.storyboard */,
+				292235BD25B7070D0043258B /* InformacionViewController.swift */,
 			);
 			path = roadtrip;
 			sourceTree = "<group>";
@@ -150,21 +186,38 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		29192C58256EBF13008D37F5 /* roadtrip */ = {
+		292235A225B6FD1B0043258B /* TripTok */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 29192C6E256EBF14008D37F5 /* Build configuration list for PBXNativeTarget "roadtrip" */;
+			buildConfigurationList = 292235B825B6FD1B0043258B /* Build configuration list for PBXNativeTarget "TripTok" */;
 			buildPhases = (
-				29192C55256EBF13008D37F5 /* Sources */,
-				29192C56256EBF13008D37F5 /* Frameworks */,
-				29192C57256EBF13008D37F5 /* Resources */,
+				292235A325B6FD1B0043258B /* Sources */,
+				292235B325B6FD1B0043258B /* Frameworks */,
+				292235B425B6FD1B0043258B /* Resources */,
 			);
 			buildRules = (
 			);
 			dependencies = (
 			);
-			name = roadtrip;
+			name = TripTok;
 			productName = roadtrip;
-			productReference = 29192C59256EBF13008D37F5 /* roadtrip.app */;
+			productReference = 292235BB25B6FD1B0043258B /* TripTok.app */;
+			productType = "com.apple.product-type.application";
+		};
+		2933952525B72510001E5968 /* imaginRoad */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 2933953C25B72510001E5968 /* Build configuration list for PBXNativeTarget "imaginRoad" */;
+			buildPhases = (
+				2933952625B72510001E5968 /* Sources */,
+				2933953725B72510001E5968 /* Frameworks */,
+				2933953825B72510001E5968 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = imaginRoad;
+			productName = roadtrip;
+			productReference = 2933953F25B72510001E5968 /* imaginRoad.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -176,12 +229,6 @@
 				LastSwiftUpdateCheck = 1010;
 				LastUpgradeCheck = 1010;
 				ORGANIZATIONNAME = ual;
-				TargetAttributes = {
-					29192C58256EBF13008D37F5 = {
-						CreatedOnToolsVersion = 10.1;
-						LastSwiftMigration = 1010;
-					};
-				};
 			};
 			buildConfigurationList = 29192C54256EBF13008D37F5 /* Build configuration list for PBXProject "roadtrip" */;
 			compatibilityVersion = "Xcode 9.3";
@@ -195,44 +242,79 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				29192C58256EBF13008D37F5 /* roadtrip */,
+				292235A225B6FD1B0043258B /* TripTok */,
+				2933952525B72510001E5968 /* imaginRoad */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
-		29192C57256EBF13008D37F5 /* Resources */ = {
+		292235B425B6FD1B0043258B /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				29192C6A256EBF14008D37F5 /* LaunchScreen.storyboard in Resources */,
-				29192C67256EBF14008D37F5 /* Assets.xcassets in Resources */,
-				29192C62256EBF13008D37F5 /* Main.storyboard in Resources */,
+				292235B525B6FD1B0043258B /* LaunchScreen.storyboard in Resources */,
+				292235B625B6FD1B0043258B /* Assets.xcassets in Resources */,
+				292235B725B6FD1B0043258B /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		2933953825B72510001E5968 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				2933953925B72510001E5968 /* LaunchScreen.storyboard in Resources */,
+				2933953A25B72510001E5968 /* Assets.xcassets in Resources */,
+				2933953B25B72510001E5968 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
-		29192C55256EBF13008D37F5 /* Sources */ = {
+		292235A325B6FD1B0043258B /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				297E70782570207B001D6AFA /* RegistroTableViewCell.swift in Sources */,
-				29192C5D256EBF13008D37F5 /* AppDelegate.swift in Sources */,
-				255477C92576C7F4000ED989 /* IniciarSesionViewController.swift in Sources */,
-				255477CB2576C81A000ED989 /* RegistrarseViewController.swift in Sources */,
-				25E82ED625B08596000EAED3 /* AtributoViewController.swift in Sources */,
-				25AAFDC82581467E008FF470 /* CrearUbicacionViewController.swift in Sources */,
-				25AAFDDA258157F5008FF470 /* Ubicacion+CoreDataProperties.swift in Sources */,
-				25AAFDDC258157F5008FF470 /* Registro+CoreDataProperties.swift in Sources */,
-				25AAFDDB258157F5008FF470 /* Registro+CoreDataClass.swift in Sources */,
-				25AAFDD8258157F5008FF470 /* Usuario+CoreDataProperties.swift in Sources */,
-				25AAFDD7258157F5008FF470 /* Usuario+CoreDataClass.swift in Sources */,
-				297E707C257026DC001D6AFA /* RegistroTableViewController.swift in Sources */,
-				25AAFDD9258157F5008FF470 /* Ubicacion+CoreDataClass.swift in Sources */,
-				255477D12576CAB3000ED989 /* RegistroViewController.swift in Sources */,
-				29192C65256EBF13008D37F5 /* roadtrip.xcdatamodeld in Sources */,
+				292235A425B6FD1B0043258B /* RegistroTableViewCell.swift in Sources */,
+				292235A525B6FD1B0043258B /* AppDelegate.swift in Sources */,
+				292235A625B6FD1B0043258B /* IniciarSesionViewController.swift in Sources */,
+				292235A725B6FD1B0043258B /* RegistrarseViewController.swift in Sources */,
+				292235A825B6FD1B0043258B /* AtributoViewController.swift in Sources */,
+				292235A925B6FD1B0043258B /* CrearUbicacionViewController.swift in Sources */,
+				292235AA25B6FD1B0043258B /* Ubicacion+CoreDataProperties.swift in Sources */,
+				292235AB25B6FD1B0043258B /* Registro+CoreDataProperties.swift in Sources */,
+				292235AC25B6FD1B0043258B /* Registro+CoreDataClass.swift in Sources */,
+				292235AD25B6FD1B0043258B /* Usuario+CoreDataProperties.swift in Sources */,
+				292235AE25B6FD1B0043258B /* Usuario+CoreDataClass.swift in Sources */,
+				292235AF25B6FD1B0043258B /* RegistroTableViewController.swift in Sources */,
+				292235B025B6FD1B0043258B /* Ubicacion+CoreDataClass.swift in Sources */,
+				292235B125B6FD1B0043258B /* RegistroViewController.swift in Sources */,
+				292235BF25B7070D0043258B /* InformacionViewController.swift in Sources */,
+				292235B225B6FD1B0043258B /* roadtrip.xcdatamodeld in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		2933952625B72510001E5968 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				2933952725B72510001E5968 /* RegistroTableViewCell.swift in Sources */,
+				2933952825B72510001E5968 /* AppDelegate.swift in Sources */,
+				2933952925B72510001E5968 /* IniciarSesionViewController.swift in Sources */,
+				2933952A25B72510001E5968 /* RegistrarseViewController.swift in Sources */,
+				2933952B25B72510001E5968 /* AtributoViewController.swift in Sources */,
+				2933952C25B72510001E5968 /* CrearUbicacionViewController.swift in Sources */,
+				2933952D25B72510001E5968 /* Ubicacion+CoreDataProperties.swift in Sources */,
+				2933952E25B72510001E5968 /* Registro+CoreDataProperties.swift in Sources */,
+				2933952F25B72510001E5968 /* Registro+CoreDataClass.swift in Sources */,
+				2933953025B72510001E5968 /* Usuario+CoreDataProperties.swift in Sources */,
+				2933953125B72510001E5968 /* Usuario+CoreDataClass.swift in Sources */,
+				2933953225B72510001E5968 /* RegistroTableViewController.swift in Sources */,
+				2933953325B72510001E5968 /* Ubicacion+CoreDataClass.swift in Sources */,
+				2933953425B72510001E5968 /* RegistroViewController.swift in Sources */,
+				2933953525B72510001E5968 /* InformacionViewController.swift in Sources */,
+				2933953625B72510001E5968 /* roadtrip.xcdatamodeld in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -378,38 +460,79 @@
 			};
 			name = Release;
 		};
-		29192C6F256EBF14008D37F5 /* Debug */ = {
+		292235B925B6FD1B0043258B /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_APPICON_NAME = "AppIcon - TripTok";
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
-				INFOPLIST_FILE = roadtrip/Info.plist;
+				INFOPLIST_FILE = "roadtrip copy-Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = grupo7.roadtrip;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = TripTok;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
 		};
-		29192C70256EBF14008D37F5 /* Release */ = {
+		292235BA25B6FD1B0043258B /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_APPICON_NAME = "AppIcon - TripTok";
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
-				INFOPLIST_FILE = roadtrip/Info.plist;
+				INFOPLIST_FILE = "roadtrip copy-Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = grupo7.roadtrip;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = TripTok;
+				SWIFT_VERSION = 4.2;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		2933953D25B72510001E5968 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = "AppIcon - imaginRoad";
+				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = "TripTok copy-Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = grupo7.roadtrip;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = imaginRoad;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 4.2;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		2933953E25B72510001E5968 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = "AppIcon - imaginRoad";
+				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = "TripTok copy-Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = grupo7.roadtrip;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = imaginRoad;
 				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -427,11 +550,20 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		29192C6E256EBF14008D37F5 /* Build configuration list for PBXNativeTarget "roadtrip" */ = {
+		292235B825B6FD1B0043258B /* Build configuration list for PBXNativeTarget "TripTok" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				29192C6F256EBF14008D37F5 /* Debug */,
-				29192C70256EBF14008D37F5 /* Release */,
+				292235B925B6FD1B0043258B /* Debug */,
+				292235BA25B6FD1B0043258B /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		2933953C25B72510001E5968 /* Build configuration list for PBXNativeTarget "imaginRoad" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				2933953D25B72510001E5968 /* Debug */,
+				2933953E25B72510001E5968 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

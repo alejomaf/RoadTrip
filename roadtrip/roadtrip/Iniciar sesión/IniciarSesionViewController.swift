@@ -35,15 +35,15 @@ class IniciarSesionViewController: UIViewController, UIGestureRecognizerDelegate
         let alert = UIAlertController(title: "Recordar contraseña", message: "Introduzca su usuario para poder recuperar su contraseña.", preferredStyle: .alert)
         
         alert.addTextField { (textField) in
-            textField.placeholder = "Introduce tu usuario"
+            textField.placeholder = "Usuario"
         }
+        
+        alert.addAction(UIAlertAction(title: "Atrás", style: .destructive))
         
         alert.addAction(UIAlertAction(title: "Enviar", style: .default, handler: { [weak alert] (_) in
             let textField = alert!.textFields![0]
             print("Usuario: \(textField.text ?? "Ninguno")")
         }))
-        
-        alert.addAction(UIAlertAction(title: "Atrás", style: .destructive))
         
         self.present(alert, animated: true, completion: nil)
     }
