@@ -250,7 +250,7 @@
         <!--Nueva ubicación-->
         <scene sceneID="DPk-Yz-fVU">
             <objects>
-                <viewController title="Nueva ubicación" id="Yur-GL-cm6" sceneMemberID="viewController">
+                <viewController title="Nueva ubicación" id="Yur-GL-cm6" customClass="CrearUbicacionViewController" customModule="roadtrip" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="V6P-sX-gq7">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -261,64 +261,93 @@
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Valor" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="VRD-ZV-BAK" userLabel="Latitud Tfl">
-                                <rect key="frame" x="204" y="356.5" width="160" height="30"/>
-                                <color key="backgroundColor" red="0.20000000000000001" green="0.20000000000000001" blue="0.20000000000000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="0.0000" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9rW-SE-yL3" userLabel="Latitud Lbl">
+                                <rect key="frame" x="303" y="361" width="71" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <textInputTraits key="textInputTraits"/>
-                            </textField>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Longitud" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pJN-Yq-2uD" userLabel="Longitud Lbl">
                                 <rect key="frame" x="50" y="417" width="68" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Valor" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Id1-qf-WyJ" userLabel="Longitud Tfl">
-                                <rect key="frame" x="204" y="412.5" width="160" height="30"/>
-                                <color key="backgroundColor" red="0.20000000000000001" green="0.20000000000000001" blue="0.20000000000000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
-                            </textField>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Zq0-eC-bv4" userLabel="GuardarBtn">
+                            <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Zq0-eC-bv4" userLabel="GuardarBtn">
                                 <rect key="frame" x="57" y="782" width="300" height="40"/>
-                                <state key="normal" title="Guardar" backgroundImage="btn">
+                                <state key="normal" title="Guardar ubicación" backgroundImage="btn">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
+                                <connections>
+                                    <action selector="guardarValores:" destination="Yur-GL-cm6" eventType="touchUpInside" id="Ypa-bQ-AYv"/>
+                                    <segue destination="HnM-1Z-wpy" kind="unwind" unwindAction="guardarUbicacionRegistroWithSender:" id="84c-sg-1ra"/>
+                                </connections>
                             </button>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="mapa" translatesAutoresizingMaskIntoConstraints="NO" id="C4p-st-ZC2">
+                            <button hidden="YES" opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="VEX-oU-5pa" userLabel="GuardarBtn">
+                                <rect key="frame" x="57" y="712" width="300" height="40"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Guardar ubicación predeterminada" backgroundImage="btn">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <connections>
+                                    <action selector="guardarValores:" destination="Yur-GL-cm6" eventType="touchUpInside" id="55H-Hv-Mah"/>
+                                    <segue destination="HnM-1Z-wpy" kind="unwind" unwindAction="guardarUbicacionPredeterminadaWithSender:" id="rmM-Le-ahO"/>
+                                </connections>
+                            </button>
+                            <imageView contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="mapa" translatesAutoresizingMaskIntoConstraints="NO" id="C4p-st-ZC2">
                                 <rect key="frame" x="0.0" y="88" width="414" height="233"/>
+                                <gestureRecognizers/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="C4p-st-ZC2" secondAttribute="height" multiplier="16:9" id="34h-lE-MyW"/>
                                 </constraints>
+                                <connections>
+                                    <outletCollection property="gestureRecognizers" destination="ChM-a2-U2C" appends="YES" id="ckS-lI-gU7"/>
+                                </connections>
                             </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="pointer" translatesAutoresizingMaskIntoConstraints="NO" id="g4F-mC-4pm">
+                                <rect key="frame" x="193" y="186" width="29" height="36"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="0.0000" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4F2-N5-UhM" userLabel="Latitud Lbl">
+                                <rect key="frame" x="303" y="416" width="55" height="22"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" red="0.14901960784313725" green="0.14901960784313725" blue="0.14901960784313725" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstItem="TyF-Dj-xlO" firstAttribute="trailing" secondItem="VRD-ZV-BAK" secondAttribute="trailing" constant="50" id="6G3-fK-YWT"/>
-                            <constraint firstItem="Id1-qf-WyJ" firstAttribute="centerY" secondItem="pJN-Yq-2uD" secondAttribute="centerY" id="8E7-Ka-XQq"/>
                             <constraint firstItem="0Wl-nC-E5d" firstAttribute="top" secondItem="C4p-st-ZC2" secondAttribute="bottom" constant="40" id="9nw-7I-kvk"/>
                             <constraint firstItem="TyF-Dj-xlO" firstAttribute="trailing" secondItem="C4p-st-ZC2" secondAttribute="trailing" id="AkQ-Z6-VTI"/>
                             <constraint firstItem="C4p-st-ZC2" firstAttribute="leading" secondItem="TyF-Dj-xlO" secondAttribute="leading" id="Bl1-bw-mzj"/>
                             <constraint firstItem="pJN-Yq-2uD" firstAttribute="leading" secondItem="0Wl-nC-E5d" secondAttribute="leading" id="EcC-AH-lNU"/>
-                            <constraint firstItem="Id1-qf-WyJ" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="pJN-Yq-2uD" secondAttribute="trailing" priority="999" constant="50" id="H7t-sm-Kw8"/>
                             <constraint firstItem="C4p-st-ZC2" firstAttribute="top" secondItem="TyF-Dj-xlO" secondAttribute="top" id="Smx-Gw-eMq"/>
-                            <constraint firstItem="Id1-qf-WyJ" firstAttribute="leading" secondItem="VRD-ZV-BAK" secondAttribute="leading" id="TDk-Qz-rhh"/>
                             <constraint firstItem="Zq0-eC-bv4" firstAttribute="centerX" secondItem="TyF-Dj-xlO" secondAttribute="centerX" id="XQ7-GM-PbM"/>
-                            <constraint firstItem="VRD-ZV-BAK" firstAttribute="centerY" secondItem="0Wl-nC-E5d" secondAttribute="centerY" id="dz7-FG-8dA"/>
-                            <constraint firstItem="VRD-ZV-BAK" firstAttribute="leading" secondItem="0Wl-nC-E5d" secondAttribute="trailing" constant="100" id="k87-2e-5NW"/>
                             <constraint firstItem="pJN-Yq-2uD" firstAttribute="top" secondItem="0Wl-nC-E5d" secondAttribute="bottom" constant="35" id="u2J-Qv-NqZ"/>
                             <constraint firstItem="0Wl-nC-E5d" firstAttribute="leading" secondItem="TyF-Dj-xlO" secondAttribute="leading" constant="50" id="wX4-Bn-kOW"/>
                             <constraint firstItem="TyF-Dj-xlO" firstAttribute="bottom" secondItem="Zq0-eC-bv4" secondAttribute="bottom" constant="40" id="wsN-g2-n8K"/>
-                            <constraint firstItem="Id1-qf-WyJ" firstAttribute="trailing" secondItem="VRD-ZV-BAK" secondAttribute="trailing" id="z6j-EJ-w7F"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="TyF-Dj-xlO"/>
                     </view>
+                    <connections>
+                        <outlet property="ejex" destination="9rW-SE-yL3" id="j15-4x-mVS"/>
+                        <outlet property="ejey" destination="4F2-N5-UhM" id="SEs-ro-reg"/>
+                        <outlet property="guardarUbicacionPredeterminada" destination="VEX-oU-5pa" id="XgB-SG-JTi"/>
+                        <outlet property="guardarUbicacionRegistro" destination="Zq0-eC-bv4" id="CPu-0L-Slj"/>
+                        <outlet property="pin" destination="g4F-mC-4pm" id="FB0-lY-ywM"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="zuo-VQ-lD3" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <exit id="HnM-1Z-wpy" userLabel="Exit" sceneMemberID="exit"/>
+                <tapGestureRecognizer id="ChM-a2-U2C">
+                    <connections>
+                        <action selector="seleccionarUbicacion:" destination="Yur-GL-cm6" id="mOh-38-KkE"/>
+                    </connections>
+                </tapGestureRecognizer>
             </objects>
-            <point key="canvasLocation" x="2971" y="457"/>
+            <point key="canvasLocation" x="2379.7101449275365" y="456.69642857142856"/>
         </scene>
         <!--Información-->
         <scene sceneID="XVA-ko-whK">
@@ -455,7 +484,6 @@
         <!--Registro-->
         <scene sceneID="Pot-4F-Ygz">
             <objects>
-                <viewController title="Registro" id="fZQ-Xr-QNc" customClass="AgregarRegistroViewController" customModule="roadtrip" customModuleProvider="target" sceneMemberID="viewController">
                 <viewController title="Registro" id="fZQ-Xr-QNc" customClass="RegistroViewController" customModule="roadtrip" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Qsz-VK-WgU">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
@@ -464,10 +492,10 @@
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" bouncesZoom="NO" translatesAutoresizingMaskIntoConstraints="NO" id="42P-GW-5ns">
                                 <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                                 <subviews>
-                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="auN-Lo-e1e" userLabel="Content View">
-                                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                                    <view contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="auN-Lo-e1e" userLabel="Content View">
+                                        <rect key="frame" x="0.0" y="0.0" width="414" height="918"/>
                                         <subviews>
-                                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ubicacionNoSeleccionada" translatesAutoresizingMaskIntoConstraints="NO" id="tsf-X4-CXe">
+                                            <imageView contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ubicacionNoSeleccionada" translatesAutoresizingMaskIntoConstraints="NO" id="tsf-X4-CXe">
                                                 <rect key="frame" x="0.0" y="0.0" width="414" height="233"/>
                                                 <gestureRecognizers/>
                                                 <constraints>
@@ -509,7 +537,7 @@
                                                         <color key="textColor" red="0.0" green="0.66666666666666663" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
-                                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="O8T-yi-DS2" userLabel="a1 Tfl">
+                                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="0" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="O8T-yi-DS2" userLabel="a1 Tfl">
                                                         <rect key="frame" x="256" y="2" width="120" height="31"/>
                                                         <color key="backgroundColor" red="0.26666666666666666" green="0.26666666666666666" blue="0.26666666666666666" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                         <nil key="textColor"/>
@@ -517,9 +545,10 @@
                                                         <textInputTraits key="textInputTraits"/>
                                                         <connections>
                                                             <action selector="editarTexto:" destination="fZQ-Xr-QNc" eventType="editingChanged" id="NdE-NL-L8C"/>
+                                                            <action selector="terminarEditarTexto:" destination="fZQ-Xr-QNc" eventType="editingDidEnd" id="weQ-bp-ThR"/>
                                                         </connections>
                                                     </textField>
-                                                    <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" minValue="-1" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="3G5-bn-85k" userLabel="a1 Sld">
+                                                    <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" minValue="-1000" maxValue="1000" translatesAutoresizingMaskIntoConstraints="NO" id="3G5-bn-85k" userLabel="a1 Sld">
                                                         <rect key="frame" x="38" y="40" width="343" height="31"/>
                                                         <constraints>
                                                             <constraint firstAttribute="height" constant="30" id="DH7-Sh-AP8"/>
@@ -552,17 +581,18 @@
                                                         <color key="textColor" red="0.0" green="0.66666666669999997" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
-                                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="ZXB-X5-Rxg" userLabel="a2 Tfl">
+                                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="0" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="ZXB-X5-Rxg" userLabel="a2 Tfl">
                                                         <rect key="frame" x="256" y="2.5" width="120" height="30"/>
                                                         <color key="backgroundColor" red="0.2666666667" green="0.2666666667" blue="0.2666666667" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                         <nil key="textColor"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                         <textInputTraits key="textInputTraits"/>
                                                         <connections>
-                                                            <action selector="editarTextoA2:" destination="fZQ-Xr-QNc" eventType="editingDidEnd" id="tpw-H8-lKB"/>
+                                                            <action selector="editarTextoA2:" destination="fZQ-Xr-QNc" eventType="editingChanged" id="Qbm-Wk-xkD"/>
+                                                            <action selector="terminarEditarTextoA2:" destination="fZQ-Xr-QNc" eventType="editingDidEnd" id="ArQ-h5-7sU"/>
                                                         </connections>
                                                     </textField>
-                                                    <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" minValue="-1" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="fiI-yr-qFI" userLabel="a2 Sld">
+                                                    <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" minValue="-1000" maxValue="1000" translatesAutoresizingMaskIntoConstraints="NO" id="fiI-yr-qFI" userLabel="a2 Sld">
                                                         <rect key="frame" x="38" y="40" width="343" height="31"/>
                                                         <color key="minimumTrackTintColor" red="0.0" green="0.40000000000000002" blue="0.59999999999999998" alpha="1" colorSpace="calibratedRGB"/>
                                                         <color key="maximumTrackTintColor" red="0.0" green="0.2666666667" blue="0.40000000000000002" alpha="1" colorSpace="calibratedRGB"/>
@@ -586,17 +616,18 @@
                                                         <color key="textColor" red="0.0" green="0.66666666669999997" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
-                                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="xsA-Pf-raU" userLabel="a3 Tfl">
+                                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="0" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="xsA-Pf-raU" userLabel="a3 Tfl">
                                                         <rect key="frame" x="256" y="2.5" width="120" height="30"/>
                                                         <color key="backgroundColor" red="0.2666666667" green="0.2666666667" blue="0.2666666667" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                         <nil key="textColor"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                         <textInputTraits key="textInputTraits"/>
                                                         <connections>
-                                                            <action selector="editarTextoA3:" destination="fZQ-Xr-QNc" eventType="editingDidEnd" id="OLd-NF-6O0"/>
+                                                            <action selector="editarTextoA3:" destination="fZQ-Xr-QNc" eventType="editingChanged" id="zbx-a5-OVC"/>
+                                                            <action selector="terminarEditarTextoA3:" destination="fZQ-Xr-QNc" eventType="editingDidEnd" id="FC2-0S-PSA"/>
                                                         </connections>
                                                     </textField>
-                                                    <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" minValue="-1" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="227-5C-gxq" userLabel="a3 Sld">
+                                                    <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" minValue="-1000" maxValue="1000" translatesAutoresizingMaskIntoConstraints="NO" id="227-5C-gxq" userLabel="a3 Sld">
                                                         <rect key="frame" x="38" y="40" width="343" height="31"/>
                                                         <color key="minimumTrackTintColor" red="0.0" green="0.40000000000000002" blue="0.59999999999999998" alpha="1" colorSpace="calibratedRGB"/>
                                                         <color key="maximumTrackTintColor" red="0.0" green="0.2666666667" blue="0.40000000000000002" alpha="1" colorSpace="calibratedRGB"/>
@@ -620,17 +651,18 @@
                                                         <color key="textColor" red="0.0" green="0.66666666669999997" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
-                                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="HYL-4N-Pix" userLabel="a4 Tfl">
+                                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="0" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="HYL-4N-Pix" userLabel="a4 Tfl">
                                                         <rect key="frame" x="256" y="2.5" width="120" height="30"/>
                                                         <color key="backgroundColor" red="0.2666666667" green="0.2666666667" blue="0.2666666667" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                         <nil key="textColor"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                         <textInputTraits key="textInputTraits"/>
                                                         <connections>
-                                                            <action selector="editarTextoA4:" destination="fZQ-Xr-QNc" eventType="editingDidEnd" id="yqY-17-1Jj"/>
+                                                            <action selector="editarTextoA4:" destination="fZQ-Xr-QNc" eventType="editingChanged" id="746-vt-xWF"/>
+                                                            <action selector="terminarEditarTextoA4:" destination="fZQ-Xr-QNc" eventType="editingDidEnd" id="Jav-Fd-eHv"/>
                                                         </connections>
                                                     </textField>
-                                                    <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.10000000149011612" minValue="-1" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="btF-FM-x7Z" userLabel="a4 Sld">
+                                                    <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" minValue="-1000" maxValue="1000" translatesAutoresizingMaskIntoConstraints="NO" id="btF-FM-x7Z" userLabel="a4 Sld">
                                                         <rect key="frame" x="38" y="40" width="343" height="31"/>
                                                         <color key="minimumTrackTintColor" red="0.0" green="0.40000000000000002" blue="0.59999999999999998" alpha="1" colorSpace="calibratedRGB"/>
                                                         <color key="maximumTrackTintColor" red="0.0" green="0.2666666667" blue="0.40000000000000002" alpha="1" colorSpace="calibratedRGB"/>
@@ -654,17 +686,18 @@
                                                         <color key="textColor" red="0.0" green="0.66666666669999997" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
-                                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Y3J-UC-243" userLabel="a5 Tfl">
+                                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="0" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Y3J-UC-243" userLabel="a5 Tfl">
                                                         <rect key="frame" x="256" y="2.5" width="120" height="30"/>
                                                         <color key="backgroundColor" red="0.2666666667" green="0.2666666667" blue="0.2666666667" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                         <nil key="textColor"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                         <textInputTraits key="textInputTraits"/>
                                                         <connections>
-                                                            <action selector="editarTextoA5:" destination="fZQ-Xr-QNc" eventType="editingDidEnd" id="u9Q-kC-QSg"/>
+                                                            <action selector="editarTextoA5:" destination="fZQ-Xr-QNc" eventType="editingChanged" id="dYJ-gN-s3I"/>
+                                                            <action selector="terminarEditarTextoA5:" destination="fZQ-Xr-QNc" eventType="editingDidEnd" id="zVo-WH-87q"/>
                                                         </connections>
                                                     </textField>
-                                                    <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.10000000149011612" minValue="-1" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="MVe-yV-jjf" userLabel="a5 Sld">
+                                                    <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" minValue="-1000" maxValue="1000" translatesAutoresizingMaskIntoConstraints="NO" id="MVe-yV-jjf" userLabel="a5 Sld">
                                                         <rect key="frame" x="38" y="40" width="343" height="31"/>
                                                         <color key="minimumTrackTintColor" red="0.0" green="0.40000000000000002" blue="0.59999999999999998" alpha="1" colorSpace="calibratedRGB"/>
                                                         <color key="maximumTrackTintColor" red="0.0" green="0.2666666667" blue="0.40000000000000002" alpha="1" colorSpace="calibratedRGB"/>
@@ -688,17 +721,18 @@
                                                         <color key="textColor" red="0.0" green="0.66666666669999997" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
-                                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="NaL-4q-mHp" userLabel="a6 Tfl">
+                                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="0" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="NaL-4q-mHp" userLabel="a6 Tfl">
                                                         <rect key="frame" x="256" y="2" width="120" height="31"/>
                                                         <color key="backgroundColor" red="0.2666666667" green="0.2666666667" blue="0.2666666667" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                         <nil key="textColor"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                         <textInputTraits key="textInputTraits"/>
                                                         <connections>
-                                                            <action selector="editarTextoA6:" destination="fZQ-Xr-QNc" eventType="editingDidEnd" id="yrh-vl-hZ7"/>
+                                                            <action selector="editarTextoA6:" destination="fZQ-Xr-QNc" eventType="editingChanged" id="acQ-h6-JQm"/>
+                                                            <action selector="terminarEditarTextoA6:" destination="fZQ-Xr-QNc" eventType="editingDidEnd" id="m2W-0Q-7rG"/>
                                                         </connections>
                                                     </textField>
-                                                    <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.10000000149011612" minValue="-1" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="zui-Wk-1aL" userLabel="a6 Sld">
+                                                    <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" minValue="-1000" maxValue="1000" translatesAutoresizingMaskIntoConstraints="NO" id="zui-Wk-1aL" userLabel="a6 Sld">
                                                         <rect key="frame" x="38" y="40" width="343" height="31"/>
                                                         <color key="minimumTrackTintColor" red="0.0" green="0.40000000000000002" blue="0.59999999999999998" alpha="1" colorSpace="calibratedRGB"/>
                                                         <color key="maximumTrackTintColor" red="0.0" green="0.2666666667" blue="0.40000000000000002" alpha="1" colorSpace="calibratedRGB"/>
@@ -716,6 +750,14 @@
                                                     <constraint firstItem="zui-Wk-1aL" firstAttribute="top" secondItem="NaL-4q-mHp" secondAttribute="bottom" constant="7" id="vjI-aS-8DP"/>
                                                 </constraints>
                                             </view>
+                                            <button hidden="YES" opaque="NO" contentMode="scaleToFill" fixedFrame="YES" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Yv9-lk-g5j">
+                                                <rect key="frame" x="137" y="858" width="141" height="30"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <state key="normal" title="Ejecutar el algoritmo"/>
+                                                <connections>
+                                                    <action selector="ejecutarAlgoritmo:" destination="fZQ-Xr-QNc" eventType="touchUpInside" id="HdF-75-vaI"/>
+                                                </connections>
+                                            </button>
                                         </subviews>
                                         <constraints>
                                             <constraint firstItem="Y3J-UC-243" firstAttribute="leading" secondItem="HYL-4N-Pix" secondAttribute="leading" id="1N1-mh-8nK"/>
@@ -806,6 +848,7 @@
                     <connections>
                         <outlet property="botonNo" destination="C1a-FO-h9j" id="ull-Q6-cMm"/>
                         <outlet property="botonSi" destination="0mL-OA-3sR" id="XHO-3d-MgA"/>
+                        <outlet property="ejecutarAlgoritmo" destination="Yv9-lk-g5j" id="CdN-ih-VQ0"/>
                         <outlet property="mapa" destination="tsf-X4-CXe" id="uXT-Sc-uGQ"/>
                         <outlet property="sliderA1" destination="3G5-bn-85k" id="4yf-4c-OqG"/>
                         <outlet property="sliderA2" destination="fiI-yr-qFI" id="HIK-7o-l37"/>
@@ -824,11 +867,11 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="QsC-gk-cRa" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <tapGestureRecognizer id="SNs-sD-Jey">
                     <connections>
-                        <segue destination="Yur-GL-cm6" kind="show" identifier="devolverUbicacionUsuario" id="4iJ-Mq-Y5N"/>
+                        <segue destination="Yur-GL-cm6" kind="show" identifier="crearUbicacionRegistro" id="pk6-wJ-Rxh"/>
                     </connections>
                 </tapGestureRecognizer>
             </objects>
-            <point key="canvasLocation" x="2141" y="1250"/>
+            <point key="canvasLocation" x="2140.5797101449275" y="1249.5535714285713"/>
         </scene>
         <!--Validacion-->
         <scene sceneID="g5W-jh-sWf">
@@ -1156,6 +1199,9 @@
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
+                                <connections>
+                                    <action selector="actualizazContrasena2:" destination="IHg-ui-Ez8" eventType="editingChanged" id="0u9-T1-0CH"/>
+                                </connections>
                             </textField>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Ubicación predeterminada" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3co-ev-0hW">
                                 <rect key="frame" x="50" y="515" width="314" height="29"/>
@@ -1163,17 +1209,6 @@
                                 <color key="textColor" red="0.0" green="0.66666666669999997" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Introduce su ubicación predeterminada" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Dnn-Tk-WSu">
-                                <rect key="frame" x="50" y="564" width="314" height="40"/>
-                                <color key="backgroundColor" red="0.20000000000000001" green="0.20000000000000001" blue="0.20000000000000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
-                                <connections>
-                                    <action selector="actualizazContrasena2:" destination="IHg-ui-Ez8" eventType="editingChanged" id="ZKc-DM-biC"/>
-                                    <segue destination="Yur-GL-cm6" kind="show" identifier="devolverUbicacionUsuario" id="F06-gB-Btb"/>
-                                </connections>
-                            </textField>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9Zk-s7-Ked">
                                 <rect key="frame" x="57" y="782" width="300" height="40"/>
                                 <state key="normal" title="Crear cuenta" backgroundImage="btn">
@@ -1191,9 +1226,18 @@
                                 <rect key="frame" x="329" y="455" width="30" height="40"/>
                                 <state key="normal" title="O"/>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eSg-4w-Z4E">
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eSg-4w-Z4E">
                                 <rect key="frame" x="329" y="564" width="30" height="40"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="O"/>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="E0K-Ej-Xe6">
+                                <rect key="frame" x="50" y="569" width="314" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Seleccionar ubicación"/>
+                                <connections>
+                                    <segue destination="Yur-GL-cm6" kind="show" identifier="crearUbicacionPredeterminada" id="2rg-aZ-mVE"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" red="0.14901960784313725" green="0.14901960784313725" blue="0.14901960784313725" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -1201,18 +1245,15 @@
                             <constraint firstItem="BsI-KF-UEK" firstAttribute="top" secondItem="Ihc-he-cab" secondAttribute="bottom" constant="20" id="1VD-9h-ahq"/>
                             <constraint firstItem="bOL-tT-Ahu" firstAttribute="leading" secondItem="BsI-KF-UEK" secondAttribute="leading" id="1kD-Ju-kbs"/>
                             <constraint firstItem="Ihc-he-cab" firstAttribute="trailing" secondItem="q9k-CY-TwF" secondAttribute="trailing" id="3SM-ad-Yyk"/>
-                            <constraint firstItem="Dnn-Tk-WSu" firstAttribute="leading" secondItem="3co-ev-0hW" secondAttribute="leading" id="4Bx-Mg-ZeO"/>
                             <constraint firstItem="9Zk-s7-Ked" firstAttribute="height" secondItem="USE-OQ-BTY" secondAttribute="height" id="6Fv-LL-ijA"/>
                             <constraint firstItem="3co-ev-0hW" firstAttribute="top" secondItem="bOL-tT-Ahu" secondAttribute="bottom" constant="20" id="9cb-l3-0nA"/>
                             <constraint firstItem="iBm-zJ-Eb7" firstAttribute="bottom" secondItem="BsI-KF-UEK" secondAttribute="bottom" id="AtU-cN-V55"/>
                             <constraint firstItem="9Zk-s7-Ked" firstAttribute="centerX" secondItem="Ewg-wO-uOb" secondAttribute="centerX" id="D25-dp-wmp"/>
                             <constraint firstItem="Ihc-he-cab" firstAttribute="top" secondItem="q9k-CY-TwF" secondAttribute="bottom" constant="20" id="DOI-TH-zFl"/>
                             <constraint firstItem="BsI-KF-UEK" firstAttribute="leading" secondItem="Ihc-he-cab" secondAttribute="leading" id="FYV-Cd-qfW"/>
-                            <constraint firstItem="eSg-4w-Z4E" firstAttribute="trailing" secondItem="Dnn-Tk-WSu" secondAttribute="trailing" constant="-5" id="IYl-8b-Qey"/>
                             <constraint firstItem="ZQt-5T-3Fi" firstAttribute="top" secondItem="USE-OQ-BTY" secondAttribute="bottom" constant="20" id="Im7-Db-1hG"/>
                             <constraint firstItem="PND-yy-bHL" firstAttribute="top" secondItem="Ewg-wO-uOb" secondAttribute="top" constant="40" id="NBg-Qc-J50"/>
                             <constraint firstItem="bOL-tT-Ahu" firstAttribute="trailing" secondItem="BsI-KF-UEK" secondAttribute="trailing" id="Nh3-sh-9DN"/>
-                            <constraint firstItem="eSg-4w-Z4E" firstAttribute="top" secondItem="Dnn-Tk-WSu" secondAttribute="top" id="PDz-PX-5jy"/>
                             <constraint firstItem="Ihc-he-cab" firstAttribute="leading" secondItem="q9k-CY-TwF" secondAttribute="leading" id="Pvw-bO-rr2"/>
                             <constraint firstItem="BsI-KF-UEK" firstAttribute="trailing" secondItem="Ihc-he-cab" secondAttribute="trailing" id="QEe-yZ-t06"/>
                             <constraint firstItem="3co-ev-0hW" firstAttribute="trailing" secondItem="bOL-tT-Ahu" secondAttribute="trailing" id="QUE-1s-a6D"/>
@@ -1223,7 +1264,6 @@
                             <constraint firstItem="3co-ev-0hW" firstAttribute="leading" secondItem="bOL-tT-Ahu" secondAttribute="leading" id="YnF-ZE-4QP"/>
                             <constraint firstItem="iBm-zJ-Eb7" firstAttribute="top" secondItem="BsI-KF-UEK" secondAttribute="top" id="akm-VI-7pa"/>
                             <constraint firstItem="Ewg-wO-uOb" firstAttribute="trailing" secondItem="PND-yy-bHL" secondAttribute="trailing" constant="50" id="dFY-QJ-EEN"/>
-                            <constraint firstItem="eSg-4w-Z4E" firstAttribute="bottom" secondItem="Dnn-Tk-WSu" secondAttribute="bottom" id="ddO-wJ-kZb"/>
                             <constraint firstItem="q9k-CY-TwF" firstAttribute="height" secondItem="USE-OQ-BTY" secondAttribute="height" id="fMN-GQ-f7N"/>
                             <constraint firstItem="USE-OQ-BTY" firstAttribute="leading" secondItem="PND-yy-bHL" secondAttribute="leading" id="h5H-zf-mLf"/>
                             <constraint firstItem="USE-OQ-BTY" firstAttribute="trailing" secondItem="PND-yy-bHL" secondAttribute="trailing" id="hNR-nd-y99"/>
@@ -1231,13 +1271,10 @@
                             <constraint firstItem="ZQt-5T-3Fi" firstAttribute="leading" secondItem="USE-OQ-BTY" secondAttribute="leading" id="iw8-0A-NKe"/>
                             <constraint firstItem="BsI-KF-UEK" firstAttribute="height" secondItem="USE-OQ-BTY" secondAttribute="height" id="jJy-2i-BdL"/>
                             <constraint firstItem="q9k-CY-TwF" firstAttribute="top" secondItem="ZQt-5T-3Fi" secondAttribute="bottom" constant="20" id="jTZ-Wm-5hR"/>
-                            <constraint firstItem="Dnn-Tk-WSu" firstAttribute="top" secondItem="3co-ev-0hW" secondAttribute="bottom" constant="20" id="nSl-O7-n58"/>
                             <constraint firstItem="iBm-zJ-Eb7" firstAttribute="trailing" secondItem="BsI-KF-UEK" secondAttribute="trailing" constant="-5" id="pJF-vI-0Sf"/>
-                            <constraint firstItem="Dnn-Tk-WSu" firstAttribute="height" secondItem="USE-OQ-BTY" secondAttribute="height" id="qjL-GQ-Htx"/>
                             <constraint firstItem="PND-yy-bHL" firstAttribute="leading" secondItem="Ewg-wO-uOb" secondAttribute="leading" constant="50" id="rDR-EY-pOu"/>
                             <constraint firstItem="q9k-CY-TwF" firstAttribute="leading" secondItem="ZQt-5T-3Fi" secondAttribute="leading" id="vax-IX-PhK"/>
                             <constraint firstItem="RjD-JP-NHZ" firstAttribute="trailing" secondItem="bOL-tT-Ahu" secondAttribute="trailing" constant="-5" id="vdD-EG-Cy5"/>
-                            <constraint firstItem="Dnn-Tk-WSu" firstAttribute="trailing" secondItem="3co-ev-0hW" secondAttribute="trailing" id="w6p-gr-65Z"/>
                             <constraint firstItem="bOL-tT-Ahu" firstAttribute="top" secondItem="BsI-KF-UEK" secondAttribute="bottom" constant="20" id="yLR-O4-TpI"/>
                             <constraint firstItem="Ewg-wO-uOb" firstAttribute="bottom" secondItem="9Zk-s7-Ked" secondAttribute="bottom" constant="40" id="yYG-zB-fm7"/>
                             <constraint firstItem="q9k-CY-TwF" firstAttribute="trailing" secondItem="ZQt-5T-3Fi" secondAttribute="trailing" id="ylB-ob-ghU"/>
@@ -1249,13 +1286,14 @@
                         <outlet property="contrasenaL2" destination="bOL-tT-Ahu" id="tra-Kj-qce"/>
                         <outlet property="correoElectronicoL" destination="q9k-CY-TwF" id="wEj-lt-1n2"/>
                         <outlet property="crearCuenta" destination="9Zk-s7-Ked" id="BFm-9t-ZV6"/>
+                        <outlet property="ubicacion" destination="E0K-Ej-Xe6" id="0Wu-Tu-Rhc"/>
                         <outlet property="usuarioL" destination="USE-OQ-BTY" id="Na5-kQ-5Zh"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="uNP-sK-u9Z" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <exit id="OOR-La-F2g" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
-            <point key="canvasLocation" x="1238" y="457"/>
+            <point key="canvasLocation" x="1237.68115942029" y="456.69642857142856"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="1Ma-lh-Ku5">
@@ -1427,16 +1465,17 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="r9W-LY-1C7" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2184" y="457"/>
+            <point key="canvasLocation" x="1238" y="2037"/>
         </scene>
     </scenes>
     <resources>
         <image name="btn" width="300" height="40"/>
-        <image name="mapa" width="539" height="539"/>
-        <image name="ubicacionNoSeleccionada" width="539" height="539"/>
+        <image name="mapa" width="1079" height="1079"/>
+        <image name="pointer" width="390" height="623"/>
+        <image name="ubicacionNoSeleccionada" width="1079" height="1079"/>
     </resources>
     <inferredMetricsTieBreakers>
         <segue reference="0IN-Im-QFg"/>
-        <segue reference="4iJ-Mq-Y5N"/>
+        <segue reference="pk6-wJ-Rxh"/>
     </inferredMetricsTieBreakers>
 </document>

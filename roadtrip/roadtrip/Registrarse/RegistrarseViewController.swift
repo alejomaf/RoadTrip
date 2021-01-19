@@ -16,6 +16,7 @@ class RegistrarseViewController: UIViewController {
     @IBOutlet weak var contrasenaL1: UITextField!
     @IBOutlet weak var contrasenaL2: UITextField!
     @IBOutlet weak var crearCuenta: UIButton!
+    @IBOutlet weak var ubicacion: UIButton!
     
     
     //Los usuarios se cargan al inicializarse la vista, se utilizan para comprobar que no se repitan ni los correos ni los nombres de usuario
@@ -25,6 +26,8 @@ class RegistrarseViewController: UIViewController {
     var correo: String?
     var correoValido: Bool = false
     var nombreValido: Bool = false
+    var ejex: Float = 0
+    var ejey: Float = 0
     
     override func viewDidLoad() {
         crearCuenta.isEnabled=false
@@ -33,6 +36,8 @@ class RegistrarseViewController: UIViewController {
         // Do any additional setup after loading the view.
     }
     
+    
+    //Compruebo que el nombre no existe en nuestra base de datos
     func checkNombre(nombre:String) -> Bool{
         if (usuarios?.count==0) {return true}
         for usuario in usuarios!{
@@ -43,6 +48,7 @@ class RegistrarseViewController: UIViewController {
         return true
     }
     
+    //Compruebo que el correo no existe en nuestra base de datos
     func checkCorreo(correo:String) -> Bool{
         if (usuarios?.count==0) {return true}
         for usuario in usuarios!{
@@ -68,6 +74,15 @@ class RegistrarseViewController: UIViewController {
         actualizarBoton()
     }
     
+    @IBAction func guardarUbicacionPredeterminada(sender: UIStoryboardSegue) {
+        ejex = (sender.source as! CrearUbicacionViewController).x
+        ejey = (sender.source as! CrearUbicacionViewController).y
+        
+        ubicacion.setTitle("\(ejex) | \(ejey)", for: .normal)
+        
+        actualizarBoton()
+    }
+    
     func actualizarBoton(){
         if(usuarioL.text==""||correoElectronicoL.text==""||contrasenaL1.text==""||contrasenaL2.text==""||correoValido==false||nombreValido==false){
             crearCuenta.isEnabled = false
@@ -75,6 +90,21 @@ class RegistrarseViewController: UIViewController {
             crearCuenta.isEnabled = true
         }
     }
+    
+    
+    //Configuro los botones de crear ubicación para que el unwind esté bien programado
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?){
+        if segue.identifier == "crearUbicacionPredeterminada" {
+            let viewDestiny = segue.destination as! CrearUbicacionViewController
+            viewDestiny.isCreacion = true
+            viewDestiny.x = ejex
+            viewDestiny.y = ejey
+        }
+    }
+    
+    
+    
+    
     /*
     // MARK: - Navigation
 

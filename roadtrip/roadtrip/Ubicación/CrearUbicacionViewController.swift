@@ -11,15 +11,31 @@ import UIKit
 class CrearUbicacionViewController: UIViewController, UIImagePickerControllerDelegate {
 
     @IBOutlet weak var pin: UIImageView!
-    @IBOutlet weak var ejex: UITextField!
-    @IBOutlet weak var ejey: UITextField!
+    @IBOutlet weak var ejex: UILabel!
+    @IBOutlet weak var ejey: UILabel!
+    @IBOutlet weak var guardarUbicacionRegistro: UIButton!
+    @IBOutlet weak var guardarUbicacionPredeterminada: UIButton!
     
-    var x : Double = 0.0
-    var y : Double = 0.0
+    var isCreacion : Bool = false
+    
+    var x : Float = 0.0
+    var y : Float = 0.0
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
+        if(x != 0.0 || y != 0.0 ){
+            pin.center.x = CGFloat(x)
+            pin.center.y = CGFloat(y-19.0)
+            ejex.text = "\(x)"
+            ejey.text = "\(y)"
+        }
+        
+        if(isCreacion){
+            guardarUbicacionPredeterminada.isHidden = false
+        }else{
+            guardarUbicacionRegistro.isHidden = false
+        }
         // Do any additional setup after loading the view.
     }
     
@@ -27,18 +43,21 @@ class CrearUbicacionViewController: UIViewController, UIImagePickerControllerDel
         let ubicacionSeleccionada = sender.location(in: self.view)
         
         //Cojo los valores de la ubicación
-        x = Double(ubicacionSeleccionada.x)
-        y = Double(ubicacionSeleccionada.y)
+        x = Float(ubicacionSeleccionada.x)
+        y = Float(ubicacionSeleccionada.y)
         
         //Actualizo el puntero
         pin.center.x = CGFloat(x)
-        pin.center.y = CGFloat(y)
+        pin.center.y = CGFloat(y-19.0)
         
         //Actualizo los campos de texto
         ejex.text = "\(x)"
         ejey.text = "\(y)"
     }
 
+    @IBAction func guardarValores(_ sender: Any) {
+        navigationController!.popViewController(animated: true)
+    }
     /*
     // MARK: - Navigation
 
