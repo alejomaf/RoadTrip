@@ -33,7 +33,7 @@ class IniciarSesionViewController: UIViewController, UIGestureRecognizerDelegate
     @objc func recordar(sender: UITapGestureRecognizer)
     {
         let alert = UIAlertController(title: "Recordar contraseña", message: "Introduzca su usuario para poder recuperar su contraseña.", preferredStyle: .alert)
-        
+		
         alert.addTextField { (textField) in
             textField.placeholder = "Usuario"
         }

@@ -64,7 +64,14 @@ class RegistroTableViewController: UIViewController, UITableViewDataSource {
     }
     
     @IBAction func cerrar(_ sender: UIBarButtonItem) {
-        UIApplication.init()
+        let alert = UIAlertController(title: "Cerrar Sesión", message: "¿Está seguro que quiere cerrar sesión?", preferredStyle: .alert)
+		
+		alert.addAction(UIAlertAction(title: "No", style: .cancel))
+		alert.addAction(UIAlertAction(title: "Sí", style: .destructive, handler: {  (_) in
+			exit(0)
+		}))
+        
+		self.present(alert, animated: true, completion: nil)
     }
     
     // MARK: - Navigation

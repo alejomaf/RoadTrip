@@ -106,7 +106,7 @@ class RegistrarseViewController: UIViewController {
     }
     
     @IBAction func salir(sender: UIStoryboardSegue) {
-        dismiss(animated: false, completion: nil)
+        dismiss(animated: true, completion: nil)
     }
     
     //Configuro los botones de crear ubicación para que el unwind esté bien programado

@@ -55,7 +55,6 @@ class RegistroViewController: UIViewController {
         super.viewDidLoad()
 
         if(ALGORITMO){
-            ejecutarAlgoritmo.isHidden = false
             botonNo.isEnabled = false
             botonSi.isEnabled = false
         }

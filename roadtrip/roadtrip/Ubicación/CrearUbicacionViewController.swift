@@ -30,13 +30,10 @@ class CrearUbicacionViewController: UIViewController, UIImagePickerControllerDel
             ejex.text = "\(x)"
             ejey.text = "\(y)"
         }
-        
-        if(isCreacion){
-            guardarUbicacionPredeterminada.isHidden = false
-        }else{
-            guardarUbicacionRegistro.isHidden = false
-        }
-        // Do any additional setup after loading the view.
+		
+		
+		guardarUbicacionPredeterminada.isHidden = !isCreacion
+		guardarUbicacionRegistro.isHidden = isCreacion
     }
     
     @IBAction func seleccionarUbicacion(_ sender : UITapGestureRecognizer) {
@@ -56,8 +53,8 @@ class CrearUbicacionViewController: UIViewController, UIImagePickerControllerDel
     }
 
     @IBAction func guardarValores(_ sender: Any) {
-        navigationController!.popViewController(animated: true)
-    }
+        //dismiss(animated: true, completion: nil)
+	}
     /*
     // MARK: - Navigation
 
