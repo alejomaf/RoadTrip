@@ -72,22 +72,22 @@ class RegistroViewController: UIViewController {
     }
     
     @IBAction func editarTexto(_ sender: Any) {
-        editarTextoSlider(boton: sliderA1, texto: textoA1, atributo: a1)
+		editarTextoSlider(boton: sliderA1, texto: textoA1, atributo: &a1)
     }
     @IBAction func editarTextoA2(_ sender: Any) {
-        editarTextoSlider(boton: sliderA2, texto: textoA2, atributo: a2)
+        editarTextoSlider(boton: sliderA2, texto: textoA2, atributo: &a2)
     }
     @IBAction func editarTextoA3(_ sender: Any) {
-        editarTextoSlider(boton: sliderA3, texto: textoA3, atributo: a3)
+        editarTextoSlider(boton: sliderA3, texto: textoA3, atributo: &a3)
     }
     @IBAction func editarTextoA4(_ sender: Any) {
-        editarTextoSlider(boton: sliderA4, texto: textoA4, atributo: a4)
+        editarTextoSlider(boton: sliderA4, texto: textoA4, atributo: &a4)
     }
     @IBAction func editarTextoA5(_ sender: Any) {
-        editarTextoSlider(boton: sliderA5, texto: textoA5, atributo: a5)
+        editarTextoSlider(boton: sliderA5, texto: textoA5, atributo: &a5)
     }
     @IBAction func editarTextoA6(_ sender: Any) {
-        editarTextoSlider(boton: sliderA6, texto: textoA6, atributo: a6)
+        editarTextoSlider(boton: sliderA6, texto: textoA6, atributo: &a6)
     }
     
     @IBAction func terminarEditarTexto(_ sender: Any) {

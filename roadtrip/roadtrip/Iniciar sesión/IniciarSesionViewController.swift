@@ -47,15 +47,6 @@ class IniciarSesionViewController: UIViewController, UIGestureRecognizerDelegate
         
         self.present(alert, animated: true, completion: nil)
     }
-    
-	func saveData() {
-		do {
-			try context.save()
-		} catch {
-			print("Error al guardar el usuario")
-		}
-		cogerUsuarios()
-	}
 	
 	func cogerUsuarios() {
 		let request : NSFetchRequest<Usuario> = Usuario.fetchRequest()
@@ -67,9 +58,12 @@ class IniciarSesionViewController: UIViewController, UIGestureRecognizerDelegate
 	}
 	
 	func iniciarSesion(nombre: String, contrasena: String) -> Bool {
+        cogerUsuarios()
+        
         if(usuarios?.count==0){
-            print("mal")
-            return false}
+            print("Error: No hay usuarios.")
+            return false
+        }
 
 		for usuario in usuarios! {
 			if(usuario.nombre == nombre) {
@@ -77,23 +71,19 @@ class IniciarSesionViewController: UIViewController, UIGestureRecognizerDelegate
 					UserDefaults.standard.set(usuario.nombre, forKey:"username");
 					UserDefaults.standard.set(usuario.contrasena, forKey:"password");
 					UserDefaults.standard.synchronize();
+                    
 					// Con esto se carga el usuario let user = UserDefaults.standard.array(forKey: "user")as? [Usuario]
+                    
+                    print("El usuario ha iniciado sesión.")
+                    
 					return true
 				}
 			}
 		}
+        
+        print("El usuario no ha iniciado sesión.")
+        
 		return false
-	}
-	
-	func registrarse(nombre: String, contrasena: String, correo:String) {
-		let nuevoUsuario = Usuario(context: self.context)
-		nuevoUsuario.nombre = nombre
-		nuevoUsuario.contrasena = contrasena
-		nuevoUsuario.correo = correo
-		nuevoUsuario.ubicacion = nil
-		
-		self.usuarios?.append(nuevoUsuario)
-		self.saveData()
 	}
 	
 	//Segue para cuando va a registrarse el usuario o consigue iniciar sesión
@@ -112,20 +102,12 @@ class IniciarSesionViewController: UIViewController, UIGestureRecognizerDelegate
         //Si alguno de los campos de texto se encuentran vacíos no se inicia la comprobación del usuario
 		if identifier == "iniciarSesion" {
             if(nombre.text == "" || contrasena.text == ""){
-                return false}
+                return false
+            }
             else{
                 //Realiza la comprobación del usuario
                 return iniciarSesion(nombre: nombre.text!, contrasena: contrasena.text!)}
 		}
 		return true
 	}
-	
-	@IBAction func guardarNota(sender: UIStoryboardSegue) {
-		let nombre = (sender.source as! RegistrarseViewController).usuarioL.text
-		let correo = (sender.source as! RegistrarseViewController).correoElectronicoL.text
-		let contrasena = (sender.source as! RegistrarseViewController).contrasenaL1.text
-		
-		registrarse(nombre: nombre!, contrasena: correo!, correo: contrasena!)
-	}
-
 }

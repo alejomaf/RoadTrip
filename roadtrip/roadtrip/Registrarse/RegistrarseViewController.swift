@@ -18,12 +18,10 @@ class RegistrarseViewController: UIViewController {
     @IBOutlet weak var crearCuenta: UIButton!
     @IBOutlet weak var ubicacion: UIButton!
     
-    
+    let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
+	
     //Los usuarios se cargan al inicializarse la vista, se utilizan para comprobar que no se repitan ni los correos ni los nombres de usuario
     var usuarios:[Usuario]?
-    var nombre: String?
-    var contrasena: String?
-    var correo: String?
     var correoValido: Bool = false
     var nombreValido: Bool = false
     var ejex: Float = 0
@@ -84,13 +82,25 @@ class RegistrarseViewController: UIViewController {
     }
     
     func actualizarBoton(){
-        if(usuarioL.text==""||correoElectronicoL.text==""||contrasenaL1.text==""||contrasenaL2.text==""||correoValido==false||nombreValido==false){
-            crearCuenta.isEnabled = false
-        }else{
-            crearCuenta.isEnabled = true
-        }
+        crearCuenta.isEnabled = !(usuarioL.text=="" || correoElectronicoL.text==""||contrasenaL1.text=="" || contrasenaL1.text != contrasenaL2.text || !correoValido || !nombreValido)
     }
     
+     @IBAction func registrarse(sender: UIStoryboardSegue) {
+        let nuevoUsuario = Usuario(context: context)
+        nuevoUsuario.nombre = usuarioL.text
+        nuevoUsuario.contrasena = contrasenaL1.text
+        nuevoUsuario.correo = correoElectronicoL.text
+        nuevoUsuario.ubicacion = nil
+        
+        do {
+            context.insert(nuevoUsuario)
+            try context.save()
+        } catch {
+            print("Error al guardar el usuario")
+        }
+		
+		print("Usuario registrado.")
+    }
     
     //Configuro los botones de crear ubicación para que el unwind esté bien programado
     override func prepare(for segue: UIStoryboardSegue, sender: Any?){
