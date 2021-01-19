@@ -16,7 +16,6 @@ class RegistroTableViewCell: UITableViewCell {
     
     override func awakeFromNib() {
         super.awakeFromNib()
-        self.accessoryView?.tintColor = UIColor.init(red: 0, green: 170, blue: 255, alpha: 1)
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {

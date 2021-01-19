@@ -174,8 +174,34 @@ class RegistroViewController: UIViewController {
         
     }
     
+    @IBAction func crearOModificarRegistro(_ sender: Any) {
+        if(edicion){
+            registro?.ubicacion?.horizontal = Double(ejex)
+            registro?.ubicacion?.vertical = Double(ejey)
+            registro?.a01 = Float(textoA1.text!)!
+            registro?.a02 = Float(textoA2.text!)!
+            registro?.a03 = Float(textoA3.text!)!
+            registro?.a04 = Float(textoA4.text!)!
+            registro?.a05 = Float(textoA5.text!)!
+            registro?.a06 = Float(textoA6.text!)!
+        }else{
+            a1 = Float(textoA1.text!)!
+            a2 = Float(textoA2.text!)!
+            a3 = Float(textoA3.text!)!
+            a4 = Float(textoA4.text!)!
+            a5 = Float(textoA5.text!)!
+            a6 = Float(textoA6.text!)!
+        }
+        
+    
+    }
+    
+    
+    
+    
     //Método cuando el botón ejecutar es pulsado
     @IBAction func ejecutarAlgoritmo(_ sender: Any) {
+        
     }
     
     func algoritmo(){
