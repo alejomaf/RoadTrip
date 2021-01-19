@@ -456,6 +456,7 @@
         <scene sceneID="Pot-4F-Ygz">
             <objects>
                 <viewController title="Registro" id="fZQ-Xr-QNc" customClass="AgregarRegistroViewController" customModule="roadtrip" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController title="Registro" id="fZQ-Xr-QNc" customClass="RegistroViewController" customModule="roadtrip" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Qsz-VK-WgU">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>

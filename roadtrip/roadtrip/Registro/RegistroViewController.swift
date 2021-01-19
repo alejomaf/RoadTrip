@@ -40,18 +40,47 @@ class RegistroViewController: UIViewController {
     
     @IBAction func editarTexto(_ sender: Any) {
         
+        editarTextoSlider(boton: sliderA1, valor: textoA1.text!)
     }
     @IBAction func editarTextoA2(_ sender: Any) {
+        editarTextoSlider(boton: sliderA2, valor: textoA2.text!)
     }
     @IBAction func editarTextoA3(_ sender: Any) {
+        editarTextoSlider(boton: sliderA3, valor: textoA3.text!)
     }
     @IBAction func editarTextoA4(_ sender: Any) {
+        editarTextoSlider(boton: sliderA4, valor: textoA4.text!)
     }
     @IBAction func editarTextoA5(_ sender: Any) {
+        editarTextoSlider(boton: sliderA5, valor: textoA5.text!)
     }
     @IBAction func editarTextoA6(_ sender: Any) {
+        editarTextoSlider(boton: sliderA6, valor: textoA6.text!)
     }
     
+    func editarTextoSlider( boton: UISlider, valor: String ){
+        do {
+            let b = try getFloat(valor)
+            boton.setValue(Float(b), animated: true)
+        } catch MyError.conversionError {
+            boton.setValue(Float(0), animated: true)
+        } catch{
+            boton.setValue(Float(0), animated: true)
+        }
+    }
+    
+    enum MyError : Error {
+        case conversionError
+    }
+    
+    func getFloat(_ data:String) throws -> Float
+    {
+        guard let result = Float(data) else { throw MyError.conversionError }
+        return result
+        
+    }
+    
+   
     
     @IBAction func pulsarBotonSi(_ sender: Any) {
     }
