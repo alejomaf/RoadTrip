@@ -5,6 +5,7 @@ class InformacionViewController: UIViewController {
     @IBOutlet weak var nombreApp: UILabel!
     @IBOutlet weak var iconoApp: UIImageView!
     
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 

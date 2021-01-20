@@ -88,7 +88,10 @@ class IniciarSesionViewController: UIViewController, UIGestureRecognizerDelegate
 					// Con esto se carga el usuario let user = UserDefaults.standard.array(forKey: "user")as? [Usuario]
                     
                     print("El usuario ha iniciado sesión.")
-                    
+					
+					self.nombre.text = ""
+					self.contrasena.text = ""
+					
 					return true
 				}
 			}

@@ -156,6 +156,9 @@
                                 <navigationItem title="Lista de registros" id="bd5-Iz-YGT">
                                     <barButtonItem key="leftBarButtonItem" systemItem="stop" id="pzA-3R-lkZ">
                                         <color key="tintColor" red="0.0" green="0.66666666669999997" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <connections>
+                                            <action selector="cerrar:" destination="hyJ-Om-uWd" id="jYn-1v-RIc"/>
+                                        </connections>
                                     </barButtonItem>
                                     <barButtonItem key="rightBarButtonItem" systemItem="add" id="P6X-Lg-nqF">
                                         <color key="tintColor" red="0.0" green="0.66666666669999997" blue="1" alpha="1" colorSpace="calibratedRGB"/>
@@ -360,7 +363,7 @@
         <!--Información-->
         <scene sceneID="XVA-ko-whK">
             <objects>
-                <viewController title="Información" id="FZx-4N-CC1" sceneMemberID="viewController">
+                <viewController title="Información" id="FZx-4N-CC1" customClass="InformacionViewController" customModule="TripTok" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="B6p-ci-Cw1">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -484,6 +487,10 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="duo-Bx-k3I"/>
                     </view>
+                    <connections>
+                        <outlet property="iconoApp" destination="HGe-I9-g7g" id="UG7-9n-0g8"/>
+                        <outlet property="nombreApp" destination="pZM-Vh-236" id="ifA-mn-ihd"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="UI2-T4-sDh" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -1640,6 +1647,6 @@
     </resources>
     <inferredMetricsTieBreakers>
         <segue reference="pBY-UV-9ag"/>
-        <segue reference="pk6-wJ-Rxh"/>
+        <segue reference="2rg-aZ-mVE"/>
     </inferredMetricsTieBreakers>
 </document>

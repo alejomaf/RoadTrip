@@ -38,10 +38,8 @@ class RegistroTableViewController: UITableViewController{
                 }
             }
         }
-        
-        
+		
         cogerRegistros()
-        //tableView.reloadData()
     }
     
     func saveData() {
@@ -50,19 +48,17 @@ class RegistroTableViewController: UITableViewController{
         } catch {
             print("Error al guardar el usuario")
         }
-        cogerRegistros()
     }
     
     func cogerRegistros(){
         self.registros = usuarioSesion?.registros?.array as? [Registro]
-        
-        
+		tableView.reloadData()
     }
+	
     override func numberOfSections(in tableView: UITableView) -> Int {
         // #warning Incomplete implementation, return the number of sections
         return 1
     }
-    // MARK: - Functions
     
     func validationColor(_ valid: Bool?) -> UIColor {
         if(valid == nil){
@@ -73,8 +69,6 @@ class RegistroTableViewController: UITableViewController{
             ? UIColor.init(red: 85, green: 204, blue: 85, alpha: 1)
             : UIColor.init(red: 204, green: 85, blue: 85, alpha: 1)
     }
-    
-    // MARK: - TableViewDataSource
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         print (registros?.count ?? 0)
@@ -108,8 +102,10 @@ class RegistroTableViewController: UITableViewController{
         nuevoRegistro.fecha = Date() as NSDate
         
         print("\(a1), \(a2),\(a3),\(a4), \(ejex), \(ejey)")
+		self.registros?.append(nuevoRegistro)
         usuarioSesion?.addToRegistros(nuevoRegistro)
         self.saveData()
+		tableView.reloadData()
     }
     
     @IBAction func guardarRegistro(sender: UIStoryboardSegue) {
@@ -142,8 +138,8 @@ class RegistroTableViewController: UITableViewController{
 		if identifier == "crearRegistro" {
 			
 			//Es el unwind, es decir, cuando se va a crear o actualizar un registro
-			let alert = UIAlertController(title: "Ingresa el nombre del registro", message: nil, preferredStyle: .alert)
-			alert.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: nil))
+			let alert = UIAlertController(title: "Nombre del registro", message: "Ingrese el nombre del registro.", preferredStyle: .alert)
+			alert.addAction(UIAlertAction(title: "Cancelar", style: .cancel, handler: nil))
 			
 			
 			let okAction = UIAlertAction(title: "Crear", style: .default) { (_) in
@@ -161,7 +157,7 @@ class RegistroTableViewController: UITableViewController{
 				NotificationCenter.default.addObserver(forName: UITextField.textDidChangeNotification, object: textField, queue: OperationQueue.main, using:
 					{_ in
 						// Being in this block means that something fired the UITextFieldTextDidChange notification.
-						textField.placeholder = "Nombre"
+						textField.placeholder = "Registro"
 						// Access the textField object from alertController.addTextField(configurationHandler:) above and get the character count of its non whitespace characters
 						let textCount = textField.text?.trimmingCharacters(in: .whitespacesAndNewlines).count ?? 0
 						let textIsNotEmpty = textCount > 0
@@ -177,4 +173,12 @@ class RegistroTableViewController: UITableViewController{
 		}
 		return true
 	}
+	
+    @IBAction func cerrar(_ sender: UIBarButtonItem) {
+		UserDefaults.standard.set("", forKey: "username")
+		UserDefaults.standard.set("", forKey: "password")
+		UserDefaults.standard.synchronize();
+
+		self.view.window?.rootViewController?.dismiss(animated: true, completion: nil)
+    }
 }
