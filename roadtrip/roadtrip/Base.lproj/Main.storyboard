@@ -170,7 +170,7 @@
                             </items>
                         </navigationBar>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="RegistroTableViewCell" rowHeight="80" id="bVo-70-goU" customClass="RegistroTableViewCell" customModule="TripTok" customModuleProvider="target">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="RegistroTableViewCell" rowHeight="80" id="bVo-70-goU" customClass="RegistroTableViewCell" customModule="TripTok" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="72" width="414" height="80"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="bVo-70-goU" id="Ysr-JS-eTg">
@@ -231,6 +231,9 @@
                     <tabBarItem key="tabBarItem" title="Inicio" image="casaOff" selectedImage="casaOn" id="Din-X3-JzV"/>
                     <toolbarItems/>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics" barStyle="black"/>
+                    <connections>
+                        <outlet property="anadirButton" destination="P6X-Lg-nqF" id="fEc-qh-4vk"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="kh1-X4-HUp" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -294,14 +297,14 @@
                                 <rect key="frame" x="0.0" y="88" width="30" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0.0000" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4F2-N5-UhM" userLabel="Latitud Lbl">
-                                <rect key="frame" x="299" y="490" width="55" height="20.5"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0.0" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4F2-N5-UhM" userLabel="Latitud Lbl">
+                                <rect key="frame" x="330" y="490" width="24" height="20.5"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0.0000" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9rW-SE-yL3" userLabel="Latitud Lbl">
-                                <rect key="frame" x="299" y="438.5" width="55" height="21"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0.0" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9rW-SE-yL3" userLabel="Latitud Lbl">
+                                <rect key="frame" x="330" y="438.5" width="24" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
@@ -510,7 +513,11 @@
                                 <color key="barTintColor" red="0.14901960784313725" green="0.14901960784313725" blue="0.14901960784313725" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <items>
                                     <navigationItem title="Registro" id="9q7-6h-GtZ">
-                                        <barButtonItem key="leftBarButtonItem" title="Atrás" id="qfy-nw-Nf0"/>
+                                        <barButtonItem key="leftBarButtonItem" title="Atrás" id="qfy-nw-Nf0">
+                                            <connections>
+                                                <action selector="atras:" destination="fZQ-Xr-QNc" id="Wjd-db-FCY"/>
+                                            </connections>
+                                        </barButtonItem>
                                         <barButtonItem key="rightBarButtonItem" title="Guardar" id="h8P-jr-wMm">
                                             <color key="tintColor" red="0.0" green="0.66666666669999997" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                             <connections>
@@ -888,7 +895,17 @@
                         <outlet property="mapa" destination="tsf-X4-CXe" id="uXT-Sc-uGQ"/>
                         <outlet property="pointer" destination="Wkl-3M-HPV" id="SaV-Ed-c2q"/>
                         <outlet property="sliderA1" destination="3G5-bn-85k" id="4yf-4c-OqG"/>
+                        <outlet property="sliderA2" destination="TvF-tc-4JG" id="9OU-y3-ESy"/>
+                        <outlet property="sliderA3" destination="wI3-Ll-YQb" id="PkW-KK-vKD"/>
+                        <outlet property="sliderA4" destination="6eY-H1-quZ" id="mij-kG-zIj"/>
+                        <outlet property="sliderA5" destination="yxV-6f-mFN" id="DIe-HU-ST7"/>
+                        <outlet property="sliderA6" destination="Sh8-dN-A03" id="4NE-Im-YKY"/>
                         <outlet property="textoA1" destination="O8T-yi-DS2" id="nbo-cC-oxF"/>
+                        <outlet property="textoA2" destination="E3b-1g-X73" id="G8u-LG-WZu"/>
+                        <outlet property="textoA3" destination="dk1-z7-A07" id="wrE-tf-GEf"/>
+                        <outlet property="textoA4" destination="itc-HF-qFL" id="dqe-Gj-mFR"/>
+                        <outlet property="textoA5" destination="9Dd-eh-p8t" id="mrI-x7-moC"/>
+                        <outlet property="textoA6" destination="j6h-7W-BCL" id="luU-Gw-1Az"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="QsC-gk-cRa" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -1114,10 +1131,10 @@
             </objects>
             <point key="canvasLocation" x="-1207" y="-149"/>
         </scene>
-        <!--Tab Bar Controller-->
+        <!--Main Tab Bar Controller-->
         <scene sceneID="aIK-8G-FBv">
             <objects>
-                <tabBarController modalPresentationStyle="overCurrentContext" id="774-Az-ef9" sceneMemberID="viewController">
+                <tabBarController modalPresentationStyle="overCurrentContext" id="774-Az-ef9" customClass="MainTabBarController" customModule="TripTok" customModuleProvider="target" sceneMemberID="viewController">
                     <navigationItem key="navigationItem" id="bEt-XA-4S1"/>
                     <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" barStyle="black" id="HV2-zW-uqP">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="49"/>
@@ -1127,46 +1144,29 @@
                     <connections>
                         <segue destination="hyJ-Om-uWd" kind="relationship" relationship="viewControllers" id="LBf-7g-sG6"/>
                         <segue destination="2If-da-I8b" kind="relationship" relationship="viewControllers" id="jwx-WZ-9LE"/>
-                        <segue destination="flA-A1-Aj3" kind="relationship" relationship="viewControllers" id="KW6-Wu-9iF"/>
+                        <segue destination="QrF-4M-Z3d" kind="relationship" relationship="viewControllers" id="NC3-cz-x1A"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="zUP-bp-0Jw" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-210" y="652"/>
         </scene>
-        <!--Validación-->
-        <scene sceneID="pcU-90-bSu">
-            <objects>
-                <viewController modalPresentationStyle="overCurrentContext" id="flA-A1-Aj3" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="4XD-yq-P3d">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" red="0.14901960784313725" green="0.14901960784313725" blue="0.14901960784313725" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                        <viewLayoutGuide key="safeArea" id="ugD-Iz-03K"/>
-                    </view>
-                    <tabBarItem key="tabBarItem" title="Validación" image="calculadoraOff" selectedImage="calculadoraOn" id="IU6-c7-KEb"/>
-                    <simulatedTabBarMetrics key="simulatedBottomBarMetrics" barStyle="black"/>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="uWi-IJ-43a" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="780" y="1408"/>
-        </scene>
         <!--Búsqueda-->
         <scene sceneID="Ysb-cd-Fwd">
             <objects>
-                <tableViewController id="2If-da-I8b" sceneMemberID="viewController">
+                <tableViewController id="2If-da-I8b" customClass="BusquedaTableViewController" customModule="TripTok" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="0ZK-ru-TND">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" red="0.14901960784313725" green="0.14901960784313725" blue="0.14901960784313725" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                        <searchBar key="tableHeaderView" contentMode="redraw" barStyle="black" placeholder="Escribre para buscar..." translucent="NO" id="12V-mo-ldL">
+                        <searchBar key="tableHeaderView" contentMode="redraw" barStyle="black" placeholder="Escribe para buscar..." translucent="NO" id="12V-mo-ldL">
                             <rect key="frame" x="0.0" y="0.0" width="414" height="44"/>
                             <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
                             <color key="barTintColor" red="0.14901960784313725" green="0.14901960784313725" blue="0.14901960784313725" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             <textInputTraits key="textInputTraits"/>
                         </searchBar>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="RegistroTableViewCell" rowHeight="80" id="ur9-81-Czu" customClass="RegistroTableViewCell" customModule="TripTok" customModuleProvider="target">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="RegistroTableViewCell" rowHeight="80" id="ur9-81-Czu" customClass="RegistroTableViewCell" customModule="TripTok" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="72" width="414" height="80"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="ur9-81-Czu" id="vOp-dD-w26">
@@ -1244,8 +1244,7 @@
                                 <color key="barTintColor" red="0.14901960780000001" green="0.14901960780000001" blue="0.14901960780000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <items>
                                     <navigationItem title="Validación" id="vhR-a9-sO8">
-                                        <barButtonItem key="leftBarButtonItem" title="Atrás" id="Q8C-jc-V1L"/>
-                                        <barButtonItem key="rightBarButtonItem" title="Guardar" id="eES-hL-JKW">
+                                        <barButtonItem key="rightBarButtonItem" title="Calcular" id="eES-hL-JKW">
                                             <color key="tintColor" red="0.0" green="0.66666666669999997" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                             <connections>
                                                 <action selector="crearOModificarRegistro:" destination="QrF-4M-Z3d" id="q1K-8p-Uzf"/>
@@ -1270,10 +1269,10 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" bouncesZoom="NO" translatesAutoresizingMaskIntoConstraints="NO" id="myX-QJ-enn">
-                                <rect key="frame" x="0.0" y="398.5" width="414" height="463.5"/>
+                                <rect key="frame" x="0.0" y="398.5" width="414" height="414.5"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="8XS-Pv-A8v" userLabel="Content View">
-                                        <rect key="frame" x="0.0" y="0.0" width="414" height="463.5"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="414" height="414.5"/>
                                         <subviews>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NPv-RX-uWn">
                                                 <rect key="frame" x="207" y="0.0" width="207" height="30"/>
@@ -1615,6 +1614,7 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="Soe-JR-yIJ"/>
                     </view>
+                    <tabBarItem key="tabBarItem" title="Validación" image="calculadoraOff" selectedImage="calculadoraOn" id="yiY-tD-yZq"/>
                     <connections>
                         <outlet property="botonNo" destination="qLH-Uh-JFZ" id="K3W-X8-fVK"/>
                         <outlet property="botonSi" destination="NPv-RX-uWn" id="VYC-pp-g8u"/>
@@ -1628,7 +1628,7 @@
                 <exit id="AVc-pF-1GO" userLabel="Exit" sceneMemberID="exit"/>
                 <tapGestureRecognizer id="vM0-mQ-aiN"/>
             </objects>
-            <point key="canvasLocation" x="1390" y="1408"/>
+            <point key="canvasLocation" x="780" y="1408"/>
         </scene>
     </scenes>
     <resources>
@@ -1646,7 +1646,7 @@
         <image name="pointer" width="250" height="250"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="pBY-UV-9ag"/>
-        <segue reference="2rg-aZ-mVE"/>
+        <segue reference="mQc-aQ-49L"/>
+        <segue reference="pk6-wJ-Rxh"/>
     </inferredMetricsTieBreakers>
 </document>

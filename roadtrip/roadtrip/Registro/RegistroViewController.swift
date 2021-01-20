@@ -9,7 +9,6 @@
 import UIKit
 
 class RegistroViewController: UIViewController {
-
     
     @IBOutlet weak var textoA1: UITextField!
     @IBOutlet weak var textoA2: UITextField!
@@ -17,20 +16,17 @@ class RegistroViewController: UIViewController {
     @IBOutlet weak var textoA4: UITextField!
     @IBOutlet weak var textoA5: UITextField!
     @IBOutlet weak var textoA6: UITextField!
-    
-    
+	
     @IBOutlet weak var sliderA1: UISlider!
     @IBOutlet weak var sliderA2: UISlider!
     @IBOutlet weak var sliderA3: UISlider!
     @IBOutlet weak var sliderA4: UISlider!
     @IBOutlet weak var sliderA5: UISlider!
     @IBOutlet weak var sliderA6: UISlider!
-    
-    
+	
     @IBOutlet weak var botonNo: UIButton!
     @IBOutlet weak var botonSi: UIButton!
 	
-    
     @IBOutlet weak var pointer: UIImageView!
     @IBOutlet weak var mapa: UIImageView!
 	
@@ -243,15 +239,10 @@ class RegistroViewController: UIViewController {
 		
 		self.present(alert, animated: true)
 	}
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
+	
+	
+	@IBAction func atras(_ sender: UIBarButtonItem) {
+		self.dismiss(animated: true, completion: nil)
+	}
+	
 }

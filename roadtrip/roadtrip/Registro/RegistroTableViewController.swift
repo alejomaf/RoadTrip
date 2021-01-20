@@ -9,37 +9,28 @@
 import UIKit
 import CoreData
 
-class RegistroTableViewController: UITableViewController{
-    
+class RegistroTableViewController: UITableViewController {
     
     let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
     var registros: [Registro]?
-    var usuarioSesion: Usuario?
     var usuarios : [Usuario]?
 	var nombreRegistroCreado : String = ""
     
+    @IBOutlet weak var anadirButton: UIBarButtonItem!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        let request : NSFetchRequest<Usuario> = Usuario.fetchRequest()
-        do{
-            usuarios = try context.fetch(request)
-        }catch{
-            print("Error cargando las páginas")
-        }
-        
-        let nombreAux = UserDefaults.standard.string(forKey: "username")
-        let contrasenaAux = UserDefaults.standard.string(forKey: "password")
-        
-        for usuarioB in usuarios! {
-            if(usuarioB.nombre == nombreAux) {
-                if(usuarioB.contrasena == contrasenaAux) {
-                    usuarioSesion = usuarioB
-                }
-            }
-        }
 		
         cogerRegistros()
+        
+        #if imaginRoad
+            anadirButton.isEnabled = true
+        #elseif TripTok
+            anadirButton.isEnabled = false
+            anadirButton.tintColor = UIColor(white: 0, alpha: 0)
+        #else
+            anadirButton.isEnabled = true
+        #endif
     }
     
     func saveData() {
@@ -51,37 +42,39 @@ class RegistroTableViewController: UITableViewController{
     }
     
     func cogerRegistros(){
-        self.registros = usuarioSesion?.registros?.array as? [Registro]
+        self.registros = MainTabBarController.sesion?.registros?.array as? [Registro]
 		tableView.reloadData()
     }
 	
     override func numberOfSections(in tableView: UITableView) -> Int {
-        // #warning Incomplete implementation, return the number of sections
         return 1
     }
     
-    func validationColor(_ valid: Bool?) -> UIColor {
+    static func validationColor(_ valid: Bool?) -> UIColor {
         if(valid == nil){
-            return UIColor.init(red: 204, green: 187, blue: 85, alpha: 1)
+            return UIColor.init(red: 0.8, green: 0.8, blue: 0.3, alpha: 1)
         }
         
         return valid!
-            ? UIColor.init(red: 85, green: 204, blue: 85, alpha: 1)
-            : UIColor.init(red: 204, green: 85, blue: 85, alpha: 1)
+            ? UIColor.init(red: 0.3, green: 0.8, blue: 0.3, alpha: 1)
+            : UIColor.init(red: 0.8, green: 0.3, blue: 0.3, alpha: 1)
     }
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        print (registros?.count ?? 0)
         return registros?.count ?? 0
     }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "RegistroTableViewCell", for: indexPath) as! RegistroTableViewCell
         let row = registros?[indexPath.row]
-        
+        let dateFormatter = DateFormatter()
+		
+		dateFormatter.dateFormat = "dd/MM/yyyy - HH:mm"
+		dateFormatter.locale = Locale(identifier: "es")
+		
         cell.titleLbl.text = row?.value(forKey: "nombre") as? String ?? "Sin nombre"
-        cell.dateLbl.text = (row?.value(forKey: "fecha") as? Date)?.description ?? "-"
-        //cell.validationBorder.backgroundColor = validationColor(row?.value(forKey: "resultado") as? Bool)
+		cell.dateLbl.text = dateFormatter.string(from: row?.value(forKey: "fecha") as! Date)
+		cell.validationBorder.backgroundColor = RegistroTableViewController.validationColor(row?.value(forKey: "satelite") as! Bool?)
         
         return cell
     }
@@ -97,13 +90,13 @@ class RegistroTableViewController: UITableViewController{
         nuevoRegistro.a06 = a6
         nuevoRegistro.ubicacion?.horizontal = ejex
         nuevoRegistro.ubicacion?.vertical = ejey
-        nuevoRegistro.usuario = usuarioSesion
+        nuevoRegistro.usuario = MainTabBarController.sesion
         nuevoRegistro.nombre = nombreRegistroCreado
         nuevoRegistro.fecha = Date() as NSDate
         
         print("\(a1), \(a2),\(a3),\(a4), \(ejex), \(ejey)")
 		self.registros?.append(nuevoRegistro)
-        usuarioSesion?.addToRegistros(nuevoRegistro)
+        MainTabBarController.sesion?.addToRegistros(nuevoRegistro)
         self.saveData()
 		tableView.reloadData()
     }
@@ -174,11 +167,28 @@ class RegistroTableViewController: UITableViewController{
 		return true
 	}
 	
+    override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
+        if editingStyle == .delete {
+            do {
+				context.delete((registros?[indexPath.row])!)
+                try context.save()
+                registros?.remove(at: indexPath.row)
+                tableView.deleteRows(at: [indexPath], with: .fade)
+                tableView.reloadData()
+            } catch {
+                print ("Ha ocurrido un error.")
+            }
+        }
+    }
+
+	
     @IBAction func cerrar(_ sender: UIBarButtonItem) {
 		UserDefaults.standard.set("", forKey: "username")
 		UserDefaults.standard.set("", forKey: "password")
 		UserDefaults.standard.synchronize();
 
+		MainTabBarController.sesion = nil
+		
 		self.view.window?.rootViewController?.dismiss(animated: true, completion: nil)
     }
 }

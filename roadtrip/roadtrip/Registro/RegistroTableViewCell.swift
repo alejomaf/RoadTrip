@@ -13,7 +13,7 @@ class RegistroTableViewCell: UITableViewCell {
     @IBOutlet weak var validationBorder: UIView!
     @IBOutlet weak var titleLbl: UILabel!
     @IBOutlet weak var dateLbl: UILabel!
-    
+	
     override func awakeFromNib() {
         super.awakeFromNib()
     }
