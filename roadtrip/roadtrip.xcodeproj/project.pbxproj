@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		257E526D25B78DA20028B206 /* Registro+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 257E526B25B78DA20028B206 /* Registro+CoreDataClass.swift */; };
+		257E526E25B78DA20028B206 /* Registro+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 257E526B25B78DA20028B206 /* Registro+CoreDataClass.swift */; };
+		257E526F25B78DA20028B206 /* Registro+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 257E526C25B78DA20028B206 /* Registro+CoreDataProperties.swift */; };
+		257E527025B78DA20028B206 /* Registro+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 257E526C25B78DA20028B206 /* Registro+CoreDataProperties.swift */; };
 		292235A425B6FD1B0043258B /* RegistroTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 297E70772570207B001D6AFA /* RegistroTableViewCell.swift */; };
 		292235A525B6FD1B0043258B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29192C5C256EBF13008D37F5 /* AppDelegate.swift */; };
 		292235A625B6FD1B0043258B /* IniciarSesionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 255477C82576C7F4000ED989 /* IniciarSesionViewController.swift */; };
@@ -14,8 +18,6 @@
 		292235A825B6FD1B0043258B /* AtributoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25E82ED525B08596000EAED3 /* AtributoViewController.swift */; };
 		292235A925B6FD1B0043258B /* CrearUbicacionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25AAFDC72581467E008FF470 /* CrearUbicacionViewController.swift */; };
 		292235AA25B6FD1B0043258B /* Ubicacion+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25AAFDD4258157F5008FF470 /* Ubicacion+CoreDataProperties.swift */; };
-		292235AB25B6FD1B0043258B /* Registro+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25AAFDD6258157F5008FF470 /* Registro+CoreDataProperties.swift */; };
-		292235AC25B6FD1B0043258B /* Registro+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25AAFDD5258157F5008FF470 /* Registro+CoreDataClass.swift */; };
 		292235AD25B6FD1B0043258B /* Usuario+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25AAFDD2258157F5008FF470 /* Usuario+CoreDataProperties.swift */; };
 		292235AE25B6FD1B0043258B /* Usuario+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25AAFDD1258157F5008FF470 /* Usuario+CoreDataClass.swift */; };
 		292235AF25B6FD1B0043258B /* RegistroTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 297E707B257026DC001D6AFA /* RegistroTableViewController.swift */; };
@@ -33,8 +35,6 @@
 		2933952B25B72510001E5968 /* AtributoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25E82ED525B08596000EAED3 /* AtributoViewController.swift */; };
 		2933952C25B72510001E5968 /* CrearUbicacionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25AAFDC72581467E008FF470 /* CrearUbicacionViewController.swift */; };
 		2933952D25B72510001E5968 /* Ubicacion+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25AAFDD4258157F5008FF470 /* Ubicacion+CoreDataProperties.swift */; };
-		2933952E25B72510001E5968 /* Registro+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25AAFDD6258157F5008FF470 /* Registro+CoreDataProperties.swift */; };
-		2933952F25B72510001E5968 /* Registro+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25AAFDD5258157F5008FF470 /* Registro+CoreDataClass.swift */; };
 		2933953025B72510001E5968 /* Usuario+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25AAFDD2258157F5008FF470 /* Usuario+CoreDataProperties.swift */; };
 		2933953125B72510001E5968 /* Usuario+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25AAFDD1258157F5008FF470 /* Usuario+CoreDataClass.swift */; };
 		2933953225B72510001E5968 /* RegistroTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 297E707B257026DC001D6AFA /* RegistroTableViewController.swift */; };
@@ -51,13 +51,13 @@
 		255477C82576C7F4000ED989 /* IniciarSesionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IniciarSesionViewController.swift; sourceTree = "<group>"; };
 		255477CA2576C81A000ED989 /* RegistrarseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistrarseViewController.swift; sourceTree = "<group>"; };
 		255477D02576CAB3000ED989 /* RegistroViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistroViewController.swift; sourceTree = "<group>"; };
+		257E526B25B78DA20028B206 /* Registro+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Registro+CoreDataClass.swift"; sourceTree = "<group>"; };
+		257E526C25B78DA20028B206 /* Registro+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Registro+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		25AAFDC72581467E008FF470 /* CrearUbicacionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CrearUbicacionViewController.swift; sourceTree = "<group>"; };
 		25AAFDD1258157F5008FF470 /* Usuario+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Usuario+CoreDataClass.swift"; sourceTree = "<group>"; };
 		25AAFDD2258157F5008FF470 /* Usuario+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Usuario+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		25AAFDD3258157F5008FF470 /* Ubicacion+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Ubicacion+CoreDataClass.swift"; sourceTree = "<group>"; };
 		25AAFDD4258157F5008FF470 /* Ubicacion+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Ubicacion+CoreDataProperties.swift"; sourceTree = "<group>"; };
-		25AAFDD5258157F5008FF470 /* Registro+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Registro+CoreDataClass.swift"; sourceTree = "<group>"; };
-		25AAFDD6258157F5008FF470 /* Registro+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Registro+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		25E82ED525B08596000EAED3 /* AtributoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AtributoViewController.swift; sourceTree = "<group>"; };
 		29192C5C256EBF13008D37F5 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		29192C61256EBF13008D37F5 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -125,12 +125,12 @@
 		255477E32577EC60000ED989 /* Base de datos */ = {
 			isa = PBXGroup;
 			children = (
+				257E526B25B78DA20028B206 /* Registro+CoreDataClass.swift */,
+				257E526C25B78DA20028B206 /* Registro+CoreDataProperties.swift */,
 				25AAFDD1258157F5008FF470 /* Usuario+CoreDataClass.swift */,
 				25AAFDD2258157F5008FF470 /* Usuario+CoreDataProperties.swift */,
 				25AAFDD3258157F5008FF470 /* Ubicacion+CoreDataClass.swift */,
 				25AAFDD4258157F5008FF470 /* Ubicacion+CoreDataProperties.swift */,
-				25AAFDD5258157F5008FF470 /* Registro+CoreDataClass.swift */,
-				25AAFDD6258157F5008FF470 /* Registro+CoreDataProperties.swift */,
 			);
 			path = "Base de datos";
 			sourceTree = "<group>";
@@ -278,13 +278,13 @@
 			files = (
 				292235A425B6FD1B0043258B /* RegistroTableViewCell.swift in Sources */,
 				292235A525B6FD1B0043258B /* AppDelegate.swift in Sources */,
+				257E526F25B78DA20028B206 /* Registro+CoreDataProperties.swift in Sources */,
+				257E526D25B78DA20028B206 /* Registro+CoreDataClass.swift in Sources */,
 				292235A625B6FD1B0043258B /* IniciarSesionViewController.swift in Sources */,
 				292235A725B6FD1B0043258B /* RegistrarseViewController.swift in Sources */,
 				292235A825B6FD1B0043258B /* AtributoViewController.swift in Sources */,
 				292235A925B6FD1B0043258B /* CrearUbicacionViewController.swift in Sources */,
 				292235AA25B6FD1B0043258B /* Ubicacion+CoreDataProperties.swift in Sources */,
-				292235AB25B6FD1B0043258B /* Registro+CoreDataProperties.swift in Sources */,
-				292235AC25B6FD1B0043258B /* Registro+CoreDataClass.swift in Sources */,
 				292235AD25B6FD1B0043258B /* Usuario+CoreDataProperties.swift in Sources */,
 				292235AE25B6FD1B0043258B /* Usuario+CoreDataClass.swift in Sources */,
 				292235AF25B6FD1B0043258B /* RegistroTableViewController.swift in Sources */,
@@ -301,13 +301,13 @@
 			files = (
 				2933952725B72510001E5968 /* RegistroTableViewCell.swift in Sources */,
 				2933952825B72510001E5968 /* AppDelegate.swift in Sources */,
+				257E527025B78DA20028B206 /* Registro+CoreDataProperties.swift in Sources */,
+				257E526E25B78DA20028B206 /* Registro+CoreDataClass.swift in Sources */,
 				2933952925B72510001E5968 /* IniciarSesionViewController.swift in Sources */,
 				2933952A25B72510001E5968 /* RegistrarseViewController.swift in Sources */,
 				2933952B25B72510001E5968 /* AtributoViewController.swift in Sources */,
 				2933952C25B72510001E5968 /* CrearUbicacionViewController.swift in Sources */,
 				2933952D25B72510001E5968 /* Ubicacion+CoreDataProperties.swift in Sources */,
-				2933952E25B72510001E5968 /* Registro+CoreDataProperties.swift in Sources */,
-				2933952F25B72510001E5968 /* Registro+CoreDataClass.swift in Sources */,
 				2933953025B72510001E5968 /* Usuario+CoreDataProperties.swift in Sources */,
 				2933953125B72510001E5968 /* Usuario+CoreDataClass.swift in Sources */,
 				2933953225B72510001E5968 /* RegistroTableViewController.swift in Sources */,

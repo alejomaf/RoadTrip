@@ -2,8 +2,8 @@
 //  Registro+CoreDataProperties.swift
 //  roadtrip
 //
-//  Created by Alejo Martín Arias Filippo on 09/12/2020.
-//  Copyright © 2020 ual. All rights reserved.
+//  Created by Alejo Martín Arias Filippo on 19/01/2021.
+//  Copyright © 2021 ual. All rights reserved.
 //
 //
 
@@ -25,6 +25,7 @@ extension Registro {
     @NSManaged public var a06: Float
     @NSManaged public var fecha: NSDate?
     @NSManaged public var nombre: String?
+    @NSManaged public var satelite: Bool
     @NSManaged public var ubicacion: Ubicacion?
     @NSManaged public var usuario: Usuario?
 

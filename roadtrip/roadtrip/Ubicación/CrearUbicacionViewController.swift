@@ -26,7 +26,7 @@ class CrearUbicacionViewController: UIViewController, UIImagePickerControllerDel
         
         if(x != 0.0 || y != 0.0 ){
             pin.center.x = CGFloat(x)
-            pin.center.y = CGFloat(y-19.0)
+            pin.center.y = CGFloat(y-19.0)+88
             ejex.text = "\(x)"
             ejey.text = "\(y)"
         }
@@ -41,11 +41,11 @@ class CrearUbicacionViewController: UIViewController, UIImagePickerControllerDel
         
         //Cojo los valores de la ubicación
         x = Float(ubicacionSeleccionada.x)
-        y = Float(ubicacionSeleccionada.y)
+        y = Float(ubicacionSeleccionada.y)-88
         
         //Actualizo el puntero
         pin.center.x = CGFloat(x)
-        pin.center.y = CGFloat(y-19.0)
+        pin.center.y = CGFloat(y-19.0)+88
         
         //Actualizo los campos de texto
         ejex.text = "\(x)"

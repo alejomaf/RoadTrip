@@ -28,7 +28,20 @@ class IniciarSesionViewController: UIViewController, UIGestureRecognizerDelegate
         olvidadolbl.addGestureRecognizer(tap)
         
         tap.delegate = self
+		
+		let nombreAux = UserDefaults.standard.string(forKey: "username")
+		let contrasenaAux = UserDefaults.standard.string(forKey: "password")
+		
+		for usuarioB in usuarios! {
+			if(usuarioB.nombre == nombreAux) {
+				if(usuarioB.contrasena == contrasenaAux) {
+					performSegue(withIdentifier: "iniciarSesion", sender: nil)
+				}
+			}
+		}
+		
     }
+	
     
     @objc func recordar(sender: UITapGestureRecognizer)
     {

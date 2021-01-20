@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="14460.32" systemVersion="19H15" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
+<model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="14460.32" systemVersion="19H505" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
     <entity name="Registro" representedClassName="Registro" syncable="YES">
         <attribute name="a01" attributeType="Float" defaultValueString="0.0" usesScalarValueType="YES" syncable="YES"/>
         <attribute name="a02" attributeType="Float" defaultValueString="0.0" usesScalarValueType="YES" syncable="YES"/>
@@ -9,6 +9,7 @@
         <attribute name="a06" attributeType="Float" defaultValueString="0.0" usesScalarValueType="YES" syncable="YES"/>
         <attribute name="fecha" optional="YES" attributeType="Date" usesScalarValueType="NO" syncable="YES"/>
         <attribute name="nombre" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="satelite" optional="YES" attributeType="Boolean" usesScalarValueType="YES" syncable="YES"/>
         <relationship name="ubicacion" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Ubicacion" syncable="YES"/>
         <relationship name="usuario" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Usuario" inverseName="registros" inverseEntity="Usuario" syncable="YES"/>
     </entity>
@@ -24,7 +25,7 @@
         <relationship name="ubicacion" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Usuario" syncable="YES"/>
     </entity>
     <elements>
-        <element name="Registro" positionX="-281.4375" positionY="-5.71484375" width="128" height="195"/>
+        <element name="Registro" positionX="-281.4375" positionY="-5.71484375" width="128" height="210"/>
         <element name="Ubicacion" positionX="-442.11328125" positionY="-90.578125" width="128" height="75"/>
         <element name="Usuario" positionX="-288.234375" positionY="-165.421875" width="128" height="120"/>
     </elements>

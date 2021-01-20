@@ -40,6 +40,7 @@ class RegistrarseViewController: UIViewController {
         if (usuarios?.count==0) {return true}
         for usuario in usuarios!{
             if(usuario.nombre==nombre){
+				showAlert(titulo: "Usuario existente", texto: "El usuario que ha intentado ingresar ya existe")
                 return false
             }
         }
@@ -51,6 +52,7 @@ class RegistrarseViewController: UIViewController {
         if (usuarios?.count==0) {return true}
         for usuario in usuarios!{
             if(usuario.correo==correo){
+				showAlert(titulo: "Correo electrónico registrado", texto: "El correo electrónico que ha intentado ingresar ya ha sido registrado")
                 return false
             }
         }
@@ -82,7 +84,7 @@ class RegistrarseViewController: UIViewController {
     }
     
     func actualizarBoton(){
-        crearCuenta.isEnabled = !(usuarioL.text=="" || correoElectronicoL.text==""||contrasenaL1.text=="" || contrasenaL1.text != contrasenaL2.text || !correoValido || !nombreValido)
+        crearCuenta.isEnabled = !(usuarioL.text=="" || correoElectronicoL.text==""||contrasenaL1.text=="" || contrasenaL1.text != contrasenaL2.text || !correoValido || !nombreValido || (ejex == 0 && ejey == 0))
     }
     
      @IBAction func registrarse(sender: UIStoryboardSegue) {
@@ -118,6 +120,14 @@ class RegistrarseViewController: UIViewController {
             viewDestiny.y = ejey
         }
     }
+	
+	func showAlert(titulo:String,texto:String){
+		let alert = UIAlertController(title: titulo, message: texto, preferredStyle: .alert)
+		
+		alert.addAction(UIAlertAction(title: "Aceptar", style: .cancel, handler: nil))
+		
+		self.present(alert, animated: true)
+	}
     
     
     

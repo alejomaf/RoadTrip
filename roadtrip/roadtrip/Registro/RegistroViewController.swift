@@ -29,15 +29,22 @@ class RegistroViewController: UIViewController {
     
     @IBOutlet weak var botonNo: UIButton!
     @IBOutlet weak var botonSi: UIButton!
+	
     
-    
-    @IBOutlet weak var ejecutarAlgoritmo: UIButton!
-    
+    @IBOutlet weak var pointer: UIImageView!
     @IBOutlet weak var mapa: UIImageView!
-    
+	
+	// Registro que se va a editar
     var registro: Registro? = nil
+	
+	// False = Se está creando el registro | True = Se está creando
     var edicion: Bool = false
-    
+	
+	
+	// 0 = Salida no seleccionada | 1 = No hay satélite | 2 = Hay satélite
+	var salida: Int = 0
+	
+	// Atributos inicializados a cero
     var a1 : Float = 0.0
     var a2 : Float = 0.0
     var a3 : Float = 0.0
@@ -55,6 +62,7 @@ class RegistroViewController: UIViewController {
         super.viewDidLoad()
 
         if(ALGORITMO){
+			// Se deshabilitan los botones porque no se puede usar
             botonNo.isEnabled = false
             botonSi.isEnabled = false
         }
@@ -67,7 +75,10 @@ class RegistroViewController: UIViewController {
             actualizarAtributo(boton: sliderA5, texto: textoA5, valor: a5)
             actualizarAtributo(boton: sliderA6, texto: textoA6, valor: a6)
         }
-        // Do any additional setup after loading the view.
+		
+		//Ubico el puntero del mapa en la ubicación predeterminada del usuario previamente cargada en el segue
+		pointer.center.x = CGFloat(ejex)
+		pointer.center.y = CGFloat(ejey-30.0)+88
     }
     
     @IBAction func editarTexto(_ sender: Any) {
@@ -114,10 +125,15 @@ class RegistroViewController: UIViewController {
             texto.text="0"
             boton.setValue(0, animated: true)
         }
+		actualizarYAlgoritmo()
     }
     
     func editarTextoSlider( boton: UISlider, texto: UITextField, atributo: inout Float ){
         let valor = texto.text
+		
+		if(valor!.isEmpty) {return;}
+		
+		//Esta estructura sirve para saber si el casteo del botón se está realizando de forma incorrecta, si no se están añadiendo letras
         do {
             let b = try getFloat(valor!)
             boton.setValue(Float(b), animated: true)
@@ -151,9 +167,10 @@ class RegistroViewController: UIViewController {
     @IBAction func guardarUbicacionRegistro(sender: UIStoryboardSegue) {
         ejex = ((sender.source as! CrearUbicacionViewController).ejex.text! as NSString).floatValue
         ejey = ((sender.source as! CrearUbicacionViewController).ejey.text! as NSString).floatValue
-        
-        //ubicacion.text="\(ejex) | \(ejey)"
-        
+		
+		pointer.center.x = CGFloat(ejex)
+		pointer.center.y = CGFloat(ejey-30.0)+88
+		
         actualizarRegistro()
     }
     
@@ -162,10 +179,12 @@ class RegistroViewController: UIViewController {
     @IBAction func pulsarBotonSi(_ sender: Any) {
         botonNo.isSelected = false
         botonSi.isSelected = true
+		salida=2
     }
     @IBAction func pulsaBotonNo(_ sender: Any) {
         botonNo.isSelected = true
         botonSi.isSelected = false
+		salida=1
     }
     
     
@@ -179,35 +198,51 @@ class RegistroViewController: UIViewController {
             registro?.ubicacion?.horizontal = Double(ejex)
             registro?.ubicacion?.vertical = Double(ejey)
             registro?.a01 = Float(textoA1.text!)!
-            registro?.a02 = Float(textoA2.text!)!
+            /*registro?.a02 = Float(textoA2.text!)!
             registro?.a03 = Float(textoA3.text!)!
             registro?.a04 = Float(textoA4.text!)!
             registro?.a05 = Float(textoA5.text!)!
-            registro?.a06 = Float(textoA6.text!)!
+            registro?.a06 = Float(textoA6.text!)!*/
         }else{
             a1 = Float(textoA1.text!)!
-            a2 = Float(textoA2.text!)!
+            /*a2 = Float(textoA2.text!)!
             a3 = Float(textoA3.text!)!
             a4 = Float(textoA4.text!)!
             a5 = Float(textoA5.text!)!
-            a6 = Float(textoA6.text!)!
+            a6 = Float(textoA6.text!)!*/
         }
         
     
     }
     
-    
-    
-    
-    //Método cuando el botón ejecutar es pulsado
-    @IBAction func ejecutarAlgoritmo(_ sender: Any) {
-        
-    }
+	func actualizarYAlgoritmo(){
+		//Ejecutar algoritmo
+		
+		//Actualizar botones según resultado
+	}
     
     func algoritmo(){
-    
+		
     }
-    
+	
+	override func shouldPerformSegue(withIdentifier identifier: String, sender: Any?) -> Bool {
+		if (!(identifier=="crearUbicacionRegistro"||identifier=="crearRegistro"||identifier=="verRegistro")) {
+			//Es el unwind, es decir, cuando se va a crear o actualizar un registro
+			if(salida==0){
+				showAlert(titulo: "Selecciona si hay satélite",texto: "Seleccion 'Si' o 'No' para saber si hay satélite")
+				//return false; ACTIVAR CUANDO ESTÉN LAS VISTAS CONFIGURADAS
+			}
+		}
+		return true
+	}
+
+	func showAlert(titulo:String,texto:String){
+		let alert = UIAlertController(title: titulo, message: texto, preferredStyle: .alert)
+		
+		alert.addAction(UIAlertAction(title: "Aceptar", style: .cancel, handler: nil))
+		
+		self.present(alert, animated: true)
+	}
 
     /*
     // MARK: - Navigation
