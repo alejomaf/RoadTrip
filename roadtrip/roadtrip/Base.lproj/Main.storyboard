@@ -503,7 +503,7 @@
                                 <color key="barTintColor" red="0.14901960784313725" green="0.14901960784313725" blue="0.14901960784313725" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <items>
                                     <navigationItem title="Registro" id="9q7-6h-GtZ">
-                                        <barButtonItem key="leftBarButtonItem" title="Atrás" style="plain" id="qfy-nw-Nf0"/>
+                                        <barButtonItem key="leftBarButtonItem" title="Atrás" id="qfy-nw-Nf0"/>
                                         <barButtonItem key="rightBarButtonItem" title="Guardar" id="h8P-jr-wMm">
                                             <color key="tintColor" red="0.0" green="0.66666666669999997" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                             <connections>
@@ -1152,7 +1152,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" red="0.14901960784313725" green="0.14901960784313725" blue="0.14901960784313725" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                        <searchBar key="tableHeaderView" contentMode="redraw" misplaced="YES" barStyle="black" placeholder="Escribre para buscar..." translucent="NO" id="12V-mo-ldL">
+                        <searchBar key="tableHeaderView" contentMode="redraw" barStyle="black" placeholder="Escribre para buscar..." translucent="NO" id="12V-mo-ldL">
                             <rect key="frame" x="0.0" y="0.0" width="414" height="44"/>
                             <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
                             <color key="barTintColor" red="0.14901960784313725" green="0.14901960784313725" blue="0.14901960784313725" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -1237,7 +1237,7 @@
                                 <color key="barTintColor" red="0.14901960780000001" green="0.14901960780000001" blue="0.14901960780000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <items>
                                     <navigationItem title="Validación" id="vhR-a9-sO8">
-                                        <barButtonItem key="leftBarButtonItem" title="Atrás" style="plain" id="Q8C-jc-V1L"/>
+                                        <barButtonItem key="leftBarButtonItem" title="Atrás" id="Q8C-jc-V1L"/>
                                         <barButtonItem key="rightBarButtonItem" title="Guardar" id="eES-hL-JKW">
                                             <color key="tintColor" red="0.0" green="0.66666666669999997" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                             <connections>
