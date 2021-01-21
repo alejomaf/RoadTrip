@@ -164,8 +164,6 @@ class RegistroTableViewController: UITableViewController {
 			let viewDestiny = segue.destination as! RegistroViewController
 			viewDestiny.ejex = (MainTabBarController.sesion!.ejex)
 			viewDestiny.ejey = (MainTabBarController.sesion!.ejey)
-			print(Float((MainTabBarController.sesion?.ejex)!))
-			print(Float((MainTabBarController.sesion?.ejey)!))
 		}
     }
 	

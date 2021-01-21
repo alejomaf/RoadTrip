@@ -66,7 +66,6 @@ class RegistroViewController: UIViewController {
 			// Se deshabilitan los botones porque no se puede usar
             botonNo.isEnabled = false
             botonSi.isEnabled = false
-			actualizarYAlgoritmo()
 			ejecutarAlgoritmoBtn?.isHidden = false			
         }
         
