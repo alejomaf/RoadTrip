@@ -16,7 +16,7 @@ class CrearUbicacionViewController: UIViewController, UIImagePickerControllerDel
     @IBOutlet weak var guardarUbicacionRegistro: UIButton!
     @IBOutlet weak var guardarUbicacionPredeterminada: UIButton!
     
-    var isCreacion : Bool = false
+    var isCreacion : Bool = true
     
     var x : Float = 0.0
     var y : Float = 0.0

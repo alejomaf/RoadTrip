@@ -96,7 +96,7 @@ class RegistrarseViewController: UIViewController {
     override func prepare(for segue: UIStoryboardSegue, sender: Any?){
         if segue.identifier == "crearUbicacionPredeterminada" {
             let viewDestiny = segue.destination as! CrearUbicacionViewController
-            viewDestiny.isCreacion = true
+            viewDestiny.isCreacion = false
             viewDestiny.x = ejex
             viewDestiny.y = ejey
         }

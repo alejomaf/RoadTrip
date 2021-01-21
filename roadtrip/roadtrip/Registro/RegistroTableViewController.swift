@@ -76,7 +76,7 @@ class RegistroTableViewController: UITableViewController {
 		
 		//Añado los atributos que se han generado en la tabla
         cell.titleLbl.text = row?.value(forKey: "nombre") as? String ?? "Sin nombre"
-		//cell.dateLbl.text = dateFormatter.string(from: (row?.value(forKey: "fecha") as! Date))
+		cell.dateLbl.text = dateFormatter.string(from: (row?.value(forKey: "fecha") as! Date))
 		cell.validationBorder.backgroundColor = RegistroTableViewController.validationColor(row?.value(forKey: "satelite") as! Bool?)
         
         return cell

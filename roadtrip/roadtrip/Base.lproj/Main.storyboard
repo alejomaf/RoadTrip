@@ -1642,7 +1642,17 @@
                         <outlet property="mapa" destination="CgH-Jz-arL" id="sel-z3-Jh4"/>
                         <outlet property="pointer" destination="0Uw-Bt-Pbx" id="5hj-Uo-mpu"/>
                         <outlet property="sliderA1" destination="J1g-0f-eBh" id="CTF-I2-34I"/>
+                        <outlet property="sliderA2" destination="sIe-fm-odz" id="7O5-oy-WUE"/>
+                        <outlet property="sliderA3" destination="V0R-A9-cS7" id="44G-wA-pdo"/>
+                        <outlet property="sliderA4" destination="Jjz-0P-YCC" id="6as-tF-JdG"/>
+                        <outlet property="sliderA5" destination="0kF-dA-hOa" id="qqg-On-Y0M"/>
+                        <outlet property="sliderA6" destination="14a-G1-48R" id="iWr-P9-IMo"/>
                         <outlet property="textoA1" destination="OT3-vf-HFc" id="F7B-ik-NEJ"/>
+                        <outlet property="textoA2" destination="NJ6-cl-JEq" id="Oho-Sm-hMW"/>
+                        <outlet property="textoA3" destination="ECt-Ct-mft" id="QKL-Pe-mZ0"/>
+                        <outlet property="textoA4" destination="2Rb-Vj-acR" id="gma-kV-AXK"/>
+                        <outlet property="textoA5" destination="qpb-Ah-mUJ" id="wRI-gG-VYr"/>
+                        <outlet property="textoA6" destination="CbB-6q-RZy" id="KUc-t6-bdt"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="gI7-RA-GKd" userLabel="First Responder" sceneMemberID="firstResponder"/>
