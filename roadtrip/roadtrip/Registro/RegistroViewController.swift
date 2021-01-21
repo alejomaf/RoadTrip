@@ -107,26 +107,56 @@ class RegistroViewController: UIViewController {
     
     @IBAction func terminarEditarTexto(_ sender: Any) {
         terminarEditarTextoSlider(boton: sliderA1, texto: textoA1, atributo: a1)
+		if(edicion){
+			registro?.a01 = Float(textoA1.text!)!
+		}else{
+			a1 = Float(textoA1.text!)!
+		}
     }
     @IBAction func terminarEditarTextoA2(_ sender: Any) {
         terminarEditarTextoSlider(boton: sliderA2, texto: textoA2, atributo: a2)
+		if(edicion){
+			registro?.a02 = Float(textoA2.text!)!
+		}else{
+			a2 = Float(textoA2.text!)!
+		}
     }
     @IBAction func terminarEditarTextoA3(_ sender: Any) {
         terminarEditarTextoSlider(boton: sliderA3, texto: textoA3, atributo: a3)
+		if(edicion){
+			registro?.a03 = Float(textoA3.text!)!
+		}else{
+			a3 = Float(textoA3.text!)!
+		}
     }
     @IBAction func terminarEditarTextoA4(_ sender: Any) {
         terminarEditarTextoSlider(boton: sliderA4, texto: textoA4, atributo: a4)
+		if(edicion){
+			registro?.a04 = Float(textoA4.text!)!
+		}else{
+			a4 = Float(textoA4.text!)!
+		}
     }
     @IBAction func terminarEditarTextoA5(_ sender: Any) {
         terminarEditarTextoSlider(boton: sliderA5, texto: textoA5, atributo: a5)
+		if(edicion){
+			registro?.a05 = Float(textoA5.text!)!
+		}else{
+			a5 = Float(textoA5.text!)!
+		}
     }
     @IBAction func terminarEditarTextoA6(_ sender: Any) {
         terminarEditarTextoSlider(boton: sliderA6, texto: textoA6, atributo: a6)
+		if(edicion){
+			registro?.a06 = Float(textoA6.text!)!
+		}else{
+			a6 = Float(textoA6.text!)!
+		}
     }
     
     func terminarEditarTextoSlider( boton: UISlider, texto: UITextField, atributo: Float ){
         let valor = texto.text
-        if(valor!.isEmpty) {
+        if(valor!.isEmpty||valor!=="-") {
             texto.text="0"
             boton.setValue(0, animated: true)
         }
@@ -137,11 +167,12 @@ class RegistroViewController: UIViewController {
         let valor = texto.text
 		
 		if(valor!.isEmpty) {return;}
-		
+		if(valor!=="-"){return;}
 		//Esta estructura sirve para saber si el casteo del botón se está realizando de forma incorrecta, si no se están añadiendo letras
         do {
             let b = try getFloat(valor!)
             boton.setValue(Float(b), animated: true)
+			atributo = Float(b)
         } catch MyError.conversionError {
             boton.setValue(Float(0), animated: true)
             texto.text = "\(0.0)"
