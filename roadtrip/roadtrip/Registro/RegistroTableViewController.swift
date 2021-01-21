@@ -24,12 +24,12 @@ class RegistroTableViewController: UITableViewController {
         cogerRegistros()
         
         #if imaginRoad
-            anadirButton.isEnabled = true
+            anadirButton?.isEnabled = true
         #elseif TripTok
-            anadirButton.isEnabled = false
-            anadirButton.tintColor = UIColor(white: 0, alpha: 0)
+            anadirButton?.isEnabled = false
+            anadirButton?.tintColor = UIColor(white: 0, alpha: 0)
         #else
-            anadirButton.isEnabled = true
+            anadirButton?.isEnabled = true
         #endif
 		
 		//print("\(MainTabBarController.sesion?.ubicacion?.vertical) | \(MainTabBarController.sesion?.ubicacion?.horizontal)")
