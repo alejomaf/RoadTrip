@@ -139,7 +139,9 @@ class RegistroViewController: UIViewController {
     }
     
     func moverSlider(barra: UISlider, texto: UITextField, atributo: inout Float){
-        texto.text = "\(barra.value)"
+		texto.text = "\(barra.value)".prefix(barra.value < 0 ? 7 : 6).description
+		
+		
         atributo = barra.value
         registro?.a01 = Float(textoA1.text!)!
         registro?.a02 = Float(textoA2.text!)!
@@ -200,33 +202,30 @@ class RegistroViewController: UIViewController {
     
     func terminarEditarTextoSlider( boton: UISlider, texto: UITextField, atributo: Float ){
         let valor = texto.text
-        if(valor!.isEmpty||valor!=="-") {
+        
+        if(valor!.isEmpty || valor!=="-") {
             texto.text="0"
             boton.setValue(0, animated: true)
         }
-		//if(ALGORITMO){actualizarYAlgoritmo()}
     }
     
     func editarTextoSlider( boton: UISlider, texto: UITextField, atributo: inout Float ){
         let valor = texto.text
-		
-		if(valor!.isEmpty) {return;}
-		if(valor!=="-"){return;}
-		//Esta estructura sirve para saber si el casteo del botón se está realizando de forma incorrecta, si no se están añadiendo letras
-        do {
-            let b = try getFloat(valor!)
-            boton.setValue(Float(b), animated: true)
-			atributo = Float(b)
-        } catch MyError.conversionError {
-            boton.setValue(Float(0), animated: true)
-            texto.text = "\(0.0)"
-            atributo = 0.0
-        } catch{
-            boton.setValue(Float(0), animated: true)
-            texto.text = "\(0.0)"
-            atributo = 0.0
+        
+        if(valor!.isEmpty||valor!=="-") {
+            do {
+                boton.setValue(Float(try getFloat(valor!)), animated: true)
+                atributo = Float(boton.value)
+            } catch MyError.conversionError {
+                boton.setValue(0.0, animated: true)
+                texto.text = "\(0.0)"
+                atributo = 0.0
+            } catch{
+                boton.setValue(0.0, animated: true)
+                texto.text = "\(0.0)"
+                atributo = 0.0
+            }
         }
-        //if(ALGORITMO){actualizarYAlgoritmo()}
     }
     
     func actualizarAtributo(boton: UISlider, texto: UITextField, valor: Float){
@@ -250,9 +249,7 @@ class RegistroViewController: UIViewController {
         ejey = ((sender.source as! CrearUbicacionViewController).ejey.text! as NSString).floatValue
 		
 		pointer.center.x = CGFloat(ejex)
-		pointer.center.y = CGFloat(ejey - 19.0) + 88
-		
-        actualizarRegistro()
+		pointer.center.y = CGFloat(ejey - 19) + 88
     }
     
     @IBAction func pulsarBotonSi(_ sender: Any) {
@@ -269,12 +266,6 @@ class RegistroViewController: UIViewController {
         botonNo.backgroundColor = UIColor.init(red: 0.8, green: 0.3, blue: 0.3, alpha: 1)
 		
 		salida = 1
-    }
-    
-    
-    //Compruebo que el registro es creado correctamente y habilito o deshabilito el botón de creación
-    func actualizarRegistro(){
-        
     }
     
     @IBAction func crearOModificarRegistro(_ sender: Any) {

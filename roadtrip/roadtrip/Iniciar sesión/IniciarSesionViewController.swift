@@ -84,8 +84,7 @@ class IniciarSesionViewController: UIViewController, UIGestureRecognizerDelegate
 					UserDefaults.standard.set(usuario.nombre, forKey:"username");
 					UserDefaults.standard.set(usuario.contrasena, forKey:"password");
 					UserDefaults.standard.synchronize();
-                    
-					// Con esto se carga el usuario let user = UserDefaults.standard.array(forKey: "user")as? [Usuario]
+					
                     MainTabBarController.sesion = usuario
 					
                     print("El usuario ha iniciado sesión.")
