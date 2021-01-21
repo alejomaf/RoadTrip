@@ -119,6 +119,36 @@ class RegistroViewController: UIViewController {
         editarTextoSlider(boton: sliderA6, texto: textoA6, atributo: &a6)
     }
     
+    @IBAction func moverSlider1(_ sender: Any) {
+        moverSlider(barra: sliderA1, texto: textoA1, atributo: &a1)
+    }
+    @IBAction func moverSlider2(_ sender: Any) {
+        moverSlider(barra: sliderA2, texto: textoA2, atributo: &a2)
+    }
+    @IBAction func moverSlider3(_ sender: Any) {
+        moverSlider(barra: sliderA3, texto: textoA3, atributo: &a3)
+    }
+    @IBAction func moverSlider4(_ sender: Any) {
+        moverSlider(barra: sliderA4, texto: textoA4, atributo: &a3)
+    }
+    @IBAction func moverSlider5(_ sender: Any) {
+        moverSlider(barra: sliderA5, texto: textoA5, atributo: &a4)
+    }
+    @IBAction func moverSlider6(_ sender: Any) {
+        moverSlider(barra: sliderA6, texto: textoA6, atributo: &a5)
+    }
+    
+    func moverSlider(barra: UISlider, texto: UITextField, atributo: inout Float){
+        texto.text = "\(barra.value)"
+        atributo = barra.value
+        registro?.a01 = Float(textoA1.text!)!
+        registro?.a02 = Float(textoA2.text!)!
+        registro?.a03 = Float(textoA3.text!)!
+        registro?.a04 = Float(textoA4.text!)!
+        registro?.a05 = Float(textoA5.text!)!
+        registro?.a06 = Float(textoA6.text!)!
+    }
+    
     @IBAction func terminarEditarTexto(_ sender: Any) {
         terminarEditarTextoSlider(boton: sliderA1, texto: textoA1, atributo: a1)
 		if(edicion){
