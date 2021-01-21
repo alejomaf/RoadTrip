@@ -26,7 +26,8 @@ class RegistroTableViewController: UITableViewController {
         #if imaginRoad
             anadirButton?.isEnabled = true
         #elseif TripTok
-            
+			anadirButton.isEnabled = false
+			anadirButton.tintColor = UIColor(white: 0, alpha: 0)
         #else
             anadirButton?.isEnabled = true
         #endif
@@ -142,8 +143,8 @@ class RegistroTableViewController: UITableViewController {
 		
 		if(creacionOModificacion){
 			//Modifico el registro
-			let filaSeleccionada = tableView.indexPathForSelectedRow?.row
-			self.modificarRegistro(registro: (sender.source as! RegistroViewController).registro!, fila: filaSeleccionada!)
+			let filaSeleccionada = tableView.indexPathForSelectedRow!.row
+			self.modificarRegistro(registro: (sender.source as! RegistroViewController).registro!, fila: filaSeleccionada)
 			
 		}else{
 			//Creo el registro

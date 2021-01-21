@@ -29,8 +29,9 @@ class RegistroViewController: UIViewController {
 	
     @IBOutlet weak var pointer: UIImageView!
     @IBOutlet weak var mapa: UIImageView!
+    @IBOutlet weak var guardarBtn: UIBarButtonItem!
+    
 	
-    @IBOutlet weak var ejecutarAlgoritmoBtn: UIButton!
     // Registro que se va a editar
     var registro: Registro? = nil
 	
@@ -59,14 +60,17 @@ class RegistroViewController: UIViewController {
         super.viewDidLoad()
 
 		#if TripTok
-			ALGORITMO=true
+            ALGORITMO=true
+            guardarBtn?.isEnabled = false
+            guardarBtn?.tintColor = UIColor(white: 0, alpha: 0)
 		#endif
 		
         if(ALGORITMO){
 			// Se deshabilitan los botones porque no se puede usar
             botonNo.isEnabled = false
             botonSi.isEnabled = false
-			ejecutarAlgoritmoBtn?.isHidden = false			
+            ejex = (MainTabBarController.sesion?.ejex)!
+            ejey = (MainTabBarController.sesion?.ejey)!
         }
         
         if(edicion){
