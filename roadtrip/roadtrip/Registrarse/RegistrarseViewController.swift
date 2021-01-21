@@ -140,4 +140,18 @@ class RegistrarseViewController: UIViewController {
     }
     */
 
+    @IBAction func verPass1(_ sender: Any) {
+        if(contrasenaL1.isSecureTextEntry == true){
+            contrasenaL1.isSecureTextEntry = false
+        }else{
+            contrasenaL1.isSecureTextEntry = true
+        }
+    }
+    @IBAction func verPass2(_ sender: Any) {
+        if(contrasenaL2.isSecureTextEntry == true){
+            contrasenaL2.isSecureTextEntry = false
+        }else{
+            contrasenaL2.isSecureTextEntry = true
+        }
+    }
 }

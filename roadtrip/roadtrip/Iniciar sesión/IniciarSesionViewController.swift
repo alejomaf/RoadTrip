@@ -127,5 +127,12 @@ class IniciarSesionViewController: UIViewController, UIGestureRecognizerDelegate
 		return true
 	}
 	
-	
+    @IBAction func showPass(_ sender: Any) {
+		if(contrasena.isSecureTextEntry == true){
+			contrasena.isSecureTextEntry = false
+		}else{
+			contrasena.isSecureTextEntry = true
+		}
+    }
+    
 }

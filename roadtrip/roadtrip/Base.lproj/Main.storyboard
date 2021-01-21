@@ -93,6 +93,9 @@
                                     <constraint firstAttribute="width" secondItem="R3U-21-4Z9" secondAttribute="height" multiplier="1:1" id="7Ss-IP-Bf2"/>
                                 </constraints>
                                 <state key="normal" backgroundImage="ojoOff"/>
+                                <connections>
+                                    <action selector="showPass:" destination="BYZ-38-t0r" eventType="touchUpInside" id="r06-Ie-5Jh"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" red="0.14901960784313725" green="0.14901960784313725" blue="0.14901960784313725" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -1000,6 +1003,9 @@
                                     <constraint firstAttribute="width" secondItem="iBm-zJ-Eb7" secondAttribute="height" multiplier="1:1" id="4Pd-oK-meY"/>
                                 </constraints>
                                 <state key="normal" backgroundImage="ojoOff"/>
+                                <connections>
+                                    <action selector="verPass1:" destination="IHg-ui-Ez8" eventType="touchUpInside" id="GYY-V6-Kn7"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="RjD-JP-NHZ" userLabel="Contraseña Btn2">
                                 <rect key="frame" x="329" y="476" width="30" height="30"/>
@@ -1007,6 +1013,9 @@
                                     <constraint firstAttribute="width" secondItem="RjD-JP-NHZ" secondAttribute="height" multiplier="1:1" id="NfI-Ea-BAa"/>
                                 </constraints>
                                 <state key="normal" backgroundImage="ojoOff"/>
+                                <connections>
+                                    <action selector="verPass2:" destination="IHg-ui-Ez8" eventType="touchUpInside" id="Ayc-IJ-Qkm"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="leading" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="E0K-Ej-Xe6">
                                 <rect key="frame" x="75" y="570" width="289" height="50"/>
@@ -1660,6 +1669,6 @@
     </resources>
     <inferredMetricsTieBreakers>
         <segue reference="pBY-UV-9ag"/>
-        <segue reference="pk6-wJ-Rxh"/>
+        <segue reference="2rg-aZ-mVE"/>
     </inferredMetricsTieBreakers>
 </document>
