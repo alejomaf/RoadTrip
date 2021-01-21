@@ -1045,8 +1045,7 @@
                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
                                 <connections>
-                                    <action selector="registrarseWithSender:" destination="IHg-ui-Ez8" eventType="touchUpInside" id="rmO-uj-DLE"/>
-                                    <segue destination="OOR-La-F2g" kind="unwind" unwindAction="registrarseWithSender:" id="TjU-vU-i5K"/>
+                                    <segue destination="OOR-La-F2g" kind="unwind" unwindAction="registrarseWithSender:" id="j08-BX-VSs"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -1654,6 +1653,6 @@
     </resources>
     <inferredMetricsTieBreakers>
         <segue reference="2tN-WW-kHV"/>
-        <segue reference="pk6-wJ-Rxh"/>
+        <segue reference="2rg-aZ-mVE"/>
     </inferredMetricsTieBreakers>
 </document>

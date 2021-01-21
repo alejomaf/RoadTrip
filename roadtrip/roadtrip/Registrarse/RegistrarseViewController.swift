@@ -18,7 +18,7 @@ class RegistrarseViewController: UIViewController {
     @IBOutlet weak var contrasenaL2: UITextField!
     @IBOutlet weak var crearCuenta: UIButton!
     @IBOutlet weak var ubicacion: UIButton!
-    
+	
     let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
 	
     //Los usuarios se cargan al inicializarse la vista, se utilizan para comprobar que no se repitan ni los correos ni los nombres de usuario
@@ -86,41 +86,7 @@ class RegistrarseViewController: UIViewController {
         crearCuenta.isEnabled = !(usuarioL.text=="" || correoElectronicoL.text==""||contrasenaL1.text=="" || contrasenaL1.text != contrasenaL2.text || !correoValido || !nombreValido || (ejex == 0 && ejey == 0))
     }
     
-     @IBAction func registrarse(sender: UIStoryboardSegue) {
-		
-		
-		/*let nuevaUbicacion = Ubicacion(context: context)
-		nuevaUbicacion.horizontal = Double(ejex)
-		nuevaUbicacion.vertical = Double(ejey)
-		print("\(Double(ejey)) || \(Double(ejex))")*/
-		
-		/*do {
-			context.insert(nuevaUbicacion)
-			try context.save()
-		} catch {
-			print("Error al guardar el usuario")
-		}*/
-		
-        let nuevoUsuario = Usuario(context: context)
-		
-		nuevoUsuario.nombre = usuarioL.text
-        nuevoUsuario.contrasena = contrasenaL1.text
-        nuevoUsuario.correo = correoElectronicoL.text
-		
-		
-		nuevoUsuario.ubicacion = Ubicacion(context: context)
-		nuevoUsuario.ubicacion!.horizontal = Double(ejex)
-		nuevoUsuario.ubicacion!.vertical = Double(ejey)
-		
-		do {
-			context.insert(nuevoUsuario)
-			try context.save()
-		} catch {
-			print("Error al guardar el usuario")
-		}
-		
-        salir(sender:sender)
-    }
+     
     
     @IBAction func salir(sender: UIStoryboardSegue) {
         dismiss(animated: true, completion: nil)
@@ -145,7 +111,46 @@ class RegistrarseViewController: UIViewController {
 	}
     
     
-    
+	@IBAction func registrarse(sender: UIStoryboardSegue) {
+		
+		
+		//Lo he intentado de todas las formas diferentes, ahora los datos se guardan pero no de forma persistente, es decir cuando se reinicia la aplicación (recompilándola) se eliminan los datos de los enlaces
+		
+		let nuevaUbicacion = Ubicacion(context: context)
+		nuevaUbicacion.horizontal = Double(ejex)
+		nuevaUbicacion.vertical = Double(ejey)
+		print("\(Double(ejey)) || \(Double(ejex))")
+		
+		do {
+			context.insert(nuevaUbicacion)
+			try context.save()
+		} catch {
+			print("Error al guardar el usuario")
+		}
+		
+		let nuevoUsuario = Usuario(context: context)
+		
+		nuevoUsuario.nombre = usuarioL.text
+		nuevoUsuario.contrasena = contrasenaL1.text
+		nuevoUsuario.correo = correoElectronicoL.text
+		
+		
+		nuevoUsuario.ubicacion = nuevaUbicacion
+		//nuevaUbicacion.usuario = nuevoUsuario
+		/*nuevoUsuario.ubicacion = Ubicacion(context: context)
+		nuevoUsuario.ubicacion!.horizontal = Double(ejex)
+		nuevoUsuario.ubicacion!.vertical = Double(ejey)*/
+		
+		do {
+			context.insert(nuevoUsuario)
+			try self.context.save()
+		} catch {
+			print("Error al guardar el usuario")
+		}
+		
+		
+		salir(sender:sender)
+	}
     
     /*
     // MARK: - Navigation
