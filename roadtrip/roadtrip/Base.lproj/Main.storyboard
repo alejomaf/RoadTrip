@@ -146,7 +146,7 @@
         <scene sceneID="8Na-1l-pgV">
             <objects>
                 <tableViewController modalPresentationStyle="overCurrentContext" id="hyJ-Om-uWd" customClass="RegistroTableViewController" customModule="TripTok" customModuleProvider="target" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="RGd-zW-bse">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="80" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="RGd-zW-bse">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" red="0.14901960784313725" green="0.14901960784313725" blue="0.14901960784313725" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -364,7 +364,7 @@
                     </connections>
                 </tapGestureRecognizer>
             </objects>
-            <point key="canvasLocation" x="2174" y="2287"/>
+            <point key="canvasLocation" x="1539" y="2287"/>
         </scene>
         <!--Información-->
         <scene sceneID="XVA-ko-whK">
@@ -1163,7 +1163,7 @@
         <scene sceneID="Ysb-cd-Fwd">
             <objects>
                 <tableViewController id="2If-da-I8b" customClass="BusquedaTableViewController" customModule="TripTok" customModuleProvider="target" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="0ZK-ru-TND">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="80" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="0ZK-ru-TND">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" red="0.14901960784313725" green="0.14901960784313725" blue="0.14901960784313725" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -1290,7 +1290,7 @@
                                         <subviews>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NPv-RX-uWn">
                                                 <rect key="frame" x="207" y="0.0" width="207" height="30"/>
-                                                <color key="backgroundColor" red="0.0" green="0.76862745099999996" blue="0.70588235290000001" alpha="1" colorSpace="calibratedRGB"/>
+                                                <color key="backgroundColor" white="0.5" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="30" id="Uoy-ov-onS"/>
                                                 </constraints>
@@ -1303,7 +1303,7 @@
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qLH-Uh-JFZ">
                                                 <rect key="frame" x="0.0" y="0.0" width="207" height="30"/>
-                                                <color key="backgroundColor" red="0.81176470590000005" green="0.40000000000000002" blue="0.47450980390000003" alpha="1" colorSpace="calibratedRGB"/>
+                                                <color key="backgroundColor" white="0.5" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <state key="normal" title="No">
                                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 </state>
@@ -1656,19 +1656,19 @@
     </scenes>
     <resources>
         <image name="btn" width="300" height="40"/>
-        <image name="calculadoraOff" width="37.5" height="37.5"/>
-        <image name="calculadoraOn" width="37.5" height="37.5"/>
-        <image name="casaOff" width="37.5" height="37.5"/>
-        <image name="casaOn" width="37.5" height="37.5"/>
-        <image name="localizacion" width="375" height="375"/>
-        <image name="lupaOff" width="37.5" height="37.5"/>
-        <image name="lupaOn" width="37.5" height="37.5"/>
-        <image name="mapa" width="733.5" height="582"/>
-        <image name="ojoOff" width="375" height="375"/>
-        <image name="pointer" width="375" height="375"/>
+        <image name="calculadoraOff" width="25" height="25"/>
+        <image name="calculadoraOn" width="25" height="25"/>
+        <image name="casaOff" width="25" height="25"/>
+        <image name="casaOn" width="25" height="25"/>
+        <image name="localizacion" width="250" height="250"/>
+        <image name="lupaOff" width="25" height="25"/>
+        <image name="lupaOn" width="25" height="25"/>
+        <image name="mapa" width="326" height="258"/>
+        <image name="ojoOff" width="250" height="250"/>
+        <image name="pointer" width="250" height="250"/>
     </resources>
     <inferredMetricsTieBreakers>
         <segue reference="pBY-UV-9ag"/>
-        <segue reference="2rg-aZ-mVE"/>
+        <segue reference="pk6-wJ-Rxh"/>
     </inferredMetricsTieBreakers>
 </document>

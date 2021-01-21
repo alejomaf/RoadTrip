@@ -82,10 +82,14 @@ class RegistroViewController: UIViewController {
 			actualizarAtributo(boton: sliderA6, texto: textoA6, valor: (registro?.a06)!)
 			
 			if ((registro?.satelite)!){
-				botonSi.isSelected = true
+                botonSi.backgroundColor = UIColor.init(red: 0.3, green: 0.8, blue: 0.3, alpha: 1)
+                botonNo.backgroundColor = UIColor.gray
+                
 				salida = 2
 			}else{
-				botonNo.isSelected = true
+                botonSi.backgroundColor = UIColor.gray
+                botonNo.backgroundColor = UIColor.init(red: 0.8, green: 0.3, blue: 0.3, alpha: 1)
+                
 				salida = 1
 			}
 			print("se actualizan los valores")
@@ -216,30 +220,25 @@ class RegistroViewController: UIViewController {
         ejey = ((sender.source as! CrearUbicacionViewController).ejey.text! as NSString).floatValue
 		
 		pointer.center.x = CGFloat(ejex)
-		pointer.center.y = CGFloat(ejey-19.0)+88
+		pointer.center.y = CGFloat(ejey - 19.0) + 88
 		
         actualizarRegistro()
     }
     
-   
-    
     @IBAction func pulsarBotonSi(_ sender: Any) {
-		if(edicion){
-			registro?.satelite = true
-		}
-		botonNo.isSelected = false
-		botonSi.isSelected = true
-		
-		salida=2
+        registro?.satelite = edicion
+		botonSi.backgroundColor = UIColor.init(red: 0.3, green: 0.8, blue: 0.3, alpha: 1)
+        botonNo.backgroundColor = UIColor.gray
+        
+		salida = 2
     }
+    
     @IBAction func pulsaBotonNo(_ sender: Any) {
-		if(edicion){
-			registro?.satelite = false
-		}
-		botonNo.isSelected = true
-		botonSi.isSelected = false
+		registro?.satelite = !edicion
+		botonSi.backgroundColor = UIColor.gray
+        botonNo.backgroundColor = UIColor.init(red: 0.8, green: 0.3, blue: 0.3, alpha: 1)
 		
-		salida=1
+		salida = 1
     }
     
     
@@ -271,38 +270,33 @@ class RegistroViewController: UIViewController {
     }
     
     @IBAction func calcular(_ sender: Any) {
-        actualizarYAlgoritmo()
-    }
-    
-    func actualizarYAlgoritmo(){
 		//Ejecutar algoritmo
 		let salidaAlgoritmo = algoritmo(a03: a3, a04: a4, a05: a5, a06: a6)
         
 		//Actualizar botones según resultado
         if(salidaAlgoritmo){
-            botonSi.isSelected = true
-            botonNo.isSelected = false
+            botonSi.backgroundColor = UIColor.init(red: 0.3, green: 0.8, blue: 0.3, alpha: 1)
+            botonNo.backgroundColor = UIColor.gray
+            
             if(edicion){
                 registro?.satelite = true
             }else{
                 salida = 2
             }
+            
         }else{
-            botonSi.isSelected = false
-            botonNo.isSelected = true
+            botonSi.backgroundColor = UIColor.gray
+            botonNo.backgroundColor = UIColor.init(red: 0.8, green: 0.3, blue: 0.3, alpha: 1)
+            
             if(edicion){
                 registro?.satelite = false
             }else{
                 salida = 1
             }
         }
-        
-        
-        
 	}
     
     func algoritmo(a03: Float, a04: Float, a05: Float, a06: Float) -> Bool {
-        
         if (a05 <= 0.0409) {
             return false
         } else {
