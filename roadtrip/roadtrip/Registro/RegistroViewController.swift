@@ -213,13 +213,21 @@ class RegistroViewController: UIViewController {
    
     
     @IBAction func pulsarBotonSi(_ sender: Any) {
-        botonNo.isSelected = false
-        botonSi.isSelected = true
+		if(edicion){
+			registro?.satelite = true
+		}
+		botonNo.isSelected = false
+		botonSi.isSelected = true
+		
 		salida=2
     }
     @IBAction func pulsaBotonNo(_ sender: Any) {
-        botonNo.isSelected = true
-        botonSi.isSelected = false
+		if(edicion){
+			registro?.satelite = false
+		}
+		botonNo.isSelected = true
+		botonSi.isSelected = false
+		
 		salida=1
     }
     
