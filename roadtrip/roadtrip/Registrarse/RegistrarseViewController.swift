@@ -111,45 +111,23 @@ class RegistrarseViewController: UIViewController {
 	}
     
     
-	@IBAction func registrarse(sender: UIStoryboardSegue) {
-		
-		
-		//Lo he intentado de todas las formas diferentes, ahora los datos se guardan pero no de forma persistente, es decir cuando se reinicia la aplicación (recompilándola) se eliminan los datos de los enlaces
-		
-		let nuevaUbicacion = Ubicacion(context: context)
-		nuevaUbicacion.horizontal = Double(ejex)
-		nuevaUbicacion.vertical = Double(ejey)
-		print("\(Double(ejey)) || \(Double(ejex))")
-		
-		do {
-			context.insert(nuevaUbicacion)
-			try context.save()
-		} catch {
-			print("Error al guardar el usuario")
-		}
-		
+	@IBAction func registrarse() {
 		let nuevoUsuario = Usuario(context: context)
 		
 		nuevoUsuario.nombre = usuarioL.text
 		nuevoUsuario.contrasena = contrasenaL1.text
 		nuevoUsuario.correo = correoElectronicoL.text
-		
-		
-		nuevoUsuario.ubicacion = nuevaUbicacion
-		//nuevaUbicacion.usuario = nuevoUsuario
-		/*nuevoUsuario.ubicacion = Ubicacion(context: context)
-		nuevoUsuario.ubicacion!.horizontal = Double(ejex)
-		nuevoUsuario.ubicacion!.vertical = Double(ejey)*/
+		nuevoUsuario.ejex = ejex
+		nuevoUsuario.ejey = ejey
 		
 		do {
 			context.insert(nuevoUsuario)
-			try self.context.save()
+			try context.save()
 		} catch {
 			print("Error al guardar el usuario")
 		}
 		
-		
-		salir(sender:sender)
+		dismiss(animated: true, completion: nil)
 	}
     
     /*

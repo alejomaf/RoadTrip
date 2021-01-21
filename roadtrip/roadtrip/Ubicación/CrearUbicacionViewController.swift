@@ -32,8 +32,8 @@ class CrearUbicacionViewController: UIViewController, UIImagePickerControllerDel
         }
 		
 		
-		guardarUbicacionPredeterminada.isHidden = !isCreacion
-		guardarUbicacionRegistro.isHidden = isCreacion
+		guardarUbicacionPredeterminada.isHidden = isCreacion
+		guardarUbicacionRegistro.isHidden = !isCreacion
     }
     
     @IBAction func seleccionarUbicacion(_ sender : UITapGestureRecognizer) {

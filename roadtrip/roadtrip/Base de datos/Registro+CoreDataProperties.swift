@@ -26,7 +26,8 @@ extension Registro {
     @NSManaged public var fecha: NSDate?
     @NSManaged public var nombre: String?
     @NSManaged public var satelite: Bool
-    @NSManaged public var ubicacion: Ubicacion?
+    @NSManaged public var ejex: Float
+    @NSManaged public var ejey: Float
     @NSManaged public var usuario: Usuario?
 
 }

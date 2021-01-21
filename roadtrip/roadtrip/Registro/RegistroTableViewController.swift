@@ -84,7 +84,7 @@ class RegistroTableViewController: UITableViewController {
     }
 	
 	
-	func anadirRegistro(a1:Float,a2:Float,a3:Float,a4:Float,a5:Float,a6:Float, ejex:Double, ejey: Double, salida: Bool) {
+	func anadirRegistro(a1:Float,a2:Float,a3:Float,a4:Float,a5:Float,a6:Float, ejex:Float, ejey: Float, salida: Bool) {
 		
 		//Creo el registro para añadirlo a la base de datos
         let nuevoRegistro = Registro(context: self.context)
@@ -98,16 +98,8 @@ class RegistroTableViewController: UITableViewController {
         nuevoRegistro.nombre = nombreRegistroCreado
         nuevoRegistro.fecha = NSDate()
 		nuevoRegistro.satelite = salida
-		
-		//Genero la ubicación que le ha querido asignar el usuario
-		let nuevaUbicacion = Ubicacion(context: self.context)
-		nuevaUbicacion.horizontal = ejex
-		nuevaUbicacion.vertical = ejey
-		
-		//Vinculo el registro con su ubicación
-		nuevoRegistro.ubicacion = nuevaUbicacion
-        
-        print("\(a1), \(a2),\(a3),\(a4), \(ejex), \(ejey)")
+		nuevoRegistro.ejex = ejex
+		nuevoRegistro.ejey = ejey
 		
 		//Añado los registros y recargo las tablas
 		self.registros?.append(nuevoRegistro)
@@ -116,16 +108,8 @@ class RegistroTableViewController: UITableViewController {
 		tableView.reloadData()
     }
 	
-	func modificarRegistro(a1:Float,a2:Float,a3:Float,a4:Float,a5:Float,a6:Float, ejex:Double, ejey: Double, salida: Bool, fila: Int){
+	func modificarRegistro(registro: Registro, fila: Int){
 		let registro = registros![fila]
-		registro.a01 = a1
-		registro.a02 = a2
-		registro.a03 = a3
-		registro.a04 = a4
-		registro.a05 = a5
-		registro.a06 = a6
-		registro.ubicacion!.horizontal = ejex
-		registro.ubicacion!.vertical = ejey
 		
 		self.registros?[fila] = registro
 		MainTabBarController.sesion?.replaceRegistros(at: fila, with: registro)
@@ -160,11 +144,11 @@ class RegistroTableViewController: UITableViewController {
 		if(creacionOModificacion){
 			//Modifico el registro
 			let filaSeleccionada = tableView.indexPathForSelectedRow?.row
-			self.modificarRegistro(a1: a1, a2: a2, a3: a3, a4: a4, a5: a5, a6: a6, ejex: Double(ejex),ejey: Double(ejey), salida: salida, fila: filaSeleccionada!)
+			self.modificarRegistro(registro: (sender.source as! RegistroViewController).registro!, fila: filaSeleccionada!)
 			
 		}else{
 			//Creo el registro
-			self.anadirRegistro(a1: a1, a2: a2, a3: a3, a4: a4, a5: a5, a6: a6, ejex: Double(ejex),ejey: Double(ejey), salida: salida)
+			self.anadirRegistro(a1: a1, a2: a2, a3: a3, a4: a4, a5: a5, a6: a6, ejex: ejex,ejey: ejey, salida: salida)
 		}
 	}
 	
@@ -175,14 +159,14 @@ class RegistroTableViewController: UITableViewController {
 			let viewDestiny = segue.destination as! RegistroViewController
 			viewDestiny.registro = registros?[selectedRow!]
 			viewDestiny.edicion = true
-			viewDestiny.ejex = Float((registros?[selectedRow!].ubicacion?.horizontal)!)
-			viewDestiny.ejey = Float((registros?[selectedRow!].ubicacion?.vertical)!)
+			viewDestiny.ejex = (registros?[selectedRow!].ejex)!
+			viewDestiny.ejey = (registros?[selectedRow!].ejey)!
 		}else if segue.identifier == "crearRegistro" {
 			let viewDestiny = segue.destination as! RegistroViewController
-			viewDestiny.ejex = Float((MainTabBarController.sesion?.ubicacion?.horizontal)!)
-			viewDestiny.ejey = Float((MainTabBarController.sesion?.ubicacion?.vertical)!)
-			print(Float((MainTabBarController.sesion?.ubicacion?.horizontal)!))
-			print(Float((MainTabBarController.sesion?.ubicacion?.vertical)!))
+			viewDestiny.ejex = (MainTabBarController.sesion!.ejex)
+			viewDestiny.ejey = (MainTabBarController.sesion!.ejey)
+			print(Float((MainTabBarController.sesion?.ejex)!))
+			print(Float((MainTabBarController.sesion?.ejey)!))
 		}
     }
 	

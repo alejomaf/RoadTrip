@@ -92,8 +92,6 @@ class IniciarSesionViewController: UIViewController, UIGestureRecognizerDelegate
 					
 					self.nombre.text = ""
 					self.contrasena.text = ""
-					print(usuario.ubicacion?.horizontal)
-					print(usuario.ubicacion?.vertical)
 					return true
 				}
 			}

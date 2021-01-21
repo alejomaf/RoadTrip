@@ -20,8 +20,9 @@ extension Usuario {
     @NSManaged public var contrasena: String?
     @NSManaged public var correo: String?
     @NSManaged public var nombre: String?
+    @NSManaged public var ejex: Float
+    @NSManaged public var ejey: Float
     @NSManaged public var registros: NSOrderedSet?
-    @NSManaged public var ubicacion: Ubicacion?
 
 }
 

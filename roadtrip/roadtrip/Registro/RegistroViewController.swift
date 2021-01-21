@@ -64,17 +64,26 @@ class RegistroViewController: UIViewController {
         }
         
         if(edicion){
-            actualizarAtributo(boton: sliderA1, texto: textoA1, valor: a1)
-            actualizarAtributo(boton: sliderA2, texto: textoA2, valor: a2)
-            actualizarAtributo(boton: sliderA3, texto: textoA3, valor: a3)
-            actualizarAtributo(boton: sliderA4, texto: textoA4, valor: a4)
-            actualizarAtributo(boton: sliderA5, texto: textoA5, valor: a5)
-            actualizarAtributo(boton: sliderA6, texto: textoA6, valor: a6)
+			actualizarAtributo(boton: sliderA1, texto: textoA1, valor: (registro?.a01)!)
+			actualizarAtributo(boton: sliderA2, texto: textoA2, valor: (registro?.a02)!)
+			actualizarAtributo(boton: sliderA3, texto: textoA3, valor: (registro?.a03)!)
+			actualizarAtributo(boton: sliderA4, texto: textoA4, valor: (registro?.a04)!)
+			actualizarAtributo(boton: sliderA5, texto: textoA5, valor: (registro?.a05)!)
+			actualizarAtributo(boton: sliderA6, texto: textoA6, valor: (registro?.a06)!)
+			
+			if ((registro?.satelite)!){
+				botonSi.isSelected = true
+				salida = 2
+			}else{
+				botonNo.isSelected = true
+				salida = 1
+			}
+			print("se actualizan los valores")
         }
 		
 		//Ubico el puntero del mapa en la ubicación predeterminada del usuario previamente cargada en el segue
 		pointer.center.x = CGFloat(ejex)
-		pointer.center.y = CGFloat(ejey-30.0)+88
+		pointer.center.y = CGFloat(ejey-19.0)+88
     }
     
     @IBAction func editarTexto(_ sender: Any) {
@@ -165,7 +174,7 @@ class RegistroViewController: UIViewController {
         ejey = ((sender.source as! CrearUbicacionViewController).ejey.text! as NSString).floatValue
 		
 		pointer.center.x = CGFloat(ejex)
-		pointer.center.y = CGFloat(ejey-30.0)+88
+		pointer.center.y = CGFloat(ejey-19.0)+88
 		
         actualizarRegistro()
     }
@@ -191,8 +200,8 @@ class RegistroViewController: UIViewController {
     
     @IBAction func crearOModificarRegistro(_ sender: Any) {
         if(edicion){
-            registro?.ubicacion?.horizontal = Double(ejex)
-            registro?.ubicacion?.vertical = Double(ejey)
+            registro?.ejex = ejex
+            registro?.ejey = ejey
             registro?.a01 = Float(textoA1.text!)!
             registro?.a02 = Float(textoA2.text!)!
             registro?.a03 = Float(textoA3.text!)!
@@ -247,7 +256,7 @@ class RegistroViewController: UIViewController {
 	
 	//Configuro los botones de crear ubicación para que el unwind esté bien programado
 	override func prepare(for segue: UIStoryboardSegue, sender: Any?){
-		if segue.identifier == "crearUbicacionPredeterminada" {
+		if segue.identifier == "crearUbicacionRegistro" {
 			let viewDestiny = segue.destination as! CrearUbicacionViewController
 			viewDestiny.isCreacion = true
 			viewDestiny.x = ejex
