@@ -591,7 +591,7 @@
                                                             <action selector="terminarEditarTexto:" destination="fZQ-Xr-QNc" eventType="editingDidEnd" id="weQ-bp-ThR"/>
                                                         </connections>
                                                     </textField>
-                                                    <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" minValue="-1000" maxValue="1000" translatesAutoresizingMaskIntoConstraints="NO" id="3G5-bn-85k" userLabel="a1 Sld">
+                                                    <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" minValue="-1" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="3G5-bn-85k" userLabel="a1 Sld">
                                                         <rect key="frame" x="38" y="38" width="328" height="31"/>
                                                         <constraints>
                                                             <constraint firstAttribute="height" constant="30" id="5jr-b2-zqz"/>
@@ -634,7 +634,7 @@
                                                             <action selector="terminarEditarTextoA2:" destination="fZQ-Xr-QNc" eventType="editingDidEnd" id="wtE-2R-5hO"/>
                                                         </connections>
                                                     </textField>
-                                                    <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" minValue="-1000" maxValue="1000" translatesAutoresizingMaskIntoConstraints="NO" id="TvF-tc-4JG" userLabel="a2 Sld">
+                                                    <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" minValue="-1" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="TvF-tc-4JG" userLabel="a2 Sld">
                                                         <rect key="frame" x="38" y="38" width="328" height="31"/>
                                                         <constraints>
                                                             <constraint firstAttribute="height" constant="30" id="qHm-18-d8e"/>
@@ -677,7 +677,7 @@
                                                             <action selector="terminarEditarTextoA3:" destination="fZQ-Xr-QNc" eventType="editingDidEnd" id="2Sd-sh-iGD"/>
                                                         </connections>
                                                     </textField>
-                                                    <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" minValue="-1000" maxValue="1000" translatesAutoresizingMaskIntoConstraints="NO" id="wI3-Ll-YQb" userLabel="a3 Sld">
+                                                    <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" minValue="-1" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="wI3-Ll-YQb" userLabel="a3 Sld">
                                                         <rect key="frame" x="38" y="38" width="328" height="31"/>
                                                         <constraints>
                                                             <constraint firstAttribute="height" constant="30" id="uGS-PU-wjq"/>
@@ -720,7 +720,7 @@
                                                             <action selector="terminarEditarTextoA4:" destination="fZQ-Xr-QNc" eventType="editingDidEnd" id="USM-La-GFA"/>
                                                         </connections>
                                                     </textField>
-                                                    <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" minValue="-1000" maxValue="1000" translatesAutoresizingMaskIntoConstraints="NO" id="6eY-H1-quZ" userLabel="a4 Sld">
+                                                    <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" minValue="-1" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="6eY-H1-quZ" userLabel="a4 Sld">
                                                         <rect key="frame" x="38" y="38" width="328" height="31"/>
                                                         <constraints>
                                                             <constraint firstAttribute="height" constant="30" id="gF0-Ju-gTe"/>
@@ -763,7 +763,7 @@
                                                             <action selector="terminarEditarTextoA5:" destination="fZQ-Xr-QNc" eventType="editingDidEnd" id="rLP-nX-UK6"/>
                                                         </connections>
                                                     </textField>
-                                                    <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" minValue="-1000" maxValue="1000" translatesAutoresizingMaskIntoConstraints="NO" id="yxV-6f-mFN" userLabel="a5 Sld">
+                                                    <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" minValue="-1" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="yxV-6f-mFN" userLabel="a5 Sld">
                                                         <rect key="frame" x="38" y="38" width="328" height="31"/>
                                                         <constraints>
                                                             <constraint firstAttribute="height" constant="30" id="0Qv-WV-6g4"/>
@@ -806,7 +806,7 @@
                                                             <action selector="terminarEditarTextoA6:" destination="fZQ-Xr-QNc" eventType="editingDidEnd" id="GdJ-rL-3y7"/>
                                                         </connections>
                                                     </textField>
-                                                    <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" minValue="-1000" maxValue="1000" translatesAutoresizingMaskIntoConstraints="NO" id="Sh8-dN-A03" userLabel="a6 Sld">
+                                                    <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" minValue="-1" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="Sh8-dN-A03" userLabel="a6 Sld">
                                                         <rect key="frame" x="38" y="38" width="328" height="31"/>
                                                         <constraints>
                                                             <constraint firstAttribute="height" constant="30" id="jsO-BO-xUD"/>
@@ -829,6 +829,20 @@
                                                     <constraint firstAttribute="trailing" secondItem="j6h-7W-BCL" secondAttribute="trailing" constant="3" id="xR8-o9-vsq"/>
                                                 </constraints>
                                             </view>
+                                            <button hidden="YES" opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5m3-I6-dWG">
+                                                <rect key="frame" x="0.0" y="32" width="414" height="30"/>
+                                                <color key="backgroundColor" red="0.21911936121251263" green="0.34883777372111718" blue="0.95686274510000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="30" id="gAG-Qr-SPU"/>
+                                                    <constraint firstAttribute="width" constant="414" id="hy6-ek-pq3"/>
+                                                </constraints>
+                                                <state key="normal" title="Ejecutar algoritmo">
+                                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                </state>
+                                                <connections>
+                                                    <action selector="calcular:" destination="fZQ-Xr-QNc" eventType="touchUpInside" id="A2a-An-bc1"/>
+                                                </connections>
+                                            </button>
                                         </subviews>
                                         <constraints>
                                             <constraint firstItem="9VN-BJ-R0y" firstAttribute="top" secondItem="0mL-OA-3sR" secondAttribute="bottom" constant="40" id="07E-qV-h9U"/>
@@ -838,6 +852,7 @@
                                             <constraint firstItem="0mL-OA-3sR" firstAttribute="leading" secondItem="auN-Lo-e1e" secondAttribute="centerX" id="3T5-pr-1M4"/>
                                             <constraint firstItem="R2M-gx-7NP" firstAttribute="trailing" secondItem="4YH-gs-Wcd" secondAttribute="trailing" id="4Zo-Vb-I3m"/>
                                             <constraint firstItem="R2M-gx-7NP" firstAttribute="top" secondItem="TvF-tc-4JG" secondAttribute="bottom" constant="20" id="5JE-TY-Gbt"/>
+                                            <constraint firstItem="9VN-BJ-R0y" firstAttribute="top" secondItem="5m3-I6-dWG" secondAttribute="bottom" constant="8" id="8Zw-D9-Xh5"/>
                                             <constraint firstItem="JsL-k7-vMg" firstAttribute="top" secondItem="yxV-6f-mFN" secondAttribute="bottom" constant="20" id="9P9-8F-4Xz"/>
                                             <constraint firstItem="R2M-gx-7NP" firstAttribute="leading" secondItem="4YH-gs-Wcd" secondAttribute="leading" id="9Sg-gA-bxf"/>
                                             <constraint firstAttribute="trailing" secondItem="9VN-BJ-R0y" secondAttribute="trailing" constant="50" id="LR2-hY-8je"/>
@@ -851,6 +866,7 @@
                                             <constraint firstItem="AW3-JL-iHK" firstAttribute="leading" secondItem="R2M-gx-7NP" secondAttribute="leading" id="ek1-CM-YbS"/>
                                             <constraint firstItem="C1a-FO-h9j" firstAttribute="leading" secondItem="auN-Lo-e1e" secondAttribute="leading" id="gyi-Wi-Tlb"/>
                                             <constraint firstItem="0mL-OA-3sR" firstAttribute="leading" secondItem="C1a-FO-h9j" secondAttribute="trailing" id="jfF-p1-0gK"/>
+                                            <constraint firstItem="5m3-I6-dWG" firstAttribute="top" secondItem="0mL-OA-3sR" secondAttribute="bottom" constant="2" id="mTm-99-Zr4"/>
                                             <constraint firstItem="vjQ-oY-Jgi" firstAttribute="top" secondItem="6eY-H1-quZ" secondAttribute="bottom" constant="20" id="qKb-I3-mOT"/>
                                             <constraint firstAttribute="trailing" secondItem="0mL-OA-3sR" secondAttribute="trailing" id="sJ8-Bc-RZa"/>
                                             <constraint firstItem="4YH-gs-Wcd" firstAttribute="trailing" secondItem="9VN-BJ-R0y" secondAttribute="trailing" id="t7B-gl-um0"/>
@@ -892,6 +908,7 @@
                     <connections>
                         <outlet property="botonNo" destination="C1a-FO-h9j" id="ull-Q6-cMm"/>
                         <outlet property="botonSi" destination="0mL-OA-3sR" id="XHO-3d-MgA"/>
+                        <outlet property="ejecutarAlgoritmoBtn" destination="5m3-I6-dWG" id="otF-AI-Hq2"/>
                         <outlet property="mapa" destination="tsf-X4-CXe" id="uXT-Sc-uGQ"/>
                         <outlet property="pointer" destination="Wkl-3M-HPV" id="SaV-Ed-c2q"/>
                         <outlet property="sliderA1" destination="3G5-bn-85k" id="4yf-4c-OqG"/>
@@ -1252,8 +1269,7 @@
                                         <barButtonItem key="rightBarButtonItem" title="Calcular" id="eES-hL-JKW">
                                             <color key="tintColor" red="0.0" green="0.66666666669999997" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                             <connections>
-                                                <action selector="crearOModificarRegistro:" destination="QrF-4M-Z3d" id="q1K-8p-Uzf"/>
-                                                <segue destination="AVc-pF-1GO" kind="unwind" unwindAction="guardarRegistroWithSender:" id="FYs-N3-BPE"/>
+                                                <action selector="calcular:" destination="QrF-4M-Z3d" id="pTa-rK-Qgy"/>
                                             </connections>
                                         </barButtonItem>
                                     </navigationItem>
@@ -1322,7 +1338,7 @@
                                                             <action selector="terminarEditarTexto:" destination="QrF-4M-Z3d" eventType="editingDidEnd" id="2RR-1p-Bmn"/>
                                                         </connections>
                                                     </textField>
-                                                    <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" minValue="-1000" maxValue="1000" translatesAutoresizingMaskIntoConstraints="NO" id="J1g-0f-eBh" userLabel="a1 Sld">
+                                                    <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" minValue="-1" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="J1g-0f-eBh" userLabel="a1 Sld">
                                                         <rect key="frame" x="38" y="38" width="328" height="31"/>
                                                         <constraints>
                                                             <constraint firstAttribute="height" constant="30" id="lhR-2m-OaM"/>
@@ -1361,11 +1377,11 @@
                                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                         <textInputTraits key="textInputTraits"/>
                                                         <connections>
-                                                            <action selector="editarTexto:" destination="QrF-4M-Z3d" eventType="editingChanged" id="edH-t6-L12"/>
-                                                            <action selector="terminarEditarTexto:" destination="QrF-4M-Z3d" eventType="editingDidEnd" id="D6s-YH-c0J"/>
+                                                            <action selector="editarTextoA2:" destination="QrF-4M-Z3d" eventType="editingChanged" id="cHt-IY-g5W"/>
+                                                            <action selector="terminarEditarTextoA2:" destination="QrF-4M-Z3d" eventType="editingDidEnd" id="Kb2-5f-H6Q"/>
                                                         </connections>
                                                     </textField>
-                                                    <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" minValue="-1000" maxValue="1000" translatesAutoresizingMaskIntoConstraints="NO" id="sIe-fm-odz" userLabel="a2 Sld">
+                                                    <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" minValue="-1" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="sIe-fm-odz" userLabel="a2 Sld">
                                                         <rect key="frame" x="38" y="38" width="328" height="31"/>
                                                         <constraints>
                                                             <constraint firstAttribute="height" constant="30" id="5KN-7R-Xpl"/>
@@ -1404,11 +1420,11 @@
                                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                         <textInputTraits key="textInputTraits"/>
                                                         <connections>
-                                                            <action selector="editarTexto:" destination="QrF-4M-Z3d" eventType="editingChanged" id="k3W-xC-Q8r"/>
-                                                            <action selector="terminarEditarTexto:" destination="QrF-4M-Z3d" eventType="editingDidEnd" id="ulT-ut-poP"/>
+                                                            <action selector="editarTextoA3:" destination="QrF-4M-Z3d" eventType="editingChanged" id="cNH-Ca-4Y4"/>
+                                                            <action selector="terminarEditarTextoA3:" destination="QrF-4M-Z3d" eventType="editingDidEnd" id="Jcs-Lv-Nld"/>
                                                         </connections>
                                                     </textField>
-                                                    <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" minValue="-1000" maxValue="1000" translatesAutoresizingMaskIntoConstraints="NO" id="V0R-A9-cS7" userLabel="a3 Sld">
+                                                    <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" minValue="-1" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="V0R-A9-cS7" userLabel="a3 Sld">
                                                         <rect key="frame" x="38" y="38" width="328" height="31"/>
                                                         <constraints>
                                                             <constraint firstAttribute="height" constant="30" id="ZZa-w9-5I8"/>
@@ -1447,11 +1463,11 @@
                                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                         <textInputTraits key="textInputTraits"/>
                                                         <connections>
-                                                            <action selector="editarTexto:" destination="QrF-4M-Z3d" eventType="editingChanged" id="2ex-4a-NJW"/>
-                                                            <action selector="terminarEditarTexto:" destination="QrF-4M-Z3d" eventType="editingDidEnd" id="BwM-yA-ubU"/>
+                                                            <action selector="editarTextoA4:" destination="QrF-4M-Z3d" eventType="editingChanged" id="C1X-l9-EgM"/>
+                                                            <action selector="terminarEditarTextoA4:" destination="QrF-4M-Z3d" eventType="editingDidEnd" id="qPF-Mz-4sF"/>
                                                         </connections>
                                                     </textField>
-                                                    <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" minValue="-1000" maxValue="1000" translatesAutoresizingMaskIntoConstraints="NO" id="Jjz-0P-YCC" userLabel="a4 Sld">
+                                                    <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" minValue="-1" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="Jjz-0P-YCC" userLabel="a4 Sld">
                                                         <rect key="frame" x="38" y="38" width="328" height="31"/>
                                                         <constraints>
                                                             <constraint firstAttribute="height" constant="30" id="WfC-e5-wnz"/>
@@ -1490,11 +1506,11 @@
                                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                         <textInputTraits key="textInputTraits"/>
                                                         <connections>
-                                                            <action selector="editarTexto:" destination="QrF-4M-Z3d" eventType="editingChanged" id="8ZI-k7-TTa"/>
-                                                            <action selector="terminarEditarTexto:" destination="QrF-4M-Z3d" eventType="editingDidEnd" id="JJc-Te-Fuh"/>
+                                                            <action selector="editarTextoA5:" destination="QrF-4M-Z3d" eventType="editingChanged" id="JN0-4r-01k"/>
+                                                            <action selector="terminarEditarTextoA5:" destination="QrF-4M-Z3d" eventType="editingDidEnd" id="9MN-EF-YeG"/>
                                                         </connections>
                                                     </textField>
-                                                    <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" minValue="-1000" maxValue="1000" translatesAutoresizingMaskIntoConstraints="NO" id="0kF-dA-hOa" userLabel="a5 Sld">
+                                                    <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" minValue="-1" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="0kF-dA-hOa" userLabel="a5 Sld">
                                                         <rect key="frame" x="38" y="38" width="328" height="31"/>
                                                         <constraints>
                                                             <constraint firstAttribute="height" constant="30" id="38p-yk-f9x"/>
@@ -1533,11 +1549,11 @@
                                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                         <textInputTraits key="textInputTraits"/>
                                                         <connections>
-                                                            <action selector="editarTexto:" destination="QrF-4M-Z3d" eventType="editingChanged" id="WSw-bL-BAI"/>
-                                                            <action selector="terminarEditarTexto:" destination="QrF-4M-Z3d" eventType="editingDidEnd" id="6G1-VA-NiD"/>
+                                                            <action selector="editarTextoA6:" destination="QrF-4M-Z3d" eventType="editingChanged" id="2dQ-8j-aeE"/>
+                                                            <action selector="terminarEditarTextoA6:" destination="QrF-4M-Z3d" eventType="editingDidEnd" id="BuR-ql-IPV"/>
                                                         </connections>
                                                     </textField>
-                                                    <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" minValue="-1000" maxValue="1000" translatesAutoresizingMaskIntoConstraints="NO" id="14a-G1-48R" userLabel="a6 Sld">
+                                                    <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" minValue="-1" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="14a-G1-48R" userLabel="a6 Sld">
                                                         <rect key="frame" x="38" y="38" width="328" height="31"/>
                                                         <constraints>
                                                             <constraint firstAttribute="height" constant="30" id="mlY-wu-gjf"/>
@@ -1630,7 +1646,6 @@
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="gI7-RA-GKd" userLabel="First Responder" sceneMemberID="firstResponder"/>
-                <exit id="AVc-pF-1GO" userLabel="Exit" sceneMemberID="exit"/>
                 <tapGestureRecognizer id="vM0-mQ-aiN"/>
             </objects>
             <point key="canvasLocation" x="780" y="1408"/>

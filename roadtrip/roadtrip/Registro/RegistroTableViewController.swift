@@ -26,8 +26,7 @@ class RegistroTableViewController: UITableViewController {
         #if imaginRoad
             anadirButton?.isEnabled = true
         #elseif TripTok
-            anadirButton?.isEnabled = false
-            anadirButton?.tintColor = UIColor(white: 0, alpha: 0)
+            
         #else
             anadirButton?.isEnabled = true
         #endif

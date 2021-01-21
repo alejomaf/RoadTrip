@@ -30,7 +30,8 @@ class RegistroViewController: UIViewController {
     @IBOutlet weak var pointer: UIImageView!
     @IBOutlet weak var mapa: UIImageView!
 	
-	// Registro que se va a editar
+    @IBOutlet weak var ejecutarAlgoritmoBtn: UIButton!
+    // Registro que se va a editar
     var registro: Registro? = nil
 	
 	// False = Se está creando el registro | True = Se está creando
@@ -57,10 +58,16 @@ class RegistroViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
+		#if TripTok
+			ALGORITMO=true
+		#endif
+		
         if(ALGORITMO){
 			// Se deshabilitan los botones porque no se puede usar
             botonNo.isEnabled = false
             botonSi.isEnabled = false
+			actualizarYAlgoritmo()
+			ejecutarAlgoritmoBtn?.isHidden = false			
         }
         
         if(edicion){
@@ -160,7 +167,7 @@ class RegistroViewController: UIViewController {
             texto.text="0"
             boton.setValue(0, animated: true)
         }
-		actualizarYAlgoritmo()
+		//if(ALGORITMO){actualizarYAlgoritmo()}
     }
     
     func editarTextoSlider( boton: UISlider, texto: UITextField, atributo: inout Float ){
@@ -182,6 +189,7 @@ class RegistroViewController: UIViewController {
             texto.text = "\(0.0)"
             atributo = 0.0
         }
+        //if(ALGORITMO){actualizarYAlgoritmo()}
     }
     
     func actualizarAtributo(boton: UISlider, texto: UITextField, valor: Float){
@@ -259,14 +267,64 @@ class RegistroViewController: UIViewController {
     
     }
     
-	func actualizarYAlgoritmo(){
+    @IBAction func calcular(_ sender: Any) {
+        actualizarYAlgoritmo()
+    }
+    
+    func actualizarYAlgoritmo(){
 		//Ejecutar algoritmo
-		
+		let salidaAlgoritmo = algoritmo(a03: a3, a04: a4, a05: a5, a06: a6)
+        
 		//Actualizar botones según resultado
+        if(salidaAlgoritmo){
+            botonSi.isSelected = true
+            botonNo.isSelected = false
+            if(edicion){
+                registro?.satelite = true
+            }else{
+                salida = 2
+            }
+        }else{
+            botonSi.isSelected = false
+            botonNo.isSelected = true
+            if(edicion){
+                registro?.satelite = false
+            }else{
+                salida = 1
+            }
+        }
+        
+        
+        
 	}
     
-    func algoritmo(){
-		
+    func algoritmo(a03: Float, a04: Float, a05: Float, a06: Float) -> Bool {
+        
+        if (a05 <= 0.0409) {
+            return false
+        } else {
+            if (a03 <= 0.25316) {
+                return !(a03 <= 0.10135)
+            } else {
+                if (a06 <= -0.22703) {
+                    if(a06 <= -1) {
+                        return false
+                    } else {
+                        return !(a05 <= 0.95455)
+                    }
+                } else {
+                    if (a04 <= -0.38293) {
+                        if (a06 <= 0.85388) {
+                            return !(a04 <= -0.86701)
+                        } else {
+                            return false
+                        }
+                    } else {
+                        return true
+                    }
+                }
+            }
+        }
     }
 	
 	override func shouldPerformSegue(withIdentifier identifier: String, sender: Any?) -> Bool {
