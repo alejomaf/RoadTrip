@@ -2,7 +2,7 @@
 //  Registro+CoreDataProperties.swift
 //  roadtrip
 //
-//  Created by Alejo Martín Arias Filippo on 19/01/2021.
+//  Created by Alejo Martín Arias Filippo on 21/01/2021.
 //  Copyright © 2021 ual. All rights reserved.
 //
 //

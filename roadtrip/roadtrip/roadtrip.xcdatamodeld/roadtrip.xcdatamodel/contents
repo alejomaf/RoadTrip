@@ -10,23 +10,25 @@
         <attribute name="fecha" optional="YES" attributeType="Date" usesScalarValueType="NO" syncable="YES"/>
         <attribute name="nombre" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="satelite" optional="YES" attributeType="Boolean" usesScalarValueType="YES" syncable="YES"/>
-        <relationship name="ubicacion" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Ubicacion" syncable="YES"/>
+        <relationship name="ubicacion" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Ubicacion" inverseName="registro" inverseEntity="Ubicacion" syncable="YES"/>
         <relationship name="usuario" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Usuario" inverseName="registros" inverseEntity="Usuario" syncable="YES"/>
     </entity>
     <entity name="Ubicacion" representedClassName="Ubicacion" syncable="YES">
         <attribute name="horizontal" optional="YES" transient="YES" attributeType="Double" defaultValueString="0" usesScalarValueType="YES" syncable="YES"/>
         <attribute name="vertical" optional="YES" transient="YES" attributeType="Double" defaultValueString="0" usesScalarValueType="YES" syncable="YES"/>
+        <relationship name="registro" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Registro" inverseName="ubicacion" inverseEntity="Registro" syncable="YES"/>
+        <relationship name="usuario" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Usuario" inverseName="ubicacion" inverseEntity="Usuario" syncable="YES"/>
     </entity>
     <entity name="Usuario" representedClassName="Usuario" syncable="YES">
         <attribute name="contrasena" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="correo" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="nombre" optional="YES" attributeType="String" syncable="YES"/>
         <relationship name="registros" optional="YES" toMany="YES" deletionRule="Nullify" ordered="YES" destinationEntity="Registro" inverseName="usuario" inverseEntity="Registro" syncable="YES"/>
-        <relationship name="ubicacion" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Usuario" syncable="YES"/>
+        <relationship name="ubicacion" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Ubicacion" inverseName="usuario" inverseEntity="Ubicacion" syncable="YES"/>
     </entity>
     <elements>
         <element name="Registro" positionX="-281.4375" positionY="-5.71484375" width="128" height="210"/>
-        <element name="Ubicacion" positionX="-442.11328125" positionY="-90.578125" width="128" height="75"/>
+        <element name="Ubicacion" positionX="-442.11328125" positionY="-90.578125" width="128" height="105"/>
         <element name="Usuario" positionX="-288.234375" positionY="-165.421875" width="128" height="120"/>
     </elements>
 </model>

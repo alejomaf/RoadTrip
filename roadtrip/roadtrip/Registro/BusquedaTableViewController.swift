@@ -1,19 +1,18 @@
 import UIKit
 import CoreData
 
-class BusquedaTableViewController: UITableViewController, UISearchBarDelegate {
+class BusquedaTableViewController: RegistroTableViewController, UISearchBarDelegate {
 
     @IBOutlet weak var searchBar: UISearchBar!
     
-    let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
-	var registros: [Registro]?
-	var nombreRegistroCreado : String = ""
+    /*let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
+	var registros: [Registro]?*/
 	
     override func viewDidLoad() {
         super.viewDidLoad()
         searchBar.delegate = self
     }
-	
+	/*
 	override func viewWillAppear(_ animated: Bool) {
 		super.viewWillAppear(true)
 		
@@ -58,6 +57,7 @@ class BusquedaTableViewController: UITableViewController, UISearchBarDelegate {
 			viewDestiny.edicion = true
 		}
 	}
+	*/
 	
     func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
 		var i = 0
@@ -75,5 +75,5 @@ class BusquedaTableViewController: UITableViewController, UISearchBarDelegate {
 		}
         tableView.reloadData()
 	}
-    
+
 }

@@ -630,8 +630,8 @@
                                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                         <textInputTraits key="textInputTraits"/>
                                                         <connections>
-                                                            <action selector="editarTexto:" destination="fZQ-Xr-QNc" eventType="editingChanged" id="gVo-Fi-AjE"/>
-                                                            <action selector="terminarEditarTexto:" destination="fZQ-Xr-QNc" eventType="editingDidEnd" id="bOX-1Z-fa2"/>
+                                                            <action selector="editarTextoA2:" destination="fZQ-Xr-QNc" eventType="editingChanged" id="gDu-xf-daa"/>
+                                                            <action selector="terminarEditarTextoA2:" destination="fZQ-Xr-QNc" eventType="editingDidEnd" id="wtE-2R-5hO"/>
                                                         </connections>
                                                     </textField>
                                                     <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" minValue="-1000" maxValue="1000" translatesAutoresizingMaskIntoConstraints="NO" id="TvF-tc-4JG" userLabel="a2 Sld">
@@ -673,8 +673,8 @@
                                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                         <textInputTraits key="textInputTraits"/>
                                                         <connections>
-                                                            <action selector="editarTexto:" destination="fZQ-Xr-QNc" eventType="editingChanged" id="Sm2-Da-ZRu"/>
-                                                            <action selector="terminarEditarTexto:" destination="fZQ-Xr-QNc" eventType="editingDidEnd" id="VrK-dz-1ih"/>
+                                                            <action selector="editarTextoA3:" destination="fZQ-Xr-QNc" eventType="editingChanged" id="caV-rP-b2J"/>
+                                                            <action selector="terminarEditarTextoA3:" destination="fZQ-Xr-QNc" eventType="editingDidEnd" id="2Sd-sh-iGD"/>
                                                         </connections>
                                                     </textField>
                                                     <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" minValue="-1000" maxValue="1000" translatesAutoresizingMaskIntoConstraints="NO" id="wI3-Ll-YQb" userLabel="a3 Sld">
@@ -716,8 +716,8 @@
                                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                         <textInputTraits key="textInputTraits"/>
                                                         <connections>
-                                                            <action selector="editarTexto:" destination="fZQ-Xr-QNc" eventType="editingChanged" id="5Hw-Im-o0X"/>
-                                                            <action selector="terminarEditarTexto:" destination="fZQ-Xr-QNc" eventType="editingDidEnd" id="Oyh-0N-Rnf"/>
+                                                            <action selector="editarTextoA4:" destination="fZQ-Xr-QNc" eventType="editingChanged" id="bvE-Pb-7fz"/>
+                                                            <action selector="terminarEditarTextoA4:" destination="fZQ-Xr-QNc" eventType="editingDidEnd" id="USM-La-GFA"/>
                                                         </connections>
                                                     </textField>
                                                     <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" minValue="-1000" maxValue="1000" translatesAutoresizingMaskIntoConstraints="NO" id="6eY-H1-quZ" userLabel="a4 Sld">
@@ -759,8 +759,8 @@
                                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                         <textInputTraits key="textInputTraits"/>
                                                         <connections>
-                                                            <action selector="editarTexto:" destination="fZQ-Xr-QNc" eventType="editingChanged" id="je4-ya-T3v"/>
-                                                            <action selector="terminarEditarTexto:" destination="fZQ-Xr-QNc" eventType="editingDidEnd" id="4qn-Ho-Dv4"/>
+                                                            <action selector="editarTextoA5:" destination="fZQ-Xr-QNc" eventType="editingChanged" id="cgg-Kw-WyB"/>
+                                                            <action selector="terminarEditarTextoA5:" destination="fZQ-Xr-QNc" eventType="editingDidEnd" id="rLP-nX-UK6"/>
                                                         </connections>
                                                     </textField>
                                                     <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" minValue="-1000" maxValue="1000" translatesAutoresizingMaskIntoConstraints="NO" id="yxV-6f-mFN" userLabel="a5 Sld">
@@ -802,8 +802,8 @@
                                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                         <textInputTraits key="textInputTraits"/>
                                                         <connections>
-                                                            <action selector="editarTexto:" destination="fZQ-Xr-QNc" eventType="editingChanged" id="8p1-QV-Sdu"/>
-                                                            <action selector="terminarEditarTexto:" destination="fZQ-Xr-QNc" eventType="editingDidEnd" id="0om-JD-gus"/>
+                                                            <action selector="editarTextoA6:" destination="fZQ-Xr-QNc" eventType="editingChanged" id="clh-bv-Djr"/>
+                                                            <action selector="terminarEditarTextoA6:" destination="fZQ-Xr-QNc" eventType="editingDidEnd" id="GdJ-rL-3y7"/>
                                                         </connections>
                                                     </textField>
                                                     <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" minValue="-1000" maxValue="1000" translatesAutoresizingMaskIntoConstraints="NO" id="Sh8-dN-A03" userLabel="a6 Sld">
@@ -900,7 +900,7 @@
                         <outlet property="sliderA4" destination="6eY-H1-quZ" id="mij-kG-zIj"/>
                         <outlet property="sliderA5" destination="yxV-6f-mFN" id="DIe-HU-ST7"/>
                         <outlet property="sliderA6" destination="Sh8-dN-A03" id="4NE-Im-YKY"/>
-                        <outlet property="textoA1" destination="O8T-yi-DS2" id="nbo-cC-oxF"/>
+                        <outlet property="textoA1" destination="O8T-yi-DS2" id="pQG-4u-S4G"/>
                         <outlet property="textoA2" destination="E3b-1g-X73" id="G8u-LG-WZu"/>
                         <outlet property="textoA3" destination="dk1-z7-A07" id="wrE-tf-GEf"/>
                         <outlet property="textoA4" destination="itc-HF-qFL" id="dqe-Gj-mFR"/>
@@ -1640,20 +1640,20 @@
     </scenes>
     <resources>
         <image name="btn" width="300" height="40"/>
-        <image name="calculadoraOff" width="25" height="25"/>
-        <image name="calculadoraOn" width="25" height="25"/>
-        <image name="casaOff" width="25" height="25"/>
-        <image name="casaOn" width="25" height="25"/>
-        <image name="localizacion" width="250" height="250"/>
-        <image name="lupaOff" width="25" height="25"/>
-        <image name="lupaOn" width="25" height="25"/>
-        <image name="mapa" width="326" height="258"/>
-        <image name="mapaSeleccion" width="326" height="258"/>
-        <image name="ojoOff" width="250" height="250"/>
-        <image name="pointer" width="250" height="250"/>
+        <image name="calculadoraOff" width="37.5" height="37.5"/>
+        <image name="calculadoraOn" width="37.5" height="37.5"/>
+        <image name="casaOff" width="37.5" height="37.5"/>
+        <image name="casaOn" width="37.5" height="37.5"/>
+        <image name="localizacion" width="375" height="375"/>
+        <image name="lupaOff" width="37.5" height="37.5"/>
+        <image name="lupaOn" width="37.5" height="37.5"/>
+        <image name="mapa" width="733.5" height="582"/>
+        <image name="mapaSeleccion" width="733.5" height="582"/>
+        <image name="ojoOff" width="375" height="375"/>
+        <image name="pointer" width="375" height="375"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="mQc-aQ-49L"/>
-        <segue reference="2rg-aZ-mVE"/>
+        <segue reference="2tN-WW-kHV"/>
+        <segue reference="pk6-wJ-Rxh"/>
     </inferredMetricsTieBreakers>
 </document>

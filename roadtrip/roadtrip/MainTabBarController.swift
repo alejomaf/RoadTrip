@@ -28,6 +28,8 @@ class MainTabBarController: UITabBarController {
 					if(usuario.nombre == nombreAux) {
 						if(usuario.contrasena == contrasenaAux) {
 							MainTabBarController.sesion = usuario
+							print(usuario.ubicacion!.horizontal)
+							print(usuario.ubicacion!.vertical)
 						}
 					}
 				}

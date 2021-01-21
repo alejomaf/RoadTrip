@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import CoreData
 
 class RegistrarseViewController: UIViewController {
 
@@ -30,8 +31,6 @@ class RegistrarseViewController: UIViewController {
     override func viewDidLoad() {
         crearCuenta.isEnabled=false
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
     }
     
     
@@ -88,21 +87,37 @@ class RegistrarseViewController: UIViewController {
     }
     
      @IBAction func registrarse(sender: UIStoryboardSegue) {
+		
+		
+		/*let nuevaUbicacion = Ubicacion(context: context)
+		nuevaUbicacion.horizontal = Double(ejex)
+		nuevaUbicacion.vertical = Double(ejey)
+		print("\(Double(ejey)) || \(Double(ejex))")*/
+		
+		/*do {
+			context.insert(nuevaUbicacion)
+			try context.save()
+		} catch {
+			print("Error al guardar el usuario")
+		}*/
+		
         let nuevoUsuario = Usuario(context: context)
 		
 		nuevoUsuario.nombre = usuarioL.text
         nuevoUsuario.contrasena = contrasenaL1.text
         nuevoUsuario.correo = correoElectronicoL.text
-        nuevoUsuario.ubicacion = nil
-        
-        do {
-            context.insert(nuevoUsuario)
-            try context.save()
-        } catch {
-            print("Error al guardar el usuario")
-        }
 		
-		print("Usuario registrado.")
+		
+		nuevoUsuario.ubicacion = Ubicacion(context: context)
+		nuevoUsuario.ubicacion!.horizontal = Double(ejex)
+		nuevoUsuario.ubicacion!.vertical = Double(ejey)
+		
+		do {
+			context.insert(nuevoUsuario)
+			try context.save()
+		} catch {
+			print("Error al guardar el usuario")
+		}
 		
         salir(sender:sender)
     }

@@ -66,7 +66,7 @@ class IniciarSesionViewController: UIViewController, UIGestureRecognizerDelegate
 		do{
 			self.usuarios = try context.fetch(request)
 		}catch{
-			print("Error cargando las páginas")
+			print("Error cargando los usuarios")
 		}
 	}
 	

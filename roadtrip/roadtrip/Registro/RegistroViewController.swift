@@ -49,7 +49,7 @@ class RegistroViewController: UIViewController {
     var a6 : Float = 0.0
     
     //Algoritmo activado o desactivado
-    var ALGORITMO: Bool = true
+    var ALGORITMO: Bool = false
     
     var ejex: Float = 0
     var ejey: Float = 0
@@ -194,18 +194,18 @@ class RegistroViewController: UIViewController {
             registro?.ubicacion?.horizontal = Double(ejex)
             registro?.ubicacion?.vertical = Double(ejey)
             registro?.a01 = Float(textoA1.text!)!
-            /*registro?.a02 = Float(textoA2.text!)!
+            registro?.a02 = Float(textoA2.text!)!
             registro?.a03 = Float(textoA3.text!)!
             registro?.a04 = Float(textoA4.text!)!
             registro?.a05 = Float(textoA5.text!)!
-            registro?.a06 = Float(textoA6.text!)!*/
+            registro?.a06 = Float(textoA6.text!)!
         }else{
             a1 = Float(textoA1.text!)!
-            /*a2 = Float(textoA2.text!)!
+            a2 = Float(textoA2.text!)!
             a3 = Float(textoA3.text!)!
             a4 = Float(textoA4.text!)!
             a5 = Float(textoA5.text!)!
-            a6 = Float(textoA6.text!)!*/
+            a6 = Float(textoA6.text!)!
         }
         
     
@@ -226,7 +226,7 @@ class RegistroViewController: UIViewController {
 			//Es el unwind, es decir, cuando se va a crear o actualizar un registro
 			if(salida==0){
 				showAlert(titulo: "Selecciona si hay satélite",texto: "Seleccion 'Si' o 'No' para saber si hay satélite")
-				//return false; ACTIVAR CUANDO ESTÉN LAS VISTAS CONFIGURADAS
+				return false;
 			}
 		}
 		return true
@@ -243,6 +243,16 @@ class RegistroViewController: UIViewController {
 	
 	@IBAction func atras(_ sender: UIBarButtonItem) {
 		self.dismiss(animated: true, completion: nil)
+	}
+	
+	//Configuro los botones de crear ubicación para que el unwind esté bien programado
+	override func prepare(for segue: UIStoryboardSegue, sender: Any?){
+		if segue.identifier == "crearUbicacionPredeterminada" {
+			let viewDestiny = segue.destination as! CrearUbicacionViewController
+			viewDestiny.isCreacion = true
+			viewDestiny.x = ejex
+			viewDestiny.y = ejey
+		}
 	}
 	
 }

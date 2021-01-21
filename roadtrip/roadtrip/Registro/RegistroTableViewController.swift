@@ -31,6 +31,8 @@ class RegistroTableViewController: UITableViewController {
         #else
             anadirButton.isEnabled = true
         #endif
+		
+		//print("\(MainTabBarController.sesion?.ubicacion?.vertical) | \(MainTabBarController.sesion?.ubicacion?.horizontal)")
     }
     
     func saveData() {
@@ -69,18 +71,22 @@ class RegistroTableViewController: UITableViewController {
         let row = registros?[indexPath.row]
         let dateFormatter = DateFormatter()
 		
+		//Configuro el tipo de formato de texto para cargarlo en la celda
 		dateFormatter.dateFormat = "dd/MM/yyyy - HH:mm"
 		dateFormatter.locale = Locale(identifier: "es")
 		
+		//Añado los atributos que se han generado en la tabla
         cell.titleLbl.text = row?.value(forKey: "nombre") as? String ?? "Sin nombre"
-		cell.dateLbl.text = dateFormatter.string(from: row?.value(forKey: "fecha") as! Date)
+		//cell.dateLbl.text = dateFormatter.string(from: (row?.value(forKey: "fecha") as! Date))
 		cell.validationBorder.backgroundColor = RegistroTableViewController.validationColor(row?.value(forKey: "satelite") as! Bool?)
         
         return cell
     }
 	
 	
-    func anadirRegistro(a1:Float,a2:Float,a3:Float,a4:Float,a5:Float,a6:Float, ejex:Double, ejey: Double) {
+	func anadirRegistro(a1:Float,a2:Float,a3:Float,a4:Float,a5:Float,a6:Float, ejex:Double, ejey: Double, salida: Bool) {
+		
+		//Creo el registro para añadirlo a la base de datos
         let nuevoRegistro = Registro(context: self.context)
         nuevoRegistro.a01 = a1
         nuevoRegistro.a02 = a2
@@ -88,20 +94,47 @@ class RegistroTableViewController: UITableViewController {
         nuevoRegistro.a04 = a4
         nuevoRegistro.a05 = a5
         nuevoRegistro.a06 = a6
-        nuevoRegistro.ubicacion?.horizontal = ejex
-        nuevoRegistro.ubicacion?.vertical = ejey
         nuevoRegistro.usuario = MainTabBarController.sesion
         nuevoRegistro.nombre = nombreRegistroCreado
-        nuevoRegistro.fecha = Date() as NSDate
+        nuevoRegistro.fecha = NSDate()
+		nuevoRegistro.satelite = salida
+		
+		//Genero la ubicación que le ha querido asignar el usuario
+		let nuevaUbicacion = Ubicacion(context: self.context)
+		nuevaUbicacion.horizontal = ejex
+		nuevaUbicacion.vertical = ejey
+		
+		//Vinculo el registro con su ubicación
+		nuevoRegistro.ubicacion = nuevaUbicacion
         
         print("\(a1), \(a2),\(a3),\(a4), \(ejex), \(ejey)")
+		
+		//Añado los registros y recargo las tablas
 		self.registros?.append(nuevoRegistro)
         MainTabBarController.sesion?.addToRegistros(nuevoRegistro)
         self.saveData()
 		tableView.reloadData()
     }
-    
+	
+	func modificarRegistro(a1:Float,a2:Float,a3:Float,a4:Float,a5:Float,a6:Float, ejex:Double, ejey: Double, salida: Bool, fila: Int){
+		let registro = registros![fila]
+		registro.a01 = a1
+		registro.a02 = a2
+		registro.a03 = a3
+		registro.a04 = a4
+		registro.a05 = a5
+		registro.a06 = a6
+		registro.ubicacion!.horizontal = ejex
+		registro.ubicacion!.vertical = ejey
+		
+		self.registros?[fila] = registro
+		MainTabBarController.sesion?.replaceRegistros(at: fila, with: registro)
+		self.saveData()
+		tableView.reloadData()
+	}
+	
     @IBAction func guardarRegistro(sender: UIStoryboardSegue) {
+		//Recibo los atributos de nuestra controlador RegistroViewController, previamente se han controlado los tipos de datos recibidos
         let a1 = (sender.source as! RegistroViewController).a1
         let a2 = (sender.source as! RegistroViewController).a2
         let a3 = (sender.source as! RegistroViewController).a3
@@ -112,18 +145,44 @@ class RegistroTableViewController: UITableViewController {
         let ejex = (sender.source as! RegistroViewController).ejex
         let ejey = (sender.source as! RegistroViewController).ejey
 
-		self.anadirRegistro(a1: a1, a2: a2, a3: a3, a4: a4, a5: a5, a6: a6, ejex: Double(ejex),ejey: Double(ejey))
+		let estado = (sender.source as! RegistroViewController).salida
+		let salida : Bool
+		//Si el estado es 1 significa que no se ha detectado satélite, en el caso de que sea 2 significa que lo ha hecho
+		if(estado==1) {
+			salida = false
+		}else{
+			salida = true
+		}
+		
+		//Compruebo si el RegistroViewController estaba editando un atributo o no
+		let creacionOModificacion = (sender.source as! RegistroViewController).edicion
+		
+		if(creacionOModificacion){
+			//Modifico el registro
+			let filaSeleccionada = tableView.indexPathForSelectedRow?.row
+			self.modificarRegistro(a1: a1, a2: a2, a3: a3, a4: a4, a5: a5, a6: a6, ejex: Double(ejex),ejey: Double(ejey), salida: salida, fila: filaSeleccionada!)
+			
+		}else{
+			//Creo el registro
+			self.anadirRegistro(a1: a1, a2: a2, a3: a3, a4: a4, a5: a5, a6: a6, ejex: Double(ejex),ejey: Double(ejey), salida: salida)
+		}
 	}
-    
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
+	
+	
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
 		if segue.identifier == "verRegistro" {
 			let selectedRow = tableView.indexPath(for: sender as! RegistroTableViewCell)?.row
 			let viewDestiny = segue.destination as! RegistroViewController
 			viewDestiny.registro = registros?[selectedRow!]
 			viewDestiny.edicion = true
+			viewDestiny.ejex = Float((registros?[selectedRow!].ubicacion?.horizontal)!)
+			viewDestiny.ejey = Float((registros?[selectedRow!].ubicacion?.vertical)!)
+		}else if segue.identifier == "crearRegistro" {
+			let viewDestiny = segue.destination as! RegistroViewController
+			viewDestiny.ejex = Float((MainTabBarController.sesion?.ubicacion?.horizontal)!)
+			viewDestiny.ejey = Float((MainTabBarController.sesion?.ubicacion?.vertical)!)
+			print(Float((MainTabBarController.sesion?.ubicacion?.horizontal)!))
+			print(Float((MainTabBarController.sesion?.ubicacion?.vertical)!))
 		}
     }
 	

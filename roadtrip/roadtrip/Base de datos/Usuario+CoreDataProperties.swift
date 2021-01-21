@@ -2,8 +2,8 @@
 //  Usuario+CoreDataProperties.swift
 //  roadtrip
 //
-//  Created by Alejo Martín Arias Filippo on 09/12/2020.
-//  Copyright © 2020 ual. All rights reserved.
+//  Created by Alejo Martín Arias Filippo on 21/01/2021.
+//  Copyright © 2021 ual. All rights reserved.
 //
 //
 
@@ -21,7 +21,7 @@ extension Usuario {
     @NSManaged public var correo: String?
     @NSManaged public var nombre: String?
     @NSManaged public var registros: NSOrderedSet?
-    @NSManaged public var ubicacion: Usuario?
+    @NSManaged public var ubicacion: Ubicacion?
 
 }
 
